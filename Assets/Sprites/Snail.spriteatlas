@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Snail
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: f8cd5b5c5cb231f4c9e35bcd1fdad115, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: a56268322e57c5d47bb7763cea9d7aec, type: 3}
+  - {fileID: 21300000, guid: c0589b332cf3e654db033a27fc0fdf9b, type: 3}
+  - {fileID: 21300000, guid: f5c719d42bf00284ab6cc92b73ca4bd4, type: 3}
+  - {fileID: 21300000, guid: 7af421783dda69948b0ede9585f2740b, type: 3}
+  - {fileID: 21300000, guid: 44fd8278a7c4f764188ec529d0a57245, type: 3}
+  - {fileID: 21300000, guid: e4a3273913d6782448c7b63a2495bd49, type: 3}
+  - {fileID: 21300000, guid: b061640d0c7397949bfadad48ccf5ab1, type: 3}
+  - {fileID: 21300000, guid: 22cac20e5f107914a89ff884f92e94ab, type: 3}
+  - {fileID: 21300000, guid: a3efa53e3e4b6654ca1e17afc07952c6, type: 3}
+  - {fileID: 21300000, guid: 7c6ca0ef7c1c4c146aaecb42b6a3e739, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - snail_04
+  - snail_08
+  - snail_02
+  - snail_07
+  - snail_06
+  - snail_03
+  - snail_05
+  - snail_09
+  - snail_01
+  - snail_00
+  m_RenderDataMap: {}
+  m_Tag: Snail
+  m_IsVariant: 0

@@ -42,7 +42,7 @@ public class GameOver : MonoBehaviour
         _gameEvents.ResumeGame();
     }
     void ExtraLife(){
-        _gameEvents.Revive();
+        _gameEvents.ShowExtraLifeVR();
         GameOverPanel.SetActive(false);
     }
 

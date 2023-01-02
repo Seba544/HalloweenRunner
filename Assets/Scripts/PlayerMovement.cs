@@ -12,14 +12,23 @@ public class PlayerMovement : MonoBehaviour
     BoxCollider2D _boxCollider;
     public float PlayerSpeed;
     public float JumpForce;
-    public float DoubleJumpForce;
     public LayerMask GroundLayerMask;
-    [SerializeField] Button _jumpButton;
+    private Button _jumpButton;
+    private Button _slideButton;
     bool isDead;
+    bool isSliding;
     int currentAmountOfJumps;
+    float _initialColliderSizeY;
+    float _initialColliderOffsetY;
+    
     // Start is called before the first frame update
     void Start()
     {
+        _boxCollider = GetComponent<BoxCollider2D>();
+        _initialColliderSizeY = _boxCollider.size.y;
+        _initialColliderOffsetY = _boxCollider.offset.y;
+        _jumpButton = GameObject.FindGameObjectWithTag("JumpButton").gameObject.GetComponent<Button>();
+        _slideButton = GameObject.FindGameObjectWithTag("SlideButton").gameObject.GetComponent<Button>();
         currentAmountOfJumps = 0;
         _gameEvents.OnGameOver()
             .Subscribe(_ => ReproduceDeath())
@@ -29,11 +38,19 @@ public class PlayerMovement : MonoBehaviour
             .Subscribe(_ => Revive())
             .AddTo(this);
         _jumpButton.onClick.AddListener(Jump);
-        _boxCollider = GetComponent<BoxCollider2D>();
+        _slideButton.onClick.AddListener(Slide);
+        
         _rgbd = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
+        
     }
 
+    void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.W)){
+            Jump();
+        }
+    }
     // Update is called once per frame
     void LateUpdate()
     {
@@ -45,12 +62,10 @@ public class PlayerMovement : MonoBehaviour
         if(IsGrounded()){
             _animator.SetBool("isJumping",false);
         }else{
-            _animator.SetBool("isJumping",true);
+             _animator.SetBool("isJumping",true);
         }
 
-        if(Input.GetKeyDown(KeyCode.W)){
-            Jump();
-        }
+        
     }
 
     void ReproduceDeath(){
@@ -58,7 +73,6 @@ public class PlayerMovement : MonoBehaviour
         
         isDead=true;
   
-        
     }
 
     void Revive(){
@@ -67,12 +81,30 @@ public class PlayerMovement : MonoBehaviour
     }
 
     private void Jump(){
+        if(isSliding){
+            _animator.SetBool("isSliding",false);
+            _boxCollider.size = new Vector2(_boxCollider.size.x,_initialColliderSizeY);
+            _boxCollider.offset = new Vector2(_boxCollider.offset.x,_initialColliderOffsetY);
+            isSliding = false;
+            return;
+        }
         if((IsGrounded()|| currentAmountOfJumps<1) && !isDead){
             _rgbd.velocity = new Vector2(_rgbd.velocity.x,JumpForce);
-         
+           
             currentAmountOfJumps++;
+            
         }
             
+    }
+    private void Slide(){
+        if((IsGrounded()|| currentAmountOfJumps<1) && !isDead && !isSliding){
+            _animator.SetBool("isSliding",true);
+            _boxCollider.size = new Vector2(_boxCollider.size.x,_boxCollider.size.y/2);
+            _boxCollider.offset = new Vector2(_boxCollider.offset.x,_boxCollider.offset.y-2);
+            isSliding = true;
+            
+
+        }
     }
     bool IsGrounded(){
         float extraHeightText = 0.5f;

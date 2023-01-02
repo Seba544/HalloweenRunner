@@ -49,14 +49,14 @@ interface IMovementStrategy{
 class OnGroundMovement :  IMovementStrategy{
     public void Execute(Transform pumpking)
     {
-        Debug.Log("Se queda en el suelo");
+        //Debug.Log("Se queda en el suelo");
     }
 }
 class OnAirMovement :  IMovementStrategy{
 
     public void Execute(Transform pumpking)
     {
-        float offsetY = pumpking.position.y + 3f;
+        float offsetY = pumpking.position.y + 5f;
         pumpking.position = new Vector3(pumpking.position.x, offsetY, pumpking.position.z);
     }
 }

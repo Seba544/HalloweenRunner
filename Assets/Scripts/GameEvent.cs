@@ -16,6 +16,7 @@ public class GameEvent : ScriptableObject
     private ISubject<Unit> _endOfLevel = new Subject<Unit>();
     private ISubject<int> _giveReward = new Subject<int>();
     private ISubject<Unit> _revive = new Subject<Unit>();
+    private ISubject<Unit> _showExtraLifeVR = new Subject<Unit>();
     public IObservable<Unit> CollectPumpking(){
         _collectPumpking.OnNext(Unit.Default);
         return _collectPumpking;
@@ -35,6 +36,7 @@ public class GameEvent : ScriptableObject
     public IObservable<Unit> OnEndOfLevel () => _endOfLevel;
     public IObservable<int> OnGiveReward () => _giveReward;
     public IObservable<Unit> OnRevive() =>_revive;
+    public IObservable<Unit> OnShowExtraLifeVR => _showExtraLifeVR;
     
     public void OnEndWave() => _endWave.OnNext(Unit.Default);
     public void EndOfLevel() => _endOfLevel.OnNext(Unit.Default);
@@ -44,6 +46,7 @@ public class GameEvent : ScriptableObject
     } 
     public void GiveReward(int pumpkingsAmount) => _giveReward.OnNext(pumpkingsAmount);
     public void Revive() => _revive.OnNext(Unit.Default);
+    public void ShowExtraLifeVR() => _showExtraLifeVR.OnNext(Unit.Default);
 
     
 }

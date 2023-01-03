@@ -31,6 +31,7 @@ public class StageEnabler : MonoBehaviour
                 transform.DOPunchScale(new Vector3(0.3f,0.3f,0.3f),5,2).SetLoops(30);
         }else{
             _icon.sprite = BlockedIcon;
+            StageNumber.gameObject.SetActive(false);
             _stageButton.interactable=false;
         }
     }

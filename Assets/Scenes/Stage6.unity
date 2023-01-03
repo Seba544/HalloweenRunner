@@ -960,7 +960,7 @@ MonoBehaviour:
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
   Player: {fileID: 61614391}
   SmoothSpeed: 3
-  Offset: {x: 8, y: 0, z: 0}
+  Offset: {x: 6, y: 0, z: 0}
 --- !u!1 &574253369
 GameObject:
   m_ObjectHideFlags: 0

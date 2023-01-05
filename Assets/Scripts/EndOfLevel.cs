@@ -11,6 +11,7 @@ public class EndOfLevel : MonoBehaviour
     [SerializeField] GameEvent _gameEvents;
     public int AmountOfPumpkingsRewardOnFinish;
     public Button ContinueButton;
+    public Button MultiplyButton;
     public GameObject EndOfLevelPanel;
     public TMP_Text RewardAmount;
     public TMP_Text MultiplyReward;
@@ -20,11 +21,15 @@ public class EndOfLevel : MonoBehaviour
     void Start()
     {
         ContinueButton.onClick.AddListener(Continue);
+        MultiplyButton.onClick.AddListener(ShowBonusRewardVR);
 
         EndOfLevelPanel.SetActive(false);
 
         _gameEvents.OnEndOfLevel()
             .Subscribe(_ => FinishLevel())
+            .AddTo(this);
+        _gameEvents.OnGiveRewardBonus()
+            .Subscribe(_ => Multiply())
             .AddTo(this);
 
         RewardAmount.text = AmountOfPumpkingsRewardOnFinish.ToString();
@@ -38,6 +43,14 @@ public class EndOfLevel : MonoBehaviour
 
     void Continue(){
         _gameEvents.GiveReward(AmountOfPumpkingsRewardOnFinish);
+        _gameEvents.LoadScene.OnNext("LevelSelection");
+    }
+    void ShowBonusRewardVR(){
+        _gameEvents.ShowMultiplyRewardVR();
+    }
+    void Multiply(){
+        int reward = AmountOfPumpkingsRewardOnFinish*2;
+        _gameEvents.GiveReward(reward);
         _gameEvents.LoadScene.OnNext("LevelSelection");
     }
     

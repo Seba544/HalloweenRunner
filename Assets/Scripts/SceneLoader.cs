@@ -12,6 +12,7 @@ public class SceneLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Time.timeScale=1f;
         _gameEvents.LoadScene
             .Subscribe(sceneToLoad => {
                 if(!String.IsNullOrEmpty(sceneToLoad)){

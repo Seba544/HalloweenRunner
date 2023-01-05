@@ -8,22 +8,31 @@ public class RewardedVideoManager : MonoBehaviour,IUnityAdsLoadListener,IUnityAd
 {
     [SerializeField] GameEvent _gameEvents;
     string _extraLifePlacementId = "Extra_Life";
+    string _multiplyRewardPlacementId = "Reward_Bonus";
     // Start is called before the first frame update
     void Start()
     {
         LoadVR();
+        LoadRewardBonusVR();
         _gameEvents.OnShowExtraLifeVR
             .Subscribe(_ => {
                 
                 ShowVR();
             })
             .AddTo(this);
+        _gameEvents.OnShowMultiplyRewardVR
+            .Subscribe(_ => {
+                ShowMultiplyRewardVR();
+            })
+            .AddTo(this);
     }
 
     
     void LoadVR() => Advertisement.Load(_extraLifePlacementId,this);
+    void LoadRewardBonusVR() => Advertisement.Load(_multiplyRewardPlacementId,this);
     
-    void ShowVR () => Advertisement.Show(_extraLifePlacementId,this);   
+    void ShowVR () => Advertisement.Show(_extraLifePlacementId,this); 
+    void ShowMultiplyRewardVR() => Advertisement.Show(_multiplyRewardPlacementId,this);  
     
     public void OnUnityAdsAdLoaded(string placementId)
     {
@@ -45,11 +54,14 @@ public class RewardedVideoManager : MonoBehaviour,IUnityAdsLoadListener,IUnityAd
     {
         if (placementId.Equals(_extraLifePlacementId) && showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
         {
-            Debug.Log("Unity Ads Rewarded Ad Completed");
+            
             _gameEvents.Revive();
 
             // Load another ad:
             Advertisement.Load(_extraLifePlacementId, this);
+        }
+        if(placementId.Equals(_multiplyRewardPlacementId) && showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED)){
+            _gameEvents.GiveRewardBonus();
         }
     }
 

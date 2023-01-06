@@ -6,7 +6,7 @@ using UniRx;
 
 public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
 {
-    string PlacementID = "Extra_Life";
+    
     // Start is called before the first frame update
     void Awake()
     {

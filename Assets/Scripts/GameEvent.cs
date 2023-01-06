@@ -20,6 +20,7 @@ public class GameEvent : ScriptableObject
     private ISubject<Unit> _showExtraLifeVR = new Subject<Unit>();
     private ISubject<Unit> _showMultiplyRewardVR = new Subject<Unit>();
     private ISubject<Unit> _finalizeMultiplyRewardVR = new Subject<Unit>();
+    private ISubject<Unit> _hideBanner = new Subject<Unit>();
     
     public IObservable<Unit> CollectPumpking(){
         _collectPumpking.OnNext(Unit.Default);
@@ -43,6 +44,7 @@ public class GameEvent : ScriptableObject
     public IObservable<Unit> OnShowExtraLifeVR => _showExtraLifeVR;
     public IObservable<Unit> OnShowMultiplyRewardVR => _showMultiplyRewardVR;
     public IObservable<Unit> OnGiveRewardBonus() => _giveRewardBonus;
+    public IObservable<Unit> OnHideBanner() => _hideBanner;
     
     public void OnEndWave() => _endWave.OnNext(Unit.Default);
     public void EndOfLevel() => _endOfLevel.OnNext(Unit.Default);
@@ -55,6 +57,6 @@ public class GameEvent : ScriptableObject
     public void Revive() => _revive.OnNext(Unit.Default);
     public void ShowExtraLifeVR() => _showExtraLifeVR.OnNext(Unit.Default);
     public void ShowMultiplyRewardVR() => _showMultiplyRewardVR.OnNext(Unit.Default);
-
+    public void HideBanner() => _hideBanner.OnNext(Unit.Default);
     
 }

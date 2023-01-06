@@ -16,6 +16,7 @@ public class SceneLoader : MonoBehaviour
         _gameEvents.LoadScene
             .Subscribe(sceneToLoad => {
                 if(!String.IsNullOrEmpty(sceneToLoad)){
+                    _gameEvents.HideBanner();
                     StartCoroutine(Load(sceneToLoad));
                 }
             })

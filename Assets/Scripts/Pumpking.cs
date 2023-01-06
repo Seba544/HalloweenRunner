@@ -39,6 +39,10 @@ public class Pumpking : MonoBehaviour
         var strategy = Strategies[UnityEngine.Random.Range(0,Strategies.Count)];
         strategy.Execute(transform);
     }
+    void OnDestroy()
+    {
+        DOTween.KillAll();
+    }
     
 }
 

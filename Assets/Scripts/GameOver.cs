@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UniRx;
-using DG.Tweening;
 public class GameOver : MonoBehaviour
 {
     [SerializeField] GameEvent _gameEvents;
@@ -22,7 +21,7 @@ public class GameOver : MonoBehaviour
 
         GameOverPanel.SetActive(false);
         _gameEvents.OnGameOver()
-            .Subscribe(_ => EndGame())
+            .Subscribe(_ => Invoke("EndGame",2))
             .AddTo(this);
 
         

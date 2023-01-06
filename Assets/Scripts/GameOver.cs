@@ -21,7 +21,7 @@ public class GameOver : MonoBehaviour
 
         GameOverPanel.SetActive(false);
         _gameEvents.OnGameOver()
-            .Subscribe(_ => Invoke("EndGame",2))
+            .Subscribe(_ => Invoke("EndGame",1))
             .AddTo(this);
 
         
@@ -38,8 +38,7 @@ public class GameOver : MonoBehaviour
         _gameEvents.ResumeGame();
     }
     void GoBackToHome(){
-        _gameEvents.LoadScene.OnNext(HomeScene);
-        _gameEvents.ResumeGame();
+        _gameEvents.ShowInterstitial();
     }
     void ExtraLife(){
         _gameEvents.ShowExtraLifeVR();

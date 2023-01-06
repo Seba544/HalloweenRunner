@@ -31,7 +31,10 @@ public class EndOfLevel : MonoBehaviour
         _gameEvents.OnGiveRewardBonus()
             .Subscribe(_ => Multiply())
             .AddTo(this);
-
+        int currentStage = PlayerPrefs.GetInt("CurrentStage");
+        if(PlayerPrefs.GetInt("CurrentStage")>= NextStage){
+            AmountOfPumpkingsRewardOnFinish = 0;
+        }
         RewardAmount.text = AmountOfPumpkingsRewardOnFinish.ToString();
         MultiplyReward.text = (AmountOfPumpkingsRewardOnFinish*2).ToString();
     }

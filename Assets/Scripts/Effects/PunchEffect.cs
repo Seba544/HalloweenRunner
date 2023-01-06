@@ -18,7 +18,7 @@ public class PunchEffect : MonoBehaviour
     
 
     void DoEffect(){
-        transform.DOPunchScale(new Vector3(0.3f,0.3f,0.3f),Duration,2).SetLoops(AmountOfLoops).SetEase(EaseType);
+        transform.DOPunchScale(new Vector3(0.3f,0.3f,0.3f),Duration,2).SetLoops(AmountOfLoops).SetEase(EaseType).SetUpdate(true);
     }
     void OnDestroy()
     {

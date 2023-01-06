@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
-  AmountOfPumpkingsRewardOnFinish: 10
+  AmountOfPumpkingsRewardOnFinish: 100
   ContinueButton: {fileID: 6473748433367698235}
   MultiplyButton: {fileID: 8973957182090265617}
   EndOfLevelPanel: {fileID: 6473748433684060347}

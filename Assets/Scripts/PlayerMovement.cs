@@ -30,12 +30,17 @@ public class PlayerMovement : MonoBehaviour
         _jumpButton = GameObject.FindGameObjectWithTag("JumpButton").gameObject.GetComponent<Button>();
         _slideButton = GameObject.FindGameObjectWithTag("SlideButton").gameObject.GetComponent<Button>();
         currentAmountOfJumps = 0;
+
+        
         _gameEvents.OnGameOver()
             .Subscribe(_ => ReproduceDeath())
             .AddTo(this);
 
         _gameEvents.OnRevive()
             .Subscribe(_ => Revive())
+            .AddTo(this);
+        _gameEvents.OnEndOfLevel()
+            .Subscribe(_ => StartCoroutine("Destroy"))
             .AddTo(this);
         _jumpButton.onClick.AddListener(Jump);
         _slideButton.onClick.AddListener(Slide);
@@ -122,5 +127,10 @@ public class PlayerMovement : MonoBehaviour
         if(raycastHit.collider != null)
             currentAmountOfJumps = 0;
         return raycastHit.collider != null;
+    }
+
+    IEnumerator Destroy(){
+        yield return new WaitForSeconds(1);
+        Destroy(gameObject);
     }
 }

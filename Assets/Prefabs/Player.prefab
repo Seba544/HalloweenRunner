@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
-  PlayerSpeed: 3
+  PlayerSpeed: 3.5
   JumpForce: 18
   GroundLayerMask:
     serializedVersion: 2
@@ -179,7 +179,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
-    oldSize: {x: 5.79, y: 7.63}
+    oldSize: {x: 5.79, y: 7.640412}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

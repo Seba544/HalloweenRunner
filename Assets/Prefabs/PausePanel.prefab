@@ -482,7 +482,7 @@ GameObject:
   - component: {fileID: 4338761306735398558}
   - component: {fileID: 4338761306735398553}
   - component: {fileID: 4338761306735398552}
-  - component: {fileID: 4338761306735398559}
+  - component: {fileID: 1065281614875904621}
   m_Layer: 5
   m_Name: ExitButton
   m_TagString: Untagged
@@ -593,7 +593,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &4338761306735398559
+--- !u!114 &1065281614875904621
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -602,11 +602,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4338761306735398554}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d851707cb4c1e2449b7cee2b2fef17eb, type: 3}
+  m_Script: {fileID: 11500000, guid: da71159596cebe04b999e900e2e44e29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
-  GoTo: Home
 --- !u!1 &4338761306860287777
 GameObject:
   m_ObjectHideFlags: 0
@@ -754,6 +753,7 @@ GameObject:
   - component: {fileID: 4338761307448264561}
   - component: {fileID: 4338761307448264567}
   - component: {fileID: 4338761307448264566}
+  - component: {fileID: 2468794063091778494}
   m_Layer: 5
   m_Name: PausePopUp
   m_TagString: Untagged
@@ -821,6 +821,21 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2468794063091778494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4338761307448264560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37246bdc15f2d40418af0f575a98bd60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AmountOfLoops: 1
+  Duration: 1
+  EaseType: 0
 --- !u!1 &4338761307756313346
 GameObject:
   m_ObjectHideFlags: 0

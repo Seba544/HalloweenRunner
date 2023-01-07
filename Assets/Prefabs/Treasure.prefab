@@ -66,7 +66,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '0
+  m_text: '1000
 
 '
   m_isRightToLeft: 0
@@ -77,15 +77,15 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4286177791
-  m_fontColor: {r: 1, g: 0.8812118, b: 0.4764151, a: 1}
-  m_enableVertexGradient: 0
+    rgba: 4278231295
+  m_fontColor: {r: 1, g: 0.6291135, b: 0, a: 1}
+  m_enableVertexGradient: 1
   m_colorMode: 3
   m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+    topLeft: {r: 1, g: 0.8735975, b: 0, a: 1}
+    topRight: {r: 1, g: 0.17609826, b: 0, a: 1}
+    bottomLeft: {r: 1, g: 0.8745099, b: 0, a: 1}
+    bottomRight: {r: 1, g: 0.48956752, b: 0, a: 1}
   m_fontColorGradientPreset: {fileID: 0}
   m_spriteAsset: {fileID: 0}
   m_tintAllSprites: 0

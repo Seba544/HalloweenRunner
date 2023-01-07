@@ -42,7 +42,10 @@ public class RewardedVideoManager : MonoBehaviour,IUnityAdsLoadListener,IUnityAd
     public void OnUnityAdsFailedToLoad(string placementId, UnityAdsLoadError error, string message)
     {
         Debug.Log($"Error loading Ad Unit {placementId}: {error.ToString()} - {message}");
-       
+        if(placementId == _extraLifePlacementId)
+            LoadVR();
+        if(placementId == _multiplyRewardPlacementId)
+            LoadRewardBonusVR();
     }
 
     public void OnUnityAdsShowClick(string placementId)

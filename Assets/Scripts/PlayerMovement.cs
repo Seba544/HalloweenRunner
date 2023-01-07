@@ -20,10 +20,13 @@ public class PlayerMovement : MonoBehaviour
     int currentAmountOfJumps;
     float _initialColliderSizeY;
     float _initialColliderOffsetY;
-    
+    private AudioSource _audio;
+    public AudioClip JumpAudioClip;
+
     // Start is called before the first frame update
     void Start()
     {
+        _audio = GetComponent<AudioSource>();
         _boxCollider = GetComponent<BoxCollider2D>();
         _initialColliderSizeY = _boxCollider.size.y;
         _initialColliderOffsetY = _boxCollider.offset.y;
@@ -31,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         _slideButton = GameObject.FindGameObjectWithTag("SlideButton").gameObject.GetComponent<Button>();
         currentAmountOfJumps = 0;
 
-        
+
         _gameEvents.OnGameOver()
             .Subscribe(_ => ReproduceDeath())
             .AddTo(this);
@@ -44,92 +47,106 @@ public class PlayerMovement : MonoBehaviour
             .AddTo(this);
         _jumpButton.onClick.AddListener(Jump);
         _slideButton.onClick.AddListener(Slide);
-        
+
         _rgbd = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
-        
-    }
 
+    }
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.W)){
+        if (Input.GetKeyDown(KeyCode.W))
+        {
             Jump();
         }
     }
-    // Update is called once per frame
+
     void LateUpdate()
     {
         
-        if(Time.timeScale==0 || isDead)
+        if (Time.timeScale == 0 || isDead)
             return;
         _rgbd.velocity = new Vector2(PlayerSpeed * 1, _rgbd.velocity.y);
 
-        if(IsGrounded()){
-            _animator.SetBool("isJumping",false);
-        }else{
-             _animator.SetBool("isJumping",true);
+        if (IsGrounded())
+        {
+            _animator.SetBool("isJumping", false);
         }
-
-        
+        else
+        {
+            _animator.SetBool("isJumping", true);
+        }
     }
+    
 
-    void ReproduceDeath(){
+    void ReproduceDeath()
+    {
         _animator.SetTrigger("isDead");
-        
-        isDead=true;
-  
+
+        isDead = true;
+
     }
 
-    void Revive(){
+    void Revive()
+    {
         _animator.SetTrigger("toRevive");
         isDead = false;
     }
 
-    private void Jump(){
-        if(isSliding){
-            _animator.SetBool("isSliding",false);
-            _boxCollider.size = new Vector2(_boxCollider.size.x,_initialColliderSizeY);
-            _boxCollider.offset = new Vector2(_boxCollider.offset.x,_initialColliderOffsetY);
+    private void Jump()
+    {
+        if (isSliding)
+        {
+            _animator.SetBool("isSliding", false);
+            _boxCollider.size = new Vector2(_boxCollider.size.x, _initialColliderSizeY);
+            _boxCollider.offset = new Vector2(_boxCollider.offset.x, _initialColliderOffsetY);
             isSliding = false;
             return;
         }
-        if((IsGrounded()|| currentAmountOfJumps<1) && !isDead){
-            _rgbd.velocity = new Vector2(_rgbd.velocity.x,JumpForce);
-           
+        if ((IsGrounded() || currentAmountOfJumps < 1) && !isDead)
+        {
+            _rgbd.velocity = new Vector2(_rgbd.velocity.x, JumpForce);
+            _audio.PlayOneShot(JumpAudioClip);
             currentAmountOfJumps++;
-            
+
         }
-            
+
     }
-    private void Slide(){
-        if((IsGrounded()|| currentAmountOfJumps<1) && !isDead && !isSliding){
-            _animator.SetBool("isSliding",true);
-            _boxCollider.size = new Vector2(_boxCollider.size.x,_boxCollider.size.y/2);
-            _boxCollider.offset = new Vector2(_boxCollider.offset.x,_boxCollider.offset.y-2);
+    private void Slide()
+    {
+        if ((IsGrounded() || currentAmountOfJumps < 1) && !isDead && !isSliding)
+        {
+            _animator.SetBool("isSliding", true);
+            _boxCollider.size = new Vector2(_boxCollider.size.x, _boxCollider.size.y / 2);
+            _boxCollider.offset = new Vector2(_boxCollider.offset.x, _boxCollider.offset.y - 2);
             isSliding = true;
-            
+
 
         }
     }
-    bool IsGrounded(){
+    bool IsGrounded()
+    {
         float extraHeightText = 0.5f;
-        RaycastHit2D raycastHit = Physics2D.BoxCast(_boxCollider.bounds.center,_boxCollider.bounds.size,0f, Vector2.down, extraHeightText,GroundLayerMask);
+        RaycastHit2D raycastHit = Physics2D.BoxCast(_boxCollider.bounds.center, _boxCollider.bounds.size, 0f, Vector2.down, extraHeightText, GroundLayerMask);
         Color rayColor;
-        if(raycastHit.collider !=null){
+        if (raycastHit.collider != null)
+        {
             rayColor = Color.green;
-        }else{
+        }
+        else
+        {
             rayColor = Color.red;
         }
-        Debug.DrawRay(_boxCollider.bounds.center + new Vector3(_boxCollider.bounds.extents.x,0),Vector2.down * (_boxCollider.bounds.extents.y + extraHeightText),rayColor);
-        Debug.DrawRay(_boxCollider.bounds.center - new Vector3(_boxCollider.bounds.extents.x,0),Vector2.down * (_boxCollider.bounds.extents.y + extraHeightText),rayColor);
-        Debug.DrawRay(_boxCollider.bounds.center - new Vector3(_boxCollider.bounds.extents.x,_boxCollider.bounds.extents.y + extraHeightText),Vector2.down * (_boxCollider.bounds.extents.y + extraHeightText),rayColor);
+        Debug.DrawRay(_boxCollider.bounds.center + new Vector3(_boxCollider.bounds.extents.x, 0), Vector2.down * (_boxCollider.bounds.extents.y + extraHeightText), rayColor);
+        Debug.DrawRay(_boxCollider.bounds.center - new Vector3(_boxCollider.bounds.extents.x, 0), Vector2.down * (_boxCollider.bounds.extents.y + extraHeightText), rayColor);
+        Debug.DrawRay(_boxCollider.bounds.center - new Vector3(_boxCollider.bounds.extents.x, _boxCollider.bounds.extents.y + extraHeightText), Vector2.down * (_boxCollider.bounds.extents.y + extraHeightText), rayColor);
 
-        if(raycastHit.collider != null)
+        if (raycastHit.collider != null)
             currentAmountOfJumps = 0;
         return raycastHit.collider != null;
     }
 
-    IEnumerator Destroy(){
+    IEnumerator Destroy()
+    {
         yield return new WaitForSeconds(1);
         Destroy(gameObject);
     }

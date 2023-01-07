@@ -20,6 +20,7 @@ public class GameEvent : ScriptableObject
     private ISubject<Unit> _showExtraLifeVR = new Subject<Unit>();
     private ISubject<Unit> _showMultiplyRewardVR = new Subject<Unit>();
     private ISubject<Unit> _showInterstitial = new Subject<Unit>();
+    private ISubject<Unit> _showNextStageInsterstitial = new Subject<Unit>();
     private ISubject<Unit> _finalizeMultiplyRewardVR = new Subject<Unit>();
     private ISubject<Unit> _hideBanner = new Subject<Unit>();
     private ISubject<Unit> _showFTUE = new Subject<Unit>();
@@ -47,6 +48,7 @@ public class GameEvent : ScriptableObject
     public IObservable<Unit> OnShowExtraLifeVR => _showExtraLifeVR;
     public IObservable<Unit> OnShowMultiplyRewardVR => _showMultiplyRewardVR;
     public IObservable<Unit> OnShowInterstitial => _showInterstitial;
+    public IObservable<Unit> OnShowNextStageInstertitial => _showNextStageInsterstitial;
     public IObservable<Unit> OnGiveRewardBonus() => _giveRewardBonus;
     public IObservable<Unit> OnHideBanner() => _hideBanner;
     public IObservable<Unit> OnShowFtue() => _showFTUE;
@@ -64,6 +66,7 @@ public class GameEvent : ScriptableObject
     public void ShowExtraLifeVR() => _showExtraLifeVR.OnNext(Unit.Default);
     public void ShowMultiplyRewardVR() => _showMultiplyRewardVR.OnNext(Unit.Default);
     public void ShowInterstitial() => _showInterstitial.OnNext(Unit.Default);
+    public void ShowNextStageInstertitial() => _showNextStageInsterstitial.OnNext(Unit.Default);
     public void HideBanner() => _hideBanner.OnNext(Unit.Default);
     public void ShowFTUE() => _showFTUE.OnNext(Unit.Default);
     public void HideFTUE() => _hideFTUE.OnNext(Unit.Default);

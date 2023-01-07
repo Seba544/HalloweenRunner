@@ -199,6 +199,7 @@ MonoBehaviour:
   EndOfLevelPanel: {fileID: 6473748433684060347}
   RewardAmount: {fileID: 6473748433448315235}
   MultiplyReward: {fileID: 2959797907027809461}
+  Description: {fileID: 1550122190456610609}
   NextStage: 2
 --- !u!1 &6473748433271113492
 GameObject:

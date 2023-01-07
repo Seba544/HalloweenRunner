@@ -12,6 +12,8 @@ public class SceneLoader : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = Screen.currentResolution.refreshRate;
         Time.timeScale=1f;
         _gameEvents.LoadScene
             .Subscribe(sceneToLoad => {

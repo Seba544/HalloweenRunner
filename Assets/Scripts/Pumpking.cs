@@ -11,8 +11,11 @@ public class Pumpking : MonoBehaviour
     Vector3 originalScale;
     private Transform MoveToTarget;
     List<IMovementStrategy> Strategies;
+    private AudioSource _audio;
+    public AudioClip CollectAudioClip;
     void Start()
     {
+        _audio = GetComponent<AudioSource>();
         Strategies = new List<IMovementStrategy>{
             new OnAirMovement(),
             new OnGroundMovement()
@@ -26,6 +29,7 @@ public class Pumpking : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         if(other.CompareTag("Player")){
+            _audio.PlayOneShot(CollectAudioClip);
             _gameEvents.CollectPumpking();
             
             transform.DOMove(MoveToTarget.position,0.3f);

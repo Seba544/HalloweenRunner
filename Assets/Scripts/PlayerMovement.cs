@@ -22,10 +22,12 @@ public class PlayerMovement : MonoBehaviour
     float _initialColliderOffsetY;
     private AudioSource _audio;
     public AudioClip JumpAudioClip;
+    private float _currentSpeed;
 
     // Start is called before the first frame update
     void Start()
     {
+        _currentSpeed = PlayerSpeed;
         _audio = GetComponent<AudioSource>();
         _boxCollider = GetComponent<BoxCollider2D>();
         _initialColliderSizeY = _boxCollider.size.y;
@@ -65,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
         
         if (Time.timeScale == 0 || isDead)
             return;
-        _rgbd.velocity = new Vector2(PlayerSpeed * 1, _rgbd.velocity.y);
+        _rgbd.velocity = new Vector2(_currentSpeed, _rgbd.velocity.y);
 
         if (IsGrounded())
         {
@@ -100,6 +102,7 @@ public class PlayerMovement : MonoBehaviour
             _boxCollider.size = new Vector2(_boxCollider.size.x, _initialColliderSizeY);
             _boxCollider.offset = new Vector2(_boxCollider.offset.x, _initialColliderOffsetY);
             isSliding = false;
+            _currentSpeed = PlayerSpeed;
             return;
         }
         if ((IsGrounded() || currentAmountOfJumps < 1) && !isDead)
@@ -107,14 +110,17 @@ public class PlayerMovement : MonoBehaviour
             _rgbd.velocity = new Vector2(_rgbd.velocity.x, JumpForce);
             _audio.PlayOneShot(JumpAudioClip);
             currentAmountOfJumps++;
+            _currentSpeed = PlayerSpeed;
 
         }
+        
 
     }
     private void Slide()
     {
         if ((IsGrounded() || currentAmountOfJumps < 1) && !isDead && !isSliding)
         {
+            _currentSpeed = PlayerSpeed*2;
             _animator.SetBool("isSliding", true);
             _boxCollider.size = new Vector2(_boxCollider.size.x, _boxCollider.size.y / 2);
             _boxCollider.offset = new Vector2(_boxCollider.offset.x, _boxCollider.offset.y - 2);

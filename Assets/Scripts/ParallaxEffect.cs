@@ -21,7 +21,7 @@ public class ParallaxEffect : MonoBehaviour
     void LateUpdate()
     {
         float deltaX = (_cameraTransform.position.x - _previousCameraPosition.x) * ParallaxSpeed;
-        float moveAmount = _cameraTransform.position.x * (1.1f - ParallaxSpeed);
+        float moveAmount = _cameraTransform.position.x * (1f - ParallaxSpeed);
         transform.Translate(new Vector3(deltaX,0,0));
         _previousCameraPosition = _cameraTransform.position;
 

@@ -23,8 +23,12 @@ public class Pumpking : MonoBehaviour
         MoveToTarget = GameObject.FindGameObjectWithTag("PumpkingScore").transform;
         originalScale = transform.localScale;
 
-        DefineMovement();
         
+        
+    }
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        DefineMovement();
     }
     void OnTriggerEnter2D(Collider2D other)
     {

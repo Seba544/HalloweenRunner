@@ -16,8 +16,10 @@ public class StageSelectorManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        UnlockButton.onClick.AddListener(Unlock);
         ComingSoonPanel.SetActive(false);
         UnlockButton.gameObject.SetActive(false);
+        Grid.SetActive(false);
         WorldName.text = _config.WorldName;
         Frame.sprite = _config.Frame;
         PumpkingsRequiredTxt.text = "X"+_config.RequiredPumpkingsToUnlock;
@@ -25,18 +27,34 @@ public class StageSelectorManager : MonoBehaviour
     }
 
     void SetWorldAvailability(){
+        if(!_config.IsUnlockable){
+            Grid.SetActive(true);
+            return;
+        }
         if(_config.IsInDevelopment){
             Grid.SetActive(false);
             ComingSoonPanel.SetActive(true);
             return;
         }
-        if(PlayerPrefs.GetInt("Pumpkings") >= _config.RequiredPumpkingsToUnlock){
+        if(PlayerPrefs.GetString(_config.WorldName)=="unlocked"){
             Grid.SetActive(true);
-            UnlockButton.gameObject.SetActive(false);
-        }else{
-            Grid.SetActive(false);
+            return;
+        }
+        if(PlayerPrefs.GetInt("Treasure") >= _config.RequiredPumpkingsToUnlock){
+           
             UnlockButton.gameObject.SetActive(true);
+            UnlockButton.interactable = true;
+        }else{
+            
+            UnlockButton.gameObject.SetActive(true);
+            UnlockButton.interactable = false;
         }
             
+    }
+    void Unlock(){
+
+        UnlockButton.gameObject.SetActive(false);
+        Grid.gameObject.SetActive(true);
+        PlayerPrefs.SetString(_config.WorldName,"unlocked");
     }
 }

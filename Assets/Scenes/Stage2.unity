@@ -528,8 +528,7 @@ MonoBehaviour:
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
   Items:
   - {fileID: 8332542761670196253, guid: c4eccc9d8a609fe46be29e2f08443449, type: 3}
-  - {fileID: 1252100016462567674, guid: 4bed12b78b8d6f249a25d1a1aabdd7e0, type: 3}
-  - {fileID: 1252100016462567674, guid: 4bed12b78b8d6f249a25d1a1aabdd7e0, type: 3}
+  - {fileID: 4872698049284644566, guid: a1e4fbc1e90f14e4bbde5b7c34403e2a, type: 3}
   - {fileID: 823095995273263125, guid: 9e284d1b6f49e1b44978875a362850c3, type: 3}
   EndOfLevelPortal: {fileID: 2773388722434377067, guid: 65f8c486326010545a4f4f93854dbf10, type: 3}
   MinSpawnTime: 1
@@ -2418,16 +2417,8 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7376707800802511396, guid: 4a53dfa006266394da344cff99a03d5a, type: 3}
-      propertyPath: JumpForce
-      value: 18
-      objectReference: {fileID: 0}
-    - target: {fileID: 7376707800802511396, guid: 4a53dfa006266394da344cff99a03d5a, type: 3}
       propertyPath: PlayerSpeed
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7376707800802511396, guid: 4a53dfa006266394da344cff99a03d5a, type: 3}
-      propertyPath: _jumpButton
-      value: 
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7376707800802511401, guid: 4a53dfa006266394da344cff99a03d5a, type: 3}
       propertyPath: m_RootOrder

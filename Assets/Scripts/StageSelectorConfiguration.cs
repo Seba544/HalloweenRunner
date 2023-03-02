@@ -8,5 +8,6 @@ public class StageSelectorConfiguration : ScriptableObject
     public string WorldName;
     public int RequiredPumpkingsToUnlock;
     public bool IsInDevelopment;
+    public bool IsUnlockable;
     public Sprite Frame;
 }

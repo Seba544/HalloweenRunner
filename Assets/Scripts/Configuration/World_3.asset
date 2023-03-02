@@ -15,4 +15,5 @@ MonoBehaviour:
   WorldName: Darkness
   RequiredPumpkingsToUnlock: 2000
   IsInDevelopment: 1
+  IsUnlockable: 1
   Frame: {fileID: 21300000, guid: a44f798204e3d404b97a5a571315b0bf, type: 3}

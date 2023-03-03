@@ -31,6 +31,9 @@ public class Overlay : MonoBehaviour
         _gameEvents.OnRevive()
             .Subscribe(_ => ToggleOverlay(false))
             .AddTo(this);
+        _gameEvents.OnShowError()
+            .Subscribe(_ => ToggleOverlay(true));
+            
         ToggleOverlay(false);
         
     }

@@ -71,6 +71,7 @@ public class RewardedVideoManager : MonoBehaviour,IUnityAdsLoadListener,IUnityAd
     public void OnUnityAdsShowFailure(string placementId, UnityAdsShowError error, string message)
     {
         Debug.Log($"Error showing Ad Unit {placementId}: {error.ToString()} - {message}");
+        _gameEvents.ShowError();
     }
 
     public void OnUnityAdsShowStart(string placementId)

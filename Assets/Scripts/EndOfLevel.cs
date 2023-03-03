@@ -16,7 +16,9 @@ public class EndOfLevel : MonoBehaviour
     public TMP_Text RewardAmount;
     public TMP_Text MultiplyReward;
     public TMP_Text Description;
+    public string World;
     public int NextStage;
+    private int AmountOfPumpkinsRewardLevelRepeated = 25;
     
     // Start is called before the first frame update
     void Start()
@@ -33,9 +35,9 @@ public class EndOfLevel : MonoBehaviour
             .Subscribe(_ => Multiply())
             .AddTo(this);
         int currentStage = PlayerPrefs.GetInt("CurrentStage");
-        if(PlayerPrefs.GetInt("CurrentStage")>= NextStage){
-            AmountOfPumpkingsRewardOnFinish = 0;
-            MultiplyButton.gameObject.SetActive(false);
+        if(PlayerPrefs.GetInt(World + " Current Stage ")>= NextStage){
+            AmountOfPumpkingsRewardOnFinish = AmountOfPumpkinsRewardLevelRepeated;
+            //MultiplyButton.gameObject.SetActive(false);
             Description.text = "Try to play new levels to get more pumpkins!";
         }
         RewardAmount.text = AmountOfPumpkingsRewardOnFinish.ToString();
@@ -44,6 +46,7 @@ public class EndOfLevel : MonoBehaviour
 
     void FinishLevel(){
         EndOfLevelPanel.SetActive(true);
+        PlayerPrefs.SetInt(World + " Current Stage ",NextStage);
         PlayerPrefs.SetInt("CurrentStage",NextStage);
     }
 

@@ -14,9 +14,9 @@ public class NewGame : MonoBehaviour
     }
 
     void GoToNewGame(){
-        int currentLevel = PlayerPrefs.GetInt("CurrentStage");
+        int currentLevel = PlayerPrefs.GetInt("Apocalypse Current Stage ");
         if(currentLevel==0)
-            PlayerPrefs.SetInt("CurrentStage",1);
+            PlayerPrefs.SetInt("Apocalypse Current Stage ",1);
         _gameEvents.LoadScene.OnNext("LevelSelection"); 
     }
 }

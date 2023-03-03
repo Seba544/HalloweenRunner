@@ -25,7 +25,11 @@ public class GameEvent : ScriptableObject
     private ISubject<Unit> _hideBanner = new Subject<Unit>();
     private ISubject<Unit> _showFTUE = new Subject<Unit>();
     private ISubject<Unit> _hideFTUE = new Subject<Unit>();
-    
+    private ISubject<Unit> _showError = new Subject<Unit>();
+    private ISubject<string> _updateTreasureText = new Subject<string>();
+   
+   public IObservable<string> OnUpdateTreasureText() => _updateTreasureText;
+    public IObservable<Unit> OnShowError() => _showError;
     public IObservable<Unit> CollectPumpking(){
         _collectPumpking.OnNext(Unit.Default);
         return _collectPumpking;
@@ -54,6 +58,7 @@ public class GameEvent : ScriptableObject
     public IObservable<Unit> OnShowFtue() => _showFTUE;
     public IObservable<Unit> OnHideFtue() => _hideFTUE;
     
+    public void UpdateTreasureText(string treasure) => _updateTreasureText.OnNext(treasure);
     public void OnEndWave() => _endWave.OnNext(Unit.Default);
     public void EndOfLevel() => _endOfLevel.OnNext(Unit.Default);
     public void GameOver(){
@@ -70,5 +75,6 @@ public class GameEvent : ScriptableObject
     public void HideBanner() => _hideBanner.OnNext(Unit.Default);
     public void ShowFTUE() => _showFTUE.OnNext(Unit.Default);
     public void HideFTUE() => _hideFTUE.OnNext(Unit.Default);
+    public void ShowError() => _showError.OnNext(Unit.Default);
     
 }

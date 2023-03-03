@@ -8,7 +8,6 @@ public class ItemSpawner : MonoBehaviour
     [SerializeField] GameEvent _gameEvents;
     public List<GameObject> Items;
     Coroutine _spawnCoroutine = null;
-    public GameObject EndOfLevelPortal;
     public float MinSpawnTime;
     public float MaxSpawnTime;
     // Start is called before the first frame update
@@ -23,7 +22,7 @@ public class ItemSpawner : MonoBehaviour
         _gameEvents.EndWave()
              .Subscribe(_ =>{
                 StopSpawningEnemies();
-                CreateEndOfLevel();
+                StartCoroutine(FinishLevel());
              })
              .AddTo(this);
         _gameEvents.OnRevive()
@@ -49,7 +48,9 @@ public class ItemSpawner : MonoBehaviour
             StopCoroutine(_spawnCoroutine);
        
     }
-    void CreateEndOfLevel(){
-        Instantiate(EndOfLevelPortal,transform.position,Quaternion.identity);
+    IEnumerator FinishLevel(){
+        yield return new WaitForSeconds(4);
+        _gameEvents.EndOfLevel();
     }
+    
 }

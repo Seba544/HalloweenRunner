@@ -7,6 +7,8 @@ using UnityEngine.UI;
 public class StageSelectorManager : MonoBehaviour
 {
     [SerializeField] StageSelectorConfiguration _config;
+    [SerializeField] StageEnabler _firstWorldStageToUnlock;
+    [SerializeField] GameEvent _gameEvents;
     public GameObject Grid;
     public Button UnlockButton;
     public TMP_Text PumpkingsRequiredTxt;
@@ -52,9 +54,15 @@ public class StageSelectorManager : MonoBehaviour
             
     }
     void Unlock(){
-
+        int currentPumpkins = PlayerPrefs.GetInt("Treasure");
+        int total = currentPumpkins - _config.RequiredPumpkingsToUnlock;
         UnlockButton.gameObject.SetActive(false);
         Grid.gameObject.SetActive(true);
         PlayerPrefs.SetString(_config.WorldName,"unlocked");
+        PlayerPrefs.SetInt(_config.WorldName + " Current Stage ",1);
+        _firstWorldStageToUnlock.CheckAvailability();
+        PlayerPrefs.SetInt("Treasure",total);
+        _gameEvents.UpdateTreasureText(total.ToString());
+        
     }
 }

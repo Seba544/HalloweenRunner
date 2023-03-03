@@ -71,19 +71,19 @@ public class PlayerMovement : MonoBehaviour
 
         if (IsGrounded())
         {
-            _animator.SetBool("isJumping", false);
+            _animator.SetBool("isRunning", true);
+        }else{
+            _animator.SetBool("isRunning", false);
         }
-        else
-        {
-            _animator.SetBool("isJumping", true);
-        }
+        
     }
     
 
     void ReproduceDeath()
     {
+        if(isDead)
+            return;
         _animator.SetTrigger("isDead");
-
         isDead = true;
 
     }
@@ -96,6 +96,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void Jump()
     {
+        
+        
         if (isSliding)
         {
             _animator.SetBool("isSliding", false);
@@ -107,6 +109,8 @@ public class PlayerMovement : MonoBehaviour
         }
         if ((IsGrounded() || currentAmountOfJumps < 1) && !isDead)
         {
+            
+            _animator.SetTrigger("isJumping");
             _rgbd.velocity = new Vector2(_rgbd.velocity.x, JumpForce);
             _audio.PlayOneShot(JumpAudioClip);
             currentAmountOfJumps++;
@@ -118,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
     }
     private void Slide()
     {
-        if ((IsGrounded() || currentAmountOfJumps < 1) && !isDead && !isSliding)
+        if (IsGrounded() && !isDead && !isSliding)
         {
             _currentSpeed = PlayerSpeed*2;
             _animator.SetBool("isSliding", true);

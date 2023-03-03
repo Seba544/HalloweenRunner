@@ -312,7 +312,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
-  Stage: 15
+  Stage: 7
+  World: Evil Forest
   AvailableIcon: {fileID: 21300000, guid: 2e67dd2a932e2cb49a0780caaf31b211, type: 3}
   BlockedIcon: {fileID: 21300000, guid: ad4646bcb395dd541a2b502f27e95127, type: 3}
 --- !u!114 &55892334
@@ -703,7 +704,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 33
+  m_fontStyle: 32
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -1341,6 +1342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
   Stage: 7
+  World: Darkness
   AvailableIcon: {fileID: 21300000, guid: 2e67dd2a932e2cb49a0780caaf31b211, type: 3}
   BlockedIcon: {fileID: 21300000, guid: ad4646bcb395dd541a2b502f27e95127, type: 3}
 --- !u!114 &154063971
@@ -1769,6 +1771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
   Stage: 1
+  World: Darkness
   AvailableIcon: {fileID: 21300000, guid: 2e67dd2a932e2cb49a0780caaf31b211, type: 3}
   BlockedIcon: {fileID: 21300000, guid: ad4646bcb395dd541a2b502f27e95127, type: 3}
 --- !u!114 &243218519
@@ -3189,6 +3192,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _config: {fileID: 11400000, guid: e5067c882005bb941a21183c86097f5b, type: 2}
+  _firstWorldStageToUnlock: {fileID: 243218518}
+  _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
   Grid: {fileID: 439754933}
   UnlockButton: {fileID: 1798016796}
   PumpkingsRequiredTxt: {fileID: 149058589}
@@ -3403,6 +3408,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
   Stage: 3
+  World: Darkness
   AvailableIcon: {fileID: 21300000, guid: 2e67dd2a932e2cb49a0780caaf31b211, type: 3}
   BlockedIcon: {fileID: 21300000, guid: ad4646bcb395dd541a2b502f27e95127, type: 3}
 --- !u!114 &557992369
@@ -3542,6 +3548,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
   Stage: 8
+  World: Darkness
   AvailableIcon: {fileID: 21300000, guid: 2e67dd2a932e2cb49a0780caaf31b211, type: 3}
   BlockedIcon: {fileID: 21300000, guid: ad4646bcb395dd541a2b502f27e95127, type: 3}
 --- !u!114 &644130525
@@ -3803,7 +3810,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
-  Stage: 14
+  Stage: 6
+  World: Evil Forest
   AvailableIcon: {fileID: 21300000, guid: 2e67dd2a932e2cb49a0780caaf31b211, type: 3}
   BlockedIcon: {fileID: 21300000, guid: ad4646bcb395dd541a2b502f27e95127, type: 3}
 --- !u!114 &660491890
@@ -3942,7 +3950,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
-  Stage: 11
+  Stage: 3
+  World: Evil Forest
   AvailableIcon: {fileID: 21300000, guid: 2e67dd2a932e2cb49a0780caaf31b211, type: 3}
   BlockedIcon: {fileID: 21300000, guid: ad4646bcb395dd541a2b502f27e95127, type: 3}
 --- !u!114 &688671140
@@ -4568,6 +4577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
   Stage: 1
+  World: Apocalypse
   AvailableIcon: {fileID: 21300000, guid: 2e67dd2a932e2cb49a0780caaf31b211, type: 3}
   BlockedIcon: {fileID: 21300000, guid: ad4646bcb395dd541a2b502f27e95127, type: 3}
 --- !u!1 &787215658
@@ -4716,6 +4726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
   Stage: 3
+  World: Apocalypse
   AvailableIcon: {fileID: 21300000, guid: 2e67dd2a932e2cb49a0780caaf31b211, type: 3}
   BlockedIcon: {fileID: 21300000, guid: ad4646bcb395dd541a2b502f27e95127, type: 3}
 --- !u!114 &789642023
@@ -5074,7 +5085,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
-  Stage: 10
+  Stage: 2
+  World: Evil Forest
   AvailableIcon: {fileID: 21300000, guid: 2e67dd2a932e2cb49a0780caaf31b211, type: 3}
   BlockedIcon: {fileID: 21300000, guid: ad4646bcb395dd541a2b502f27e95127, type: 3}
 --- !u!114 &1009915007
@@ -5624,7 +5636,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 33
+  m_fontStyle: 32
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -6029,7 +6041,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 33
+  m_fontStyle: 32
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -6128,6 +6140,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
   Stage: 2
+  World: Darkness
   AvailableIcon: {fileID: 21300000, guid: 2e67dd2a932e2cb49a0780caaf31b211, type: 3}
   BlockedIcon: {fileID: 21300000, guid: ad4646bcb395dd541a2b502f27e95127, type: 3}
 --- !u!114 &1131164372
@@ -6395,7 +6408,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
-  Stage: 13
+  Stage: 5
+  World: Evil Forest
   AvailableIcon: {fileID: 21300000, guid: 2e67dd2a932e2cb49a0780caaf31b211, type: 3}
   BlockedIcon: {fileID: 21300000, guid: ad4646bcb395dd541a2b502f27e95127, type: 3}
 --- !u!114 &1148279088
@@ -6670,6 +6684,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
   Stage: 7
+  World: Apocalypse
   AvailableIcon: {fileID: 21300000, guid: 2e67dd2a932e2cb49a0780caaf31b211, type: 3}
   BlockedIcon: {fileID: 21300000, guid: ad4646bcb395dd541a2b502f27e95127, type: 3}
 --- !u!114 &1161868485
@@ -6808,7 +6823,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
-  Stage: 9
+  Stage: 1
+  World: Evil Forest
   AvailableIcon: {fileID: 21300000, guid: 2e67dd2a932e2cb49a0780caaf31b211, type: 3}
   BlockedIcon: {fileID: 21300000, guid: ad4646bcb395dd541a2b502f27e95127, type: 3}
 --- !u!114 &1183958586
@@ -6948,6 +6964,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
   Stage: 5
+  World: Darkness
   AvailableIcon: {fileID: 21300000, guid: 2e67dd2a932e2cb49a0780caaf31b211, type: 3}
   BlockedIcon: {fileID: 21300000, guid: ad4646bcb395dd541a2b502f27e95127, type: 3}
 --- !u!114 &1185150735
@@ -7222,6 +7239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
   Stage: 5
+  World: Apocalypse
   AvailableIcon: {fileID: 21300000, guid: 2e67dd2a932e2cb49a0780caaf31b211, type: 3}
   BlockedIcon: {fileID: 21300000, guid: ad4646bcb395dd541a2b502f27e95127, type: 3}
 --- !u!114 &1218343866
@@ -7366,6 +7384,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
   Stage: 2
+  World: Apocalypse
   AvailableIcon: {fileID: 21300000, guid: 2e67dd2a932e2cb49a0780caaf31b211, type: 3}
   BlockedIcon: {fileID: 21300000, guid: ad4646bcb395dd541a2b502f27e95127, type: 3}
 --- !u!114 &1252807634
@@ -7640,6 +7659,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
   Stage: 4
+  World: Darkness
   AvailableIcon: {fileID: 21300000, guid: 2e67dd2a932e2cb49a0780caaf31b211, type: 3}
   BlockedIcon: {fileID: 21300000, guid: ad4646bcb395dd541a2b502f27e95127, type: 3}
 --- !u!114 &1277785886
@@ -7859,6 +7879,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _config: {fileID: 11400000, guid: bfde005443ebf8243a0210e00e39d654, type: 2}
+  _firstWorldStageToUnlock: {fileID: 774878293}
+  _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
   Grid: {fileID: 151840501}
   UnlockButton: {fileID: 650663532}
   PumpkingsRequiredTxt: {fileID: 350972984}
@@ -8051,6 +8073,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _config: {fileID: 11400000, guid: a2ebbebca3098a04188452eda97d1647, type: 2}
+  _firstWorldStageToUnlock: {fileID: 1183958585}
+  _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
   Grid: {fileID: 701148858}
   UnlockButton: {fileID: 326083430}
   PumpkingsRequiredTxt: {fileID: 1615062007}
@@ -8562,7 +8586,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
-  Stage: 12
+  Stage: 4
+  World: Evil Forest
   AvailableIcon: {fileID: 21300000, guid: 2e67dd2a932e2cb49a0780caaf31b211, type: 3}
   BlockedIcon: {fileID: 21300000, guid: ad4646bcb395dd541a2b502f27e95127, type: 3}
 --- !u!114 &1549101216
@@ -8702,6 +8727,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
   Stage: 4
+  World: Apocalypse
   AvailableIcon: {fileID: 21300000, guid: 2e67dd2a932e2cb49a0780caaf31b211, type: 3}
   BlockedIcon: {fileID: 21300000, guid: ad4646bcb395dd541a2b502f27e95127, type: 3}
 --- !u!114 &1566544947
@@ -8840,7 +8866,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
-  Stage: 16
+  Stage: 8
+  World: Evil Forest
   AvailableIcon: {fileID: 21300000, guid: 2e67dd2a932e2cb49a0780caaf31b211, type: 3}
   BlockedIcon: {fileID: 21300000, guid: ad4646bcb395dd541a2b502f27e95127, type: 3}
 --- !u!114 &1591749870
@@ -8980,6 +9007,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
   Stage: 8
+  World: Apocalypse
   AvailableIcon: {fileID: 21300000, guid: 2e67dd2a932e2cb49a0780caaf31b211, type: 3}
   BlockedIcon: {fileID: 21300000, guid: ad4646bcb395dd541a2b502f27e95127, type: 3}
 --- !u!114 &1594678298
@@ -10552,6 +10580,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
   Stage: 6
+  World: Darkness
   AvailableIcon: {fileID: 21300000, guid: 2e67dd2a932e2cb49a0780caaf31b211, type: 3}
   BlockedIcon: {fileID: 21300000, guid: ad4646bcb395dd541a2b502f27e95127, type: 3}
 --- !u!114 &2005209528
@@ -11038,6 +11067,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
   Stage: 6
+  World: Apocalypse
   AvailableIcon: {fileID: 21300000, guid: 2e67dd2a932e2cb49a0780caaf31b211, type: 3}
   BlockedIcon: {fileID: 21300000, guid: ad4646bcb395dd541a2b502f27e95127, type: 3}
 --- !u!114 &2070304579

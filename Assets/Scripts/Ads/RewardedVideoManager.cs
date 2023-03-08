@@ -14,13 +14,13 @@ public class RewardedVideoManager : MonoBehaviour,IUnityAdsLoadListener,IUnityAd
     {
         LoadVR();
         LoadRewardBonusVR();
-        _gameEvents.OnShowExtraLifeVR
+        _gameEvents.OnShowExtraLifeVR()
             .Subscribe(_ => {
                 
                 ShowVR();
             })
             .AddTo(this);
-        _gameEvents.OnShowMultiplyRewardVR
+        _gameEvents.OnShowMultiplyRewardVR()
             .Subscribe(_ => {
                 ShowMultiplyRewardVR();
             })

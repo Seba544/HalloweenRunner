@@ -44,9 +44,7 @@ public class PlayerMovement : MonoBehaviour
         _gameEvents.OnRevive()
             .Subscribe(_ => Revive())
             .AddTo(this);
-        _gameEvents.OnEndOfLevel()
-            .Subscribe(_ => StartCoroutine("Destroy"))
-            .AddTo(this);
+        
         _jumpButton.onClick.AddListener(Jump);
         _slideButton.onClick.AddListener(Slide);
 
@@ -155,9 +153,5 @@ public class PlayerMovement : MonoBehaviour
         return raycastHit.collider != null;
     }
 
-    IEnumerator Destroy()
-    {
-        yield return new WaitForSeconds(1);
-        Destroy(gameObject);
-    }
+    
 }

@@ -49,8 +49,8 @@ public class GameEvent : ScriptableObject
     public IObservable<Unit> OnEndOfLevel () => _endOfLevel;
     public IObservable<int> OnGiveReward () => _giveReward;
     public IObservable<Unit> OnRevive() =>_revive;
-    public IObservable<Unit> OnShowExtraLifeVR => _showExtraLifeVR;
-    public IObservable<Unit> OnShowMultiplyRewardVR => _showMultiplyRewardVR;
+    public IObservable<Unit> OnShowExtraLifeVR() => _showExtraLifeVR;
+    public IObservable<Unit> OnShowMultiplyRewardVR() => _showMultiplyRewardVR;
     public IObservable<Unit> OnShowInterstitial => _showInterstitial;
     public IObservable<Unit> OnShowNextStageInstertitial => _showNextStageInsterstitial;
     public IObservable<Unit> OnGiveRewardBonus() => _giveRewardBonus;

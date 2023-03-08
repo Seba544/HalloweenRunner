@@ -59,7 +59,8 @@ public class StageSelectorManager : MonoBehaviour
         UnlockButton.gameObject.SetActive(false);
         Grid.gameObject.SetActive(true);
         PlayerPrefs.SetString(_config.WorldName,"unlocked");
-        PlayerPrefs.SetInt(_config.WorldName + " Current Stage ",1);
+        WorldProgression worldProgression = new WorldProgression(_config.WorldName,new List<int>());
+        SaveSystem.SaveWorldProgression(worldProgression);
         _firstWorldStageToUnlock.CheckAvailability();
         PlayerPrefs.SetInt("Treasure",total);
         _gameEvents.UpdateTreasureText(total.ToString());

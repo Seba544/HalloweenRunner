@@ -14,9 +14,14 @@ public class NewGame : MonoBehaviour
     }
 
     void GoToNewGame(){
-        int currentLevel = PlayerPrefs.GetInt("Apocalypse Current Stage ");
-        if(currentLevel==0)
-            PlayerPrefs.SetInt("Apocalypse Current Stage ",1);
+        
+            if(SaveSystem.LoadWorldProgression("Apocalypse")==null){
+                WorldProgression worldProgression = new WorldProgression("Apocalypse",new List<int>());
+                SaveSystem.SaveWorldProgression(worldProgression);
+            }
+        
+            
+           
         _gameEvents.LoadScene.OnNext("LevelSelection"); 
     }
 }

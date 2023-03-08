@@ -15,11 +15,10 @@ public class StageEnabler : MonoBehaviour
     public Sprite BlockedIcon;
     private TMP_Text StageNumber;
     private Button _stageButton;
-    private int _currentStage;
     // Start is called before the first frame update
     void Start()
     {
-        _currentStage = PlayerPrefs.GetInt(World + " Current Stage ");
+        
         _icon = GetComponent<Image>();
         _stageButton = GetComponent<Button>();
         _stageButton.onClick.AddListener(Go);
@@ -35,8 +34,8 @@ public class StageEnabler : MonoBehaviour
         {
             _icon.sprite = AvailableIcon;
             _stageButton.interactable = true;
-            if (_currentStage == Stage)
-                transform.DOPunchScale(new Vector3(0.3f, 0.3f, 0.3f), 5, 2).SetLoops(30);
+        
+                //transform.DOPunchScale(new Vector3(0.3f, 0.3f, 0.3f), 5, 2).SetLoops(30);
         }
         else
         {
@@ -48,8 +47,17 @@ public class StageEnabler : MonoBehaviour
 
     bool IsEnabled()
     {
-        _currentStage = PlayerPrefs.GetInt(World + " Current Stage ");
-        return _currentStage >= Stage;
+        WorldProgression worldProgression = SaveSystem.LoadWorldProgression(World);
+        if(worldProgression==null){
+            return false;
+        }
+        if(worldProgression.LevelsCompleted.Count==0 && Stage == 1)
+            return true;
+        if(worldProgression.LevelsCompleted.Contains(Stage))
+            return true;
+        if(worldProgression.LevelsCompleted.Contains(Stage-1))
+            return true;
+        return false;
     }
     void Go()
     {

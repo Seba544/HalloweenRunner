@@ -20,14 +20,21 @@ public class EndOfLevel : MonoBehaviour
     public int NextStage;
     private int AmountOfPumpkinsRewardLevelRepeated = 25;
     bool isPlayerDead;
-    
+    private int Stage;
     // Start is called before the first frame update
     void Start()
     {
+        Stage = NextStage-1;
         ContinueButton.onClick.AddListener(Continue);
         MultiplyButton.onClick.AddListener(ShowBonusRewardVR);
 
         EndOfLevelPanel.SetActive(false);
+        _gameEvents.OnShowExtraLifeVR()
+            .Subscribe(_ => {
+                isPlayerDead = false;
+            })
+            .AddTo(this);
+
         _gameEvents.OnGameOver()
             .Subscribe(_ => {
                 isPlayerDead = true;
@@ -40,9 +47,8 @@ public class EndOfLevel : MonoBehaviour
             .Subscribe(_ => Multiply())
             .AddTo(this);
         int currentStage = PlayerPrefs.GetInt("CurrentStage");
-        if(PlayerPrefs.GetInt(World + " Current Stage ")>= NextStage){
+        if(SaveSystem.LoadWorldProgression(World).LevelsCompleted.Contains(Stage)){
             AmountOfPumpkingsRewardOnFinish = AmountOfPumpkinsRewardLevelRepeated;
-            //MultiplyButton.gameObject.SetActive(false);
             Description.text = "Try to play new levels to get more pumpkins!";
         }
         RewardAmount.text = AmountOfPumpkingsRewardOnFinish.ToString();
@@ -53,8 +59,12 @@ public class EndOfLevel : MonoBehaviour
         if(isPlayerDead)
             return;
         EndOfLevelPanel.SetActive(true);
-        PlayerPrefs.SetInt(World + " Current Stage ",NextStage);
-        PlayerPrefs.SetInt("CurrentStage",NextStage);
+        WorldProgression worldProgression = SaveSystem.LoadWorldProgression(World);
+        if(worldProgression!=null && !worldProgression.LevelsCompleted.Contains(Stage)){
+            worldProgression.LevelsCompleted.Add(Stage);
+            SaveSystem.SaveWorldProgression(worldProgression);
+        }
+        
     }
 
     void Continue(){

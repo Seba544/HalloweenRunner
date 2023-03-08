@@ -19,6 +19,7 @@ public class EndOfLevel : MonoBehaviour
     public string World;
     public int NextStage;
     private int AmountOfPumpkinsRewardLevelRepeated = 25;
+    bool isPlayerDead;
     
     // Start is called before the first frame update
     void Start()
@@ -27,7 +28,11 @@ public class EndOfLevel : MonoBehaviour
         MultiplyButton.onClick.AddListener(ShowBonusRewardVR);
 
         EndOfLevelPanel.SetActive(false);
-
+        _gameEvents.OnGameOver()
+            .Subscribe(_ => {
+                isPlayerDead = true;
+            })
+            .AddTo(this);
         _gameEvents.OnEndOfLevel()
             .Subscribe(_ => FinishLevel())
             .AddTo(this);
@@ -45,6 +50,8 @@ public class EndOfLevel : MonoBehaviour
     }
 
     void FinishLevel(){
+        if(isPlayerDead)
+            return;
         EndOfLevelPanel.SetActive(true);
         PlayerPrefs.SetInt(World + " Current Stage ",NextStage);
         PlayerPrefs.SetInt("CurrentStage",NextStage);

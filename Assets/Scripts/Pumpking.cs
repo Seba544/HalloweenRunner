@@ -34,10 +34,10 @@ public class Pumpking : MonoBehaviour
     {
         if(other.CompareTag("Player")){
             _audio.PlayOneShot(CollectAudioClip);
-            _gameEvents.CollectPumpking();
+            _gameEvents.CollectPumpkin();
             
             transform.DOMove(MoveToTarget.position,0.3f);
-            transform.DOScale(new Vector3(0.01f,0.01f,0.01f),0.3f);
+            transform.DOScale(new Vector3(0.01f,0.01f,0.01f),0.25f);
             Destroy(gameObject,0.3f);
         }
         
@@ -46,10 +46,6 @@ public class Pumpking : MonoBehaviour
     void DefineMovement(){
         var strategy = Strategies[UnityEngine.Random.Range(0,Strategies.Count)];
         strategy.Execute(transform);
-    }
-    void OnDestroy()
-    {
-        DOTween.KillAll();
     }
     
 }

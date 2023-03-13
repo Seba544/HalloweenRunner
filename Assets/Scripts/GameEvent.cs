@@ -30,11 +30,7 @@ public class GameEvent : ScriptableObject
    
    public IObservable<string> OnUpdateTreasureText() => _updateTreasureText;
     public IObservable<Unit> OnShowError() => _showError;
-    public IObservable<Unit> CollectPumpking(){
-        _collectPumpking.OnNext(Unit.Default);
-        return _collectPumpking;
-
-    }
+    public IObservable<Unit> OnCollectPumpking() => _collectPumpking;
     public IObservable<Unit> PauseGame(){
         _pauseGame.OnNext(Unit.Default);
         return _pauseGame;
@@ -64,7 +60,8 @@ public class GameEvent : ScriptableObject
     public void GameOver(){
         _gameOver.OnNext(Unit.Default);
         
-    } 
+    }
+    public void CollectPumpkin() => _collectPumpking.OnNext(Unit.Default); 
     public void GiveReward(int pumpkingsAmount) => _giveReward.OnNext(pumpkingsAmount);
     public void GiveRewardBonus() => _giveRewardBonus.OnNext(Unit.Default);
     public void Revive() => _revive.OnNext(Unit.Default);

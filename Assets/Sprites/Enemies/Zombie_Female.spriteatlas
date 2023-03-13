@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Zombie_Female
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 4096
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 2
+      m_CompressionQuality: 100
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 625c7b4a4fce9674c9ad47fa5a0f5904, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: e4273960e6665374685f71e8e95098f9, type: 3}
+  - {fileID: 21300000, guid: 0f46e5612b068c449821571565e46831, type: 3}
+  - {fileID: 21300000, guid: b8d3dea15eba7f7488006889e23ad72d, type: 3}
+  - {fileID: 21300000, guid: bc58c6b10a664b24f94b311fd83a3cc2, type: 3}
+  - {fileID: 21300000, guid: 0ffb8ed1c381469429f19e98994d941f, type: 3}
+  - {fileID: 21300000, guid: 0fdc19e1f01888d42b3c48cb23def0d1, type: 3}
+  - {fileID: 21300000, guid: 53bba812a8bb86a4a8e4cc4a14034080, type: 3}
+  - {fileID: 21300000, guid: 8c64a242484eaf94891d4faae5cf34a4, type: 3}
+  - {fileID: 21300000, guid: de2a2972c68fe0347915731a09f93751, type: 3}
+  - {fileID: 21300000, guid: c2755ac2cf805f147afa9eef958a7ddd, type: 3}
+  - {fileID: 21300000, guid: a1fcf8e238c167e439d136e4d80fd2f9, type: 3}
+  - {fileID: 21300000, guid: 93cf19033c2f454448848a07e3d8d137, type: 3}
+  - {fileID: 21300000, guid: 889c46a36bffb3e4ba71c1fae7b65d24, type: 3}
+  - {fileID: 21300000, guid: 9479d8d38d0d4a942a857b19114bff71, type: 3}
+  - {fileID: 21300000, guid: d9cb8b04eb1725b46af6023d40b0e6bd, type: 3}
+  - {fileID: 21300000, guid: 2528704439b4b214aa069556d03095da, type: 3}
+  - {fileID: 21300000, guid: 4f27ecd40293a6a429929d3b9f1cad9e, type: 3}
+  - {fileID: 21300000, guid: eb010b65f7862d145b0cb80f25b10885, type: 3}
+  - {fileID: 21300000, guid: 46b12f7502e6a354cbed499280315a80, type: 3}
+  - {fileID: 21300000, guid: 4ca7397680246584889bbd229f7e9d6a, type: 3}
+  - {fileID: 21300000, guid: 2e0cf7e65f5b2274cac0b95eab61cb63, type: 3}
+  - {fileID: 21300000, guid: 8297cc17f0064a44d8e42c76f4b49386, type: 3}
+  - {fileID: 21300000, guid: dccb1fe716cabd947a907a40cce9f3ba, type: 3}
+  - {fileID: 21300000, guid: 903e7b68f4cf53345a3b03ebc2acdeb9, type: 3}
+  - {fileID: 21300000, guid: cedeb469c46f4bc4bb841e771ecde0ae, type: 3}
+  - {fileID: 21300000, guid: 49770399ff04f504c91e607ebfdb117c, type: 3}
+  - {fileID: 21300000, guid: 0ba203c93efcca14f9b6ba15844e943a, type: 3}
+  - {fileID: 21300000, guid: 69ce0cc9e01918748af90b71199e5abc, type: 3}
+  - {fileID: 21300000, guid: 49b90e3ac94679a468e05d0c2d564a19, type: 3}
+  - {fileID: 21300000, guid: edc3357b6fbd1684ea8345d09b32c731, type: 3}
+  - {fileID: 21300000, guid: 7491788bf9757334fb7689f22d5c379a, type: 3}
+  - {fileID: 21300000, guid: 5ec24bbbfcf70f74cb614b7dae3f6c53, type: 3}
+  - {fileID: 21300000, guid: 5e09e87c043cf454a93c21914f08911b, type: 3}
+  - {fileID: 21300000, guid: 1d474ddcd99820c4aa2c07268b131a87, type: 3}
+  - {fileID: 21300000, guid: 590b44eca3c6d7140a17699191a1fbf9, type: 3}
+  - {fileID: 21300000, guid: 3fe696dd204613b4680158e883759764, type: 3}
+  - {fileID: 21300000, guid: 8fcddded05ef0b74886db41a2c1efd8d, type: 3}
+  - {fileID: 21300000, guid: 8b86aefd4af9e3a488a9ac1627bdafcc, type: 3}
+  - {fileID: 21300000, guid: 0ca2413ea823f30488b11c6b3c524e79, type: 3}
+  - {fileID: 21300000, guid: c6eb729ec044fe64ba2b4bc0098533e1, type: 3}
+  - {fileID: 21300000, guid: 3fbae6de4cbef9c41877700c480cc6c0, type: 3}
+  - {fileID: 21300000, guid: b0d020fe9853649459afc7fc6a31ff00, type: 3}
+  - {fileID: 21300000, guid: 410d141f212c68d4fba25556f98547a3, type: 3}
+  - {fileID: 21300000, guid: c531d8dfb424da04d9824320b752a31b, type: 3}
+  - {fileID: 21300000, guid: 5def2eefad90bed46b1d356ea66630d3, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Dead (8)
+  - Walk (8)
+  - Dead (3)
+  - Idle (2)
+  - Walk (3)
+  - Dead (12)
+  - Dead (2)
+  - Dead (4)
+  - Idle (12)
+  - Dead (6)
+  - Idle (3)
+  - Dead (10)
+  - Attack (1)
+  - Dead (1)
+  - Idle (15)
+  - Attack (6)
+  - Attack (8)
+  - Idle (8)
+  - Idle (6)
+  - Attack (7)
+  - Idle (11)
+  - Walk (2)
+  - Dead (9)
+  - Attack (4)
+  - Dead (5)
+  - Walk (4)
+  - Walk (1)
+  - Attack (5)
+  - Idle (14)
+  - Dead (7)
+  - Walk (5)
+  - Walk (6)
+  - Walk (9)
+  - Walk (7)
+  - Idle (4)
+  - Idle (1)
+  - Attack (3)
+  - Attack (2)
+  - Dead (11)
+  - Idle (7)
+  - Idle (10)
+  - Idle (13)
+  - Idle (9)
+  - Walk (10)
+  - Idle (5)
+  m_RenderDataMap: {}
+  m_Tag: Zombie_Female
+  m_IsVariant: 0

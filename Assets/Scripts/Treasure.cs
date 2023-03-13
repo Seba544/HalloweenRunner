@@ -18,8 +18,9 @@ public class Treasure : MonoBehaviour
         _gameEvents.OnUpdateTreasureText()
             .Subscribe(pumpkins => UpdateTreasureText(pumpkins))
             .AddTo(this);
-        _gameEvents.CollectPumpking()
-    .Subscribe(_ => Collect());
+        _gameEvents.OnCollectPumpking()
+            .Subscribe(_ => Collect())
+            .AddTo(this);
 
         LoadTreasure();
     }
@@ -39,7 +40,8 @@ public class Treasure : MonoBehaviour
         _pumpkingsCollected++;
         PumpkingsAmount.text = _pumpkingsCollected.ToString();
     }
-    void UpdateTreasureText(string pumpkins){
+    void UpdateTreasureText(string pumpkins)
+    {
         PumpkingsAmount.text = pumpkins;
     }
 }

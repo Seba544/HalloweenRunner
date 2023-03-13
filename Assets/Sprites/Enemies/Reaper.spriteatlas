@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Reaper
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 2
+      m_CompressionQuality: 100
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: b737a6aa49b078441b73d9f6b872845e, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 369a0040a616b1a48a253ea3780ff645, type: 3}
+  - {fileID: 21300000, guid: 89b27a51e95eed84eaa80894295487a6, type: 3}
+  - {fileID: 21300000, guid: d3f80c612dcaf8247a2f5bee123ea27b, type: 3}
+  - {fileID: 21300000, guid: 39d2e3f106a352b4ea691fac752dac8e, type: 3}
+  - {fileID: 21300000, guid: 551dc443cee6bb348a5059e31f68f6b6, type: 3}
+  - {fileID: 21300000, guid: 398470f38165d4049af260b66240224c, type: 3}
+  - {fileID: 21300000, guid: a992c104ea8697c4e8f3325d76b1eff9, type: 3}
+  - {fileID: 21300000, guid: 88cd45a4d7a3a714fa2882baa45ac4d8, type: 3}
+  - {fileID: 21300000, guid: e7b70ee4ec64755459fe85d8d0043339, type: 3}
+  - {fileID: 21300000, guid: feaf266544185194fbeb77d928f15e6d, type: 3}
+  - {fileID: 21300000, guid: 9f19b285a2402c944971daa84c9cce0d, type: 3}
+  - {fileID: 21300000, guid: cfff1fa59e93e9f44845972729b29dc0, type: 3}
+  - {fileID: 21300000, guid: 96f67a8760dd2d84e9987443425e3146, type: 3}
+  - {fileID: 21300000, guid: a7987997a95b52041aa9f02c89669553, type: 3}
+  - {fileID: 21300000, guid: 401df6f8ef61f884d8b58593d46b2683, type: 3}
+  - {fileID: 21300000, guid: 53c8a479d580ff5408db38846a035958, type: 3}
+  - {fileID: 21300000, guid: 6c33f8a93a3838145b33a0adf3ae2b48, type: 3}
+  - {fileID: 21300000, guid: f08030c9c43e3b943a0478cbb9fd906e, type: 3}
+  - {fileID: 21300000, guid: 89c8b03a46e17544ba8e1e952301725e, type: 3}
+  - {fileID: 21300000, guid: 9c3b3c5a73dabe8449c2d69261a65117, type: 3}
+  - {fileID: 21300000, guid: c085ce7a911cec9439f1c89ec097d60e, type: 3}
+  - {fileID: 21300000, guid: e84d49db957658b44994f736ca811981, type: 3}
+  - {fileID: 21300000, guid: 6a4f462ca1a665149876bf8d913ad640, type: 3}
+  - {fileID: 21300000, guid: 9dcc496c1d18afe4f838309b83c1ed14, type: 3}
+  - {fileID: 21300000, guid: 0f7d29bcb296e944786d7224bbc923b1, type: 3}
+  - {fileID: 21300000, guid: 0b0b6dbcade955049a0867c9d4f06df4, type: 3}
+  - {fileID: 21300000, guid: e577232d0f35ec042a6485def33eac72, type: 3}
+  - {fileID: 21300000, guid: f7b8c82dfdadac9439c4818f26323b06, type: 3}
+  - {fileID: 21300000, guid: e9dd6e4d4b6204f448bf50ce4ea4e7af, type: 3}
+  - {fileID: 21300000, guid: c81925bfb72362c4a849521a36f63813, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - 0_Reaper_Man_Idle_006
+  - 0_Reaper_Man_Idle_001
+  - 0_Reaper_Man_Running_005
+  - 0_Reaper_Man_Running_010
+  - 0_Reaper_Man_Idle_007
+  - 0_Reaper_Man_Running_003
+  - 0_Reaper_Man_Idle_013
+  - 0_Reaper_Man_Running_006
+  - 0_Reaper_Man_Idle_016
+  - 0_Reaper_Man_Running_000
+  - 0_Reaper_Man_Idle_004
+  - 0_Reaper_Man_Idle_009
+  - 0_Reaper_Man_Idle_003
+  - 0_Reaper_Man_Idle_012
+  - 0_Reaper_Man_Idle_015
+  - 0_Reaper_Man_Idle_000
+  - 0_Reaper_Man_Idle_010
+  - 0_Reaper_Man_Running_008
+  - 0_Reaper_Man_Idle_005
+  - 0_Reaper_Man_Running_009
+  - 0_Reaper_Man_Idle_002
+  - 0_Reaper_Man_Running_007
+  - 0_Reaper_Man_Idle_008
+  - 0_Reaper_Man_Running_001
+  - 0_Reaper_Man_Idle_014
+  - 0_Reaper_Man_Running_011
+  - 0_Reaper_Man_Running_002
+  - 0_Reaper_Man_Running_004
+  - 0_Reaper_Man_Idle_011
+  - 0_Reaper_Man_Idle_017
+  m_RenderDataMap: {}
+  m_Tag: Reaper
+  m_IsVariant: 0

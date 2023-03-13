@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Golem
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 2
+      m_CompressionQuality: 100
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: c13439df1b3841d4d85f2a04e6ba9c79, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 5c761000450e0f64589c899b7d3259c6, type: 3}
+  - {fileID: 21300000, guid: ce459a10bf1ba5f4d8137c41bf8f2aeb, type: 3}
+  - {fileID: 21300000, guid: 74b90e0119b5c5e40b82bdaf5d39f61a, type: 3}
+  - {fileID: 21300000, guid: 22529f711bb85a548b0be5c2cc37e6ea, type: 3}
+  - {fileID: 21300000, guid: 021bc7918a1224b408f791fb0b8bd0ff, type: 3}
+  - {fileID: 21300000, guid: f20a1353dac77cd4a91eba98d2ba8985, type: 3}
+  - {fileID: 21300000, guid: c6fc56a360277554e9523e04c9defc57, type: 3}
+  - {fileID: 21300000, guid: 94d513f3a6aa9944e8e537107d3e92ea, type: 3}
+  - {fileID: 21300000, guid: 54c9d8f3bd748bd42a69b11ffe9f7722, type: 3}
+  - {fileID: 21300000, guid: 5ecddfb4041e9c7438ee0ee90f84b559, type: 3}
+  - {fileID: 21300000, guid: 1b5ed82571b6d7a4398d8bf88037a43d, type: 3}
+  - {fileID: 21300000, guid: 9a89dbc508872b7488fe88f108e794a9, type: 3}
+  - {fileID: 21300000, guid: 5fd549d55da5428439b6123339216f82, type: 3}
+  - {fileID: 21300000, guid: bce0c9166f6cb2642ae03100d2266a20, type: 3}
+  - {fileID: 21300000, guid: 18a96b177ce43ef4e8f9fc1b84accd6e, type: 3}
+  - {fileID: 21300000, guid: 68079e5727dcb7547a9c7454f7183976, type: 3}
+  - {fileID: 21300000, guid: 3c2e7d3960d182c4295780e6f17a10b5, type: 3}
+  - {fileID: 21300000, guid: 7b9941e9736e2744b83180b1ba51010a, type: 3}
+  - {fileID: 21300000, guid: 2bdd570b39675184b9f7760e145f0210, type: 3}
+  - {fileID: 21300000, guid: 7b1fe0bbea43d53459a7d1f4e9ecfbb4, type: 3}
+  - {fileID: 21300000, guid: 5956a6bbcb696734f9ce9985d62b63a8, type: 3}
+  - {fileID: 21300000, guid: 77fa4cbb551285c4ca0796e70bc60bf6, type: 3}
+  - {fileID: 21300000, guid: d6ef6b3c77d159149ad9e9f3e905eccc, type: 3}
+  - {fileID: 21300000, guid: fd5b126d34695574597868d9dfbec4a3, type: 3}
+  - {fileID: 21300000, guid: 832c97cd079759840b28ca55daae4654, type: 3}
+  - {fileID: 21300000, guid: 712a694e112e2e245a603bee6c0d2e78, type: 3}
+  - {fileID: 21300000, guid: fb9d2f4ee2dd4204f8af777d16d476ed, type: 3}
+  - {fileID: 21300000, guid: 01f7d31f1ee79914789edae0a0af7e92, type: 3}
+  - {fileID: 21300000, guid: 1b1d109f393b7c74f82faffdd397a8ae, type: 3}
+  - {fileID: 21300000, guid: 851187ef6e97d9c4782f90df5f247a74, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Golem_01_Walking_005
+  - Golem_01_Walking_002
+  - Golem_01_Idle_004
+  - Golem_01_Idle_011
+  - Golem_01_Walking_011
+  - Golem_01_Walking_008
+  - Golem_01_Walking_003
+  - Golem_01_Idle_009
+  - Golem_01_Walking_013
+  - Golem_01_Idle_007
+  - Golem_01_Walking_010
+  - Golem_01_Walking_006
+  - Golem_01_Walking_009
+  - Golem_01_Idle_001
+  - Golem_01_Walking_014
+  - Golem_01_Walking_016
+  - Golem_01_Idle_002
+  - Golem_01_Walking_004
+  - Golem_01_Idle_010
+  - Golem_01_Idle_008
+  - Golem_01_Walking_015
+  - Golem_01_Idle_000
+  - Golem_01_Idle_006
+  - Golem_01_Walking_017
+  - Golem_01_Walking_000
+  - Golem_01_Walking_007
+  - Golem_01_Walking_012
+  - Golem_01_Idle_003
+  - Golem_01_Walking_001
+  - Golem_01_Idle_005
+  m_RenderDataMap: {}
+  m_Tag: Golem
+  m_IsVariant: 0

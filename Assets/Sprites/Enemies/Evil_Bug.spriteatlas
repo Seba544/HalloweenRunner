@@ -1,0 +1,86 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Evil_Bug
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 2
+      m_CompressionQuality: 100
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 082bbdef5f8d81a4787681462be23cb7, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: b6cb04520676d2d4cb718843fc5587b7, type: 3}
+  - {fileID: 21300000, guid: 77d132d22b1c6df42b06be7850a5558c, type: 3}
+  - {fileID: 21300000, guid: 2473a924945572f438927ee3b0e25d40, type: 3}
+  - {fileID: 21300000, guid: d02bf2e7ffb1b2b42abbbb66606c9587, type: 3}
+  - {fileID: 21300000, guid: 202e3f08276ab024295dbdbf1cc355ef, type: 3}
+  - {fileID: 21300000, guid: 715dfde95b1cfb64781a6c96b3721b96, type: 3}
+  - {fileID: 21300000, guid: 5138f09a10e42f546953a1e837b4376d, type: 3}
+  - {fileID: 21300000, guid: 396277bae2ddf1e46b17f725add3f2b6, type: 3}
+  - {fileID: 21300000, guid: 29c21cbb9a3a13b4ba4936f014a96f58, type: 3}
+  - {fileID: 21300000, guid: bc866a4c24770634ea066f90b46ad028, type: 3}
+  - {fileID: 21300000, guid: e01ff08dd58658247b0f6808b40a4025, type: 3}
+  - {fileID: 21300000, guid: e76cbf9d759efaa45a85ecad70d7783a, type: 3}
+  - {fileID: 21300000, guid: 82fbe40e8d772ae4a9cc18234eb70a74, type: 3}
+  - {fileID: 21300000, guid: 128d935e468743e41a6bdac8bd9be955, type: 3}
+  - {fileID: 21300000, guid: 0462d19e1b4da904ca8b8c348c638382, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - skeleton-animation_10
+  - skeleton-animation_07
+  - skeleton-animation_09
+  - skeleton-animation_11
+  - skeleton-animation_14
+  - skeleton-animation_00
+  - skeleton-animation_02
+  - skeleton-animation_12
+  - skeleton-animation_08
+  - skeleton-animation_01
+  - skeleton-animation_13
+  - skeleton-animation_05
+  - skeleton-animation_03
+  - skeleton-animation_04
+  - skeleton-animation_06
+  m_RenderDataMap: {}
+  m_Tag: Evil_Bug
+  m_IsVariant: 0

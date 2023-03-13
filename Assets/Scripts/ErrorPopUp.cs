@@ -17,7 +17,7 @@ public class ErrorPopUp : MonoBehaviour
         _gameEvents.OnShowError()
             .Subscribe(_ =>{
                 Show();
-                StartCoroutine(SafeExit());
+                
             } )
             .AddTo(this);
             
@@ -28,8 +28,5 @@ public class ErrorPopUp : MonoBehaviour
     void GoToHome(){
         _gameEvents.LoadScene.OnNext("Home");
     }
-    IEnumerator SafeExit(){
-        yield return new WaitForSeconds(5);
-        _gameEvents.LoadScene.OnNext("LevelSelection");
-    }
+    
 }

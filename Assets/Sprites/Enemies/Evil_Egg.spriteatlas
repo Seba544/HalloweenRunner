@@ -1,0 +1,134 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Evil_Egg
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 2
+      m_CompressionQuality: 100
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: fe515959445c2a249bbf20e8a7627f1b, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: c3b22990447805448852bec4b540bd92, type: 3}
+  - {fileID: 21300000, guid: 89ee34e053f88a549a0690eb8e46b92a, type: 3}
+  - {fileID: 21300000, guid: b7cef68174735e8498b0e0c6ed45a24f, type: 3}
+  - {fileID: 21300000, guid: 93cfc69197d566848954dfadee3d1be4, type: 3}
+  - {fileID: 21300000, guid: 854539916aef3104d98e5b7b1ea655d0, type: 3}
+  - {fileID: 21300000, guid: 58bd9ea1dbdfd134dbaa517fce9d5636, type: 3}
+  - {fileID: 21300000, guid: 60a459d136a350d41996165bc935e1b8, type: 3}
+  - {fileID: 21300000, guid: 026180d2a8b8f9745bf9a290e3df89fb, type: 3}
+  - {fileID: 21300000, guid: cc627063975d84441a6e074fcc0713dd, type: 3}
+  - {fileID: 21300000, guid: 4ad263635f3405845a02efc9cbd059dd, type: 3}
+  - {fileID: 21300000, guid: e76884a31febeef41baba048986745a3, type: 3}
+  - {fileID: 21300000, guid: 5c647fb355ec0c341a215ed0984617f5, type: 3}
+  - {fileID: 21300000, guid: 57eb12042adc4754a92cc488779a1d32, type: 3}
+  - {fileID: 21300000, guid: 0e6acd041f9a9624a9d811f7c4c5bd01, type: 3}
+  - {fileID: 21300000, guid: cd7fea14716cb544da56aac9cd8bcbc6, type: 3}
+  - {fileID: 21300000, guid: 34cb86249befa5d4ca6da39f3ffd3bda, type: 3}
+  - {fileID: 21300000, guid: f38ddfb4ea57934468c16786240b1c31, type: 3}
+  - {fileID: 21300000, guid: c82e47159aad80c4aa37eef942cc0bfd, type: 3}
+  - {fileID: 21300000, guid: e1e2284581f67a74cb436c7d6437c8ba, type: 3}
+  - {fileID: 21300000, guid: ba86dc852c543d144813c949f2ca132d, type: 3}
+  - {fileID: 21300000, guid: cf4695169e6e202449e824f71d9b08ff, type: 3}
+  - {fileID: 21300000, guid: f297c6369ed229e47a640391a511a4d5, type: 3}
+  - {fileID: 21300000, guid: 33efc3866974d2f43ae6f94803d5e82d, type: 3}
+  - {fileID: 21300000, guid: 06a764a6c11f4004382f92f38e1d156b, type: 3}
+  - {fileID: 21300000, guid: a564a1670a236034484b33a6630d24a8, type: 3}
+  - {fileID: 21300000, guid: eeb1c2b794a5b64429e05e682b4e4f58, type: 3}
+  - {fileID: 21300000, guid: 1114e84878a893c40afa8dfc6a199d86, type: 3}
+  - {fileID: 21300000, guid: 1c7fc0c8143cc7c4b95ee849b6b043dd, type: 3}
+  - {fileID: 21300000, guid: 1b3a2d9aa001d6e46b60bf05e2644073, type: 3}
+  - {fileID: 21300000, guid: cf4fe5ea4e0ef8a4889ec597cd029347, type: 3}
+  - {fileID: 21300000, guid: 5d8ffd9b4edf9ee4ab0ae73d0992da51, type: 3}
+  - {fileID: 21300000, guid: df1b2edb0b0c5b94696ae75abb8b3d5e, type: 3}
+  - {fileID: 21300000, guid: 8e52550c260438041aca6ed9d4fc2318, type: 3}
+  - {fileID: 21300000, guid: 3b00ba2c1273283408a1d4bc3f87d685, type: 3}
+  - {fileID: 21300000, guid: a86f969ccb764244bba5cb0f49a0a89a, type: 3}
+  - {fileID: 21300000, guid: 211dec3d6ed0a6644856085687750f3b, type: 3}
+  - {fileID: 21300000, guid: 61d7abbdee981b94c882ca41057b0879, type: 3}
+  - {fileID: 21300000, guid: efccdb5fab8a6a74a99f15ad05246265, type: 3}
+  - {fileID: 21300000, guid: 300dcdef753754e4fae3338751cb1a20, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - skeleton-animation_23
+  - skeleton-animation_01
+  - skeleton-animation_38
+  - skeleton-animation_04
+  - skeleton-animation_35
+  - skeleton-animation_30
+  - skeleton-animation_18
+  - skeleton-animation_07
+  - skeleton-animation_00
+  - skeleton-animation_06
+  - skeleton-animation_20
+  - skeleton-animation_28
+  - skeleton-animation_17
+  - skeleton-animation_33
+  - skeleton-animation_12
+  - skeleton-animation_22
+  - skeleton-animation_26
+  - skeleton-animation_31
+  - skeleton-animation_08
+  - skeleton-animation_32
+  - skeleton-animation_11
+  - skeleton-animation_27
+  - skeleton-animation_37
+  - skeleton-animation_25
+  - skeleton-animation_09
+  - skeleton-animation_05
+  - skeleton-animation_36
+  - skeleton-animation_16
+  - skeleton-animation_29
+  - skeleton-animation_13
+  - skeleton-animation_15
+  - skeleton-animation_14
+  - skeleton-animation_10
+  - skeleton-animation_21
+  - skeleton-animation_19
+  - skeleton-animation_02
+  - skeleton-animation_24
+  - skeleton-animation_03
+  - skeleton-animation_34
+  m_RenderDataMap: {}
+  m_Tag: Evil_Bug
+  m_IsVariant: 0

@@ -1,0 +1,146 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Zombie_Male
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 4096
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 2
+      m_CompressionQuality: 100
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 1a3fce6b3d58f4149b55224280a6e088, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: c82155a026861b948a962d4796189736, type: 3}
+  - {fileID: 21300000, guid: 9bf513b04be21424ea64ed5b43b23a5e, type: 3}
+  - {fileID: 21300000, guid: 41e2e001a7fa44b4abf54fd1dafb4cd6, type: 3}
+  - {fileID: 21300000, guid: df9dfe0195c5013419238081c0d65d5d, type: 3}
+  - {fileID: 21300000, guid: 3cf29041e149d4a4eb83538870363846, type: 3}
+  - {fileID: 21300000, guid: 6e7ef6f102dc54f428c10d05b3d8d765, type: 3}
+  - {fileID: 21300000, guid: 2b019d72a3bc55645907eb5d334cb3c7, type: 3}
+  - {fileID: 21300000, guid: ed37c492e8d39254e8dfd27d950a1fb0, type: 3}
+  - {fileID: 21300000, guid: 6af30cc2158e7224faefe29889a4e0e0, type: 3}
+  - {fileID: 21300000, guid: bf47ab43ad96a214b87ae32a601e92f8, type: 3}
+  - {fileID: 21300000, guid: 8aa7d273a44e2a645a9490d16f626a2c, type: 3}
+  - {fileID: 21300000, guid: 47b904d3bc7d20b4288fc41eb26654fa, type: 3}
+  - {fileID: 21300000, guid: 7fe528d347f8e8140b8e05885df241f1, type: 3}
+  - {fileID: 21300000, guid: 85da09f3dbaaf42448682a9334d9eecf, type: 3}
+  - {fileID: 21300000, guid: bf9e4154c8de7f240a58a3dc1705eb49, type: 3}
+  - {fileID: 21300000, guid: 9dd829c47bb9d2648b35854a2e1b847a, type: 3}
+  - {fileID: 21300000, guid: f7d8f3d4319884542a172980ecbd2640, type: 3}
+  - {fileID: 21300000, guid: 4e71da75c19852a4dae122b518bcab5b, type: 3}
+  - {fileID: 21300000, guid: 2356cd7525aac8c40896120e91b29d30, type: 3}
+  - {fileID: 21300000, guid: dc54e7853293a5c40b94a6682cb2b718, type: 3}
+  - {fileID: 21300000, guid: 3e4b23f5c4a5c5f47929205afbfdebfb, type: 3}
+  - {fileID: 21300000, guid: 171fe10635b254b48aa0387430b835c7, type: 3}
+  - {fileID: 21300000, guid: c9678126e87f78343a61c37d6ede8b4a, type: 3}
+  - {fileID: 21300000, guid: bcfcf15675e46fa45835add931897864, type: 3}
+  - {fileID: 21300000, guid: fd2a4ca628012734b961acb05c9fe185, type: 3}
+  - {fileID: 21300000, guid: c5c75fb66a8312f4dab39204ed377494, type: 3}
+  - {fileID: 21300000, guid: 52c1b3d613e773b418cfe7b8b669baf9, type: 3}
+  - {fileID: 21300000, guid: 72d24847acb5c344c8b65cec39e4908f, type: 3}
+  - {fileID: 21300000, guid: ffbe5b575712a074fa3d8b25163ed5e4, type: 3}
+  - {fileID: 21300000, guid: 4a46dfa70dcf08246a4de8f5d7746c93, type: 3}
+  - {fileID: 21300000, guid: fcb460c7696855545bca638305c36699, type: 3}
+  - {fileID: 21300000, guid: e3a77ff7fa0ea244fb5e65b06123ad60, type: 3}
+  - {fileID: 21300000, guid: e5149b6813c44244caa801bef883461f, type: 3}
+  - {fileID: 21300000, guid: e4befab8d15d2de4a9c1aafd157423b5, type: 3}
+  - {fileID: 21300000, guid: e8d067690af19ff41a07d0d2c53540b0, type: 3}
+  - {fileID: 21300000, guid: 71fd96e93e0b3ae4385bfe8157e203e9, type: 3}
+  - {fileID: 21300000, guid: 78bd936aa76f0184681ce92978768cbe, type: 3}
+  - {fileID: 21300000, guid: 43452c0b67a4bfd4a8c53b86ad184a83, type: 3}
+  - {fileID: 21300000, guid: 7d4e0cfc41d02f24d9e5ca7b31cb54c2, type: 3}
+  - {fileID: 21300000, guid: 7b9c9eed6dbdd1648970fc3c2625954d, type: 3}
+  - {fileID: 21300000, guid: fb719f1ea4bbfdf4f8f9fcf57925fd8b, type: 3}
+  - {fileID: 21300000, guid: 5f7a953e94936ab4bbba330666efb43a, type: 3}
+  - {fileID: 21300000, guid: 7733f39e6462dde4aaa14f392ff71b9f, type: 3}
+  - {fileID: 21300000, guid: 946d642f613cae140ad788a961017447, type: 3}
+  - {fileID: 21300000, guid: f6fa6b2fbb8876c4f964f32e41d8c092, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Idle (7)
+  - Walk (8)
+  - Dead (7)
+  - Walk (9)
+  - Dead (1)
+  - Attack (3)
+  - Idle (13)
+  - Dead (3)
+  - Attack (7)
+  - Dead (8)
+  - Dead (6)
+  - Walk (1)
+  - Dead (2)
+  - Idle (12)
+  - Attack (4)
+  - Attack (5)
+  - Dead (5)
+  - Attack (1)
+  - Idle (14)
+  - Walk (3)
+  - Attack (2)
+  - Dead (12)
+  - Walk (10)
+  - Walk (7)
+  - Dead (10)
+  - Idle (10)
+  - Walk (4)
+  - Dead (4)
+  - Idle (4)
+  - Idle (1)
+  - Idle (11)
+  - Idle (9)
+  - Walk (2)
+  - Idle (2)
+  - Attack (6)
+  - Idle (3)
+  - Idle (8)
+  - Walk (6)
+  - Dead (9)
+  - Walk (5)
+  - Dead (11)
+  - Attack (8)
+  - Idle (6)
+  - Idle (5)
+  - Idle (15)
+  m_RenderDataMap: {}
+  m_Tag: Zombie_Male
+  m_IsVariant: 0

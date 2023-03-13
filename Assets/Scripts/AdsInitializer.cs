@@ -6,11 +6,11 @@ using UniRx;
 
 public class AdsInitializer : MonoBehaviour, IUnityAdsInitializationListener
 {
-    
+    [SerializeField] private bool _testMode = false;
     // Start is called before the first frame update
     void Awake()
     {
-        Advertisement.Initialize("5099001",false,this);
+        Advertisement.Initialize("5099001",_testMode,this);
         
         
     }

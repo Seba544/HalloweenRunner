@@ -18,7 +18,7 @@ public class ParallaxEffect : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void LateUpdate()
     {
         float deltaX = (_cameraTransform.position.x - _previousCameraPosition.x) * ParallaxSpeed;
         float moveAmount = _cameraTransform.position.x * (1f - ParallaxSpeed);

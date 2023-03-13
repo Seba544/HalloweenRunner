@@ -47,7 +47,8 @@ public class EndOfLevel : MonoBehaviour
             .Subscribe(_ => Multiply())
             .AddTo(this);
         int currentStage = PlayerPrefs.GetInt("CurrentStage");
-        if(SaveSystem.LoadWorldProgression(World).LevelsCompleted.Contains(Stage)){
+        WorldProgression worldProgression = SaveSystem.LoadWorldProgression(World);
+        if(worldProgression!= null && worldProgression.LevelsCompleted.Contains(Stage)){
             AmountOfPumpkingsRewardOnFinish = AmountOfPumpkinsRewardLevelRepeated;
             Description.text = "Try to play new levels to get more pumpkins!";
         }

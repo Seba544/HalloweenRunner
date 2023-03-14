@@ -28,7 +28,7 @@ public class AirAttack : MonoBehaviour
             })
             .AddTo(this);
     }
-    void LateUpdate()
+    void FixedUpdate()
     {
         if(Time.timeScale==0 || !isMoving){
             _rgbd.velocity = Vector2.zero;

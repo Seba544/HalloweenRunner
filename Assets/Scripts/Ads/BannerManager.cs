@@ -97,6 +97,7 @@ public class BannerManager : MonoBehaviour
 
     void OnDestroy()
     {
+        
         HideBannerAd();
     }
 

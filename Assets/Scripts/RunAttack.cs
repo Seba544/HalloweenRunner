@@ -29,7 +29,7 @@ public class RunAttack : MonoBehaviour
             })
             .AddTo(this);
     }
-    void LateUpdate()
+    void FixedUpdate()
     {
 
         if(isMoving){

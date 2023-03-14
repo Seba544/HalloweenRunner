@@ -53,10 +53,9 @@ public class StageEnabler : MonoBehaviour
         }
         if(worldProgression.LevelsCompleted.Count==0 && Stage == 1)
             return true;
-        if(worldProgression.LevelsCompleted.Contains(Stage))
+        if(worldProgression.LevelsCompleted.Contains(Stage) || worldProgression.LevelsCompleted.Contains(Stage-1))
             return true;
-        if(worldProgression.LevelsCompleted.Contains(Stage-1))
-            return true;
+        
         return false;
     }
     void Go()

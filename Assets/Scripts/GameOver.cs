@@ -15,6 +15,7 @@ public class GameOver : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         _restartButton.onClick.AddListener(Restart);
         _backToHomeButton.onClick.AddListener(GoBackToHome);
         _extraLifeButton.onClick.AddListener(ExtraLife);

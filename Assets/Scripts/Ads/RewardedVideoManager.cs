@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Advertisements;
 using UniRx;
+using TMPro;
 
 public class RewardedVideoManager : MonoBehaviour,IUnityAdsLoadListener,IUnityAdsShowListener
 {
@@ -70,8 +71,24 @@ public class RewardedVideoManager : MonoBehaviour,IUnityAdsLoadListener,IUnityAd
 
     public void OnUnityAdsShowFailure(string placementId, UnityAdsShowError error, string message)
     {
-        Debug.Log($"Error showing Ad Unit {placementId}: {error.ToString()} - {message}");
-        _gameEvents.ShowError();
+        
+        if(error == UnityAdsShowError.NO_CONNECTION || error == UnityAdsShowError.NOT_INITIALIZED){
+            _gameEvents.ShowError();
+        }
+        else
+        {
+            if(placementId == _extraLifePlacementId){
+                _gameEvents.Revive();
+                Advertisement.Load(_extraLifePlacementId, this);
+            }
+            if(placementId==_multiplyRewardPlacementId)
+                _gameEvents.GiveRewardBonus();
+
+        }
+        
+        
+        
+        
     }
 
     public void OnUnityAdsShowStart(string placementId)

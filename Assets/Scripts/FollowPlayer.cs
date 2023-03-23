@@ -6,14 +6,20 @@ using UniRx;
 public class FollowPlayer : MonoBehaviour
 {
     [SerializeField] GameEvent _gameEvents;
-    public Transform Player;
+    private GameObject _player;
     public float SmoothSpeed;
     public Vector3 Offset;
     bool followsPlayer;
     // Start is called before the first frame update
     void Start()
     {
-        followsPlayer = true;
+        _gameEvents.OnFollowPlayer()
+            .Subscribe(_ => {
+                _player = GameObject.FindGameObjectWithTag("Player");
+                followsPlayer = true;
+            })
+            .AddTo(this);
+
         _gameEvents.OnGameOver()
             .Subscribe(_ => {
                 followsPlayer = false;
@@ -36,8 +42,9 @@ public class FollowPlayer : MonoBehaviour
     {
         if(Time.timeScale==0 || !followsPlayer)
             return;
-        Vector3 desiredPosition = new Vector3(Player.position.x + Offset.x,transform.position.y,transform.position.z);
+        Vector3 desiredPosition = new Vector3(_player.transform.position.x + Offset.x,transform.position.y,transform.position.z);
         Vector3 smoothedPosition = Vector3.Lerp(transform.position,desiredPosition,SmoothSpeed * Time.deltaTime);
         transform.position = smoothedPosition;
+        Debug.Log("Camera follows player");
     }
 }

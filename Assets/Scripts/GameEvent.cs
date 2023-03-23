@@ -27,7 +27,12 @@ public class GameEvent : ScriptableObject
     private ISubject<Unit> _hideFTUE = new Subject<Unit>();
     private ISubject<Unit> _showError = new Subject<Unit>();
     private ISubject<string> _updateTreasureText = new Subject<string>();
-   
+    private ISubject<Unit> _followPlayer = new Subject<Unit>();
+    private ISubject<string> _selectSkin = new Subject<string>();
+
+
+   public IObservable<string> OnSelectSkin () => _selectSkin;
+   public IObservable<Unit> OnFollowPlayer() => _followPlayer;
    public IObservable<string> OnUpdateTreasureText() => _updateTreasureText;
     public IObservable<Unit> OnShowError() => _showError;
     public IObservable<Unit> OnCollectPumpking() => _collectPumpking;
@@ -54,6 +59,9 @@ public class GameEvent : ScriptableObject
     public IObservable<Unit> OnShowFtue() => _showFTUE;
     public IObservable<Unit> OnHideFtue() => _hideFTUE;
     
+
+    public void SelectSkin(string skin) => _selectSkin.OnNext(skin);
+    public void FollowPlayer() => _followPlayer.OnNext(Unit.Default);
     public void UpdateTreasureText(string treasure) => _updateTreasureText.OnNext(treasure);
     public void OnEndWave() => _endWave.OnNext(Unit.Default);
     public void EndOfLevel() => _endOfLevel.OnNext(Unit.Default);

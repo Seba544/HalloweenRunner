@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/LevelSelection.unity
     guid: bcff52deacf4da448a9b70acd28b307a
   - enabled: 1
+    path: Assets/Scenes/SkinSelection.unity
+    guid: a350e65cbe56d8244ba7164123bf8251
+  - enabled: 1
     path: Assets/Scenes/Apocalypse_1.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
   - enabled: 1

@@ -12,6 +12,7 @@ public class GameOver : MonoBehaviour
     [SerializeField] Button _restartButton;
     [SerializeField] Button _backToHomeButton;
     [SerializeField] Button _extraLifeButton;
+    private bool isLevelFinished;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,16 @@ public class GameOver : MonoBehaviour
 
         GameOverPanel.SetActive(false);
         _gameEvents.OnGameOver()
-            .Subscribe(_ => Invoke("EndGame",1))
+            .Subscribe(_ =>{
+                if(!isLevelFinished)
+                    Invoke("EndGame",1);
+            } )
+            .AddTo(this);
+
+        _gameEvents.OnEndOfLevel()
+            .Subscribe(_ => {
+                isLevelFinished = true;
+            })
             .AddTo(this);
 
         

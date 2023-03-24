@@ -2083,7 +2083,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Collect all pumpkings!
+  m_text: Collect all pumpkins!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: b79168a74e4f8154183867705a023fb1, type: 2}
   m_sharedMaterial: {fileID: -8324208333345892082, guid: b79168a74e4f8154183867705a023fb1, type: 2}

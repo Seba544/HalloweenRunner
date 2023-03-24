@@ -80,4 +80,5 @@ MonoBehaviour:
   _skinConfigurations:
   - {fileID: 11400000, guid: 7448f49e3b474fb4d8b922ef99d74555, type: 2}
   - {fileID: 11400000, guid: 946525359732cc244b3a224714f7ac04, type: 2}
+  - {fileID: 11400000, guid: 61e9fdcfd9c67f04091596543b369fcd, type: 2}
   _spawnPoint: {fileID: 2848794522055779088}

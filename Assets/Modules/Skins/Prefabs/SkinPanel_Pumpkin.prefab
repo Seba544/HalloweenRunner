@@ -170,7 +170,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -74.5, y: 66}
+  m_AnchoredPosition: {x: -114, y: 173}
   m_SizeDelta: {x: 149, y: 132}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2350570425537299387
@@ -288,7 +288,6 @@ MonoBehaviour:
   _purchaseButton: {fileID: 2350570425750232513}
   _skinConfiguration: {fileID: 11400000, guid: 7448f49e3b474fb4d8b922ef99d74555, type: 2}
   _price: {fileID: 2350570426680980524}
-  _showcaseImage: {fileID: 2350570425429741816}
   _currentSkinCheckImage: {fileID: 2350570425537299390}
   _selectSkinButton: {fileID: 2350570425429741765}
 --- !u!222 &1821159708

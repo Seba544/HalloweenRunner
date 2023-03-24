@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1a387ac264e2bd4daa969322d700c03, type: 3}
-  m_Name: Player_Skin_SantaClaus
+  m_Name: Player_Skin_Adventurer
   m_EditorClassIdentifier: 
-  SkinID: santa
+  SkinID: adventurer
   SkinPrice: 500
-  Player: {fileID: 1046944813134847917, guid: 0cfe1d4b5e2c41f4394cbfd3d30e5877, type: 3}
+  Player: {fileID: 1046944813134847917, guid: 72f9e21197c212646a499e7d9c0423a7, type: 3}

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7730696646274163474}
   - component: {fileID: 7001911942168017852}
   - component: {fileID: 1763460555709823520}
+  - component: {fileID: -5965952367418865842}
   - component: {fileID: 6961509731785920680}
   - component: {fileID: -1409451114136832844}
   - component: {fileID: 2180624770542379754}
@@ -112,6 +113,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
+--- !u!114 &-5965952367418865842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8332542761670196253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c81541667cb4a54c83fdcb82513c331, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Data: {fileID: 11400000, guid: 1adc6eeb8b993f642b71abe1f401b472, type: 2}
 --- !u!114 &6961509731785920680
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,7 +153,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
-  Speed: 3
 --- !u!95 &2180624770542379754
 Animator:
   serializedVersion: 4

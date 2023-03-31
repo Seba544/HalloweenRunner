@@ -6,14 +6,15 @@ using UniRx;
 public class RunAttack : MonoBehaviour
 {
     [SerializeField] GameEvent _gameEvents;
+    private EnemyConfig _enemyData;
     private Rigidbody2D _rgbd;
-    public float Speed;
 
     bool isMoving;
     private Animator _animator;
     
     void Start()
     {
+        _enemyData = GetComponent<Enemy>().Data;
         isMoving = true;
         _rgbd = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
@@ -44,7 +45,7 @@ public class RunAttack : MonoBehaviour
         }
              
 
-        _rgbd.velocity = new Vector2(Speed * -1, _rgbd.velocity.y);
+        _rgbd.velocity = new Vector2(_enemyData.Speed * -1, _rgbd.velocity.y);
     }
     
 

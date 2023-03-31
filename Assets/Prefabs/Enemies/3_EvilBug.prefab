@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8023767215632762444}
   - component: {fileID: 4406536332092232152}
   - component: {fileID: 4827761588789877923}
+  - component: {fileID: 8182011376947808356}
   - component: {fileID: 1265442510840209879}
   - component: {fileID: 5335592487015269064}
   - component: {fileID: 960006102949311119}
@@ -109,6 +110,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &8182011376947808356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2538017711316970546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c81541667cb4a54c83fdcb82513c331, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Data: {fileID: 11400000, guid: dc7c1827f1686f64caa050750e12e3a3, type: 2}
 --- !u!114 &1265442510840209879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,7 +137,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
   DistanceFromGround: 3
-  Speed: 6
 --- !u!50 &5335592487015269064
 Rigidbody2D:
   serializedVersion: 4

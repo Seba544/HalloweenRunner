@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3378288691751592529}
   - component: {fileID: 5168532003123597272}
   - component: {fileID: 8986995571499933147}
+  - component: {fileID: -65455568765876972}
   m_Layer: 0
   m_Name: EvilEgg
   m_TagString: Untagged
@@ -185,3 +186,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
   DestroyAfterSeconds: 10
+--- !u!114 &-65455568765876972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3378288691751592539}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c81541667cb4a54c83fdcb82513c331, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Data: {fileID: 11400000, guid: e634457acd97b0d409f7689b71cc13cb, type: 2}

@@ -579,13 +579,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21aa45eb29c58ef469278a8c4600325c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Dice:
+    Faces:
+    - reaper
+    - reaper
+    - reaper
+    - reaper
+    - reaper
+    - reaper
+    - reaper
+    - reaper
+    - golem
+    - golem
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
-  Items:
-  - {fileID: 8131927009810770340, guid: 376a06a0531d73947b1c6ce738b44e78, type: 3}
-  - {fileID: 4872698049284644566, guid: a1e4fbc1e90f14e4bbde5b7c34403e2a, type: 3}
-  - {fileID: 823095995273263125, guid: 9e284d1b6f49e1b44978875a362850c3, type: 3}
+  Enemies:
+  - {fileID: -3077854987589881842, guid: 376a06a0531d73947b1c6ce738b44e78, type: 3}
+  - {fileID: -7281336385293915817, guid: 4bed12b78b8d6f249a25d1a1aabdd7e0, type: 3}
+  Pumpkin: {fileID: 823095995273263125, guid: 9e284d1b6f49e1b44978875a362850c3, type: 3}
   MinSpawnTime: 1
   MaxSpawnTime: 3
+  ProbabilityOfOccurrencePumpkin: 2
 --- !u!224 &347284733 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8791462758102006435, guid: dd2e507248401b14894b369ac60a4bcb, type: 3}

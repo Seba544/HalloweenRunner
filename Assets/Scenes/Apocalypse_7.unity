@@ -632,14 +632,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21aa45eb29c58ef469278a8c4600325c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Dice:
+    Faces:
+    - zombie_male
+    - zombie_male
+    - zombie_male
+    - zombie_male
+    - zombie_female
+    - zombie_female
+    - zombie_female
+    - snail
+    - snail
+    - snail
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
-  Items:
-  - {fileID: 8332542761670196253, guid: c4eccc9d8a609fe46be29e2f08443449, type: 3}
-  - {fileID: 4872698049284644566, guid: a1e4fbc1e90f14e4bbde5b7c34403e2a, type: 3}
-  - {fileID: 7948195539357562694, guid: e03ed4861716933449bb97ff45d47f3d, type: 3}
-  - {fileID: 823095995273263125, guid: 9e284d1b6f49e1b44978875a362850c3, type: 3}
+  Enemies:
+  - {fileID: -5965952367418865842, guid: c4eccc9d8a609fe46be29e2f08443449, type: 3}
+  - {fileID: 6988485638704833163, guid: e03ed4861716933449bb97ff45d47f3d, type: 3}
+  - {fileID: -7945704310758100089, guid: a1e4fbc1e90f14e4bbde5b7c34403e2a, type: 3}
+  Pumpkin: {fileID: 823095995273263125, guid: 9e284d1b6f49e1b44978875a362850c3, type: 3}
   MinSpawnTime: 1
   MaxSpawnTime: 3
+  ProbabilityOfOccurrencePumpkin: 2
 --- !u!1001 &346170485
 PrefabInstance:
   m_ObjectHideFlags: 0

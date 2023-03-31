@@ -6,14 +6,15 @@ using UniRx;
 public class AirAttack : MonoBehaviour
 {
     [SerializeField] GameEvent _gameEvents;
+    private EnemyConfig _enemyData;
     public float DistanceFromGround;
-    public float Speed;
     private Rigidbody2D _rgbd;
     bool isMoving;
     
     // Start is called before the first frame update
     void Start()
     {
+        _enemyData = GetComponent<Enemy>().Data;
         isMoving = true;
         _rgbd = GetComponent<Rigidbody2D>();
         transform.position = new Vector3(transform.position.x,transform.position.y+DistanceFromGround,0);
@@ -34,7 +35,7 @@ public class AirAttack : MonoBehaviour
             _rgbd.velocity = Vector2.zero;
             return;
         }
-        _rgbd.velocity = new Vector2(Speed * -1, _rgbd.velocity.y);
+        _rgbd.velocity = new Vector2(_enemyData.Speed * -1, _rgbd.velocity.y);
     }
 
     void OnTriggerEnter2D(Collider2D other)

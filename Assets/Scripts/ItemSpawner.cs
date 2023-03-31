@@ -2,17 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
+using System;
+using Random = UnityEngine.Random;
 
 public class ItemSpawner : MonoBehaviour
 {
+    public Dice Dice;
     [SerializeField] GameEvent _gameEvents;
-    public List<GameObject> Items;
+    public List<Enemy> Enemies;
+    public GameObject Pumpkin;
     Coroutine _spawnCoroutine = null;
     public float MinSpawnTime;
     public float MaxSpawnTime;
+    const int ProbabilityOfOccurrencePumpkin = 1;
     // Start is called before the first frame update
     void Start()
     {
+        
         _spawnCoroutine = StartCoroutine(Spawn());
         _gameEvents.OnGameOver()
             .Subscribe(_ =>{
@@ -37,7 +43,14 @@ public class ItemSpawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(Random.Range(MinSpawnTime,MaxSpawnTime));
-            Instantiate(Items[Random.Range(0, Items.Count)], transform.position, Quaternion.identity);
+            if(Random.Range(1,11)<=ProbabilityOfOccurrencePumpkin){
+                Instantiate(Pumpkin, transform.position, Quaternion.identity);
+            }else{
+                var rollEnemyDice = new RollEnemyDice(Dice,Random.Range(1,11),Enemies);
+                var enemyPrefab = rollEnemyDice.Execute();
+                Instantiate(enemyPrefab, transform.position, Quaternion.identity);
+            }
+            
         }
 
     }
@@ -52,5 +65,11 @@ public class ItemSpawner : MonoBehaviour
         yield return new WaitForSeconds(4);
         _gameEvents.EndOfLevel();
     }
+
+    
     
 }
+    [Serializable]
+    public class Dice{
+        public List<string> Faces = new List<string>();
+    }

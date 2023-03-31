@@ -5,6 +5,11 @@ using UnityEngine;
 public class FloorTrap : MonoBehaviour
 {
     [SerializeField] GameEvent _gameEvents;
+    private EnemyConfig _enemyData;
+    void Start()
+    {
+        _enemyData = GetComponent<Enemy>().Data;
+    }
     
     void OnTriggerEnter2D(Collider2D other)
     {

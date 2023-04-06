@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Wraith1
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 2
+      m_CompressionQuality: 100
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 691dc617e8ab0c1448d6ae23f15e6098, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 782399417c5632042b483d3ff2da6971, type: 3}
+  - {fileID: 21300000, guid: bd471661f17a2c6419d05359e1eb04ed, type: 3}
+  - {fileID: 21300000, guid: 431eb4b185116664abb2fbd77afb2467, type: 3}
+  - {fileID: 21300000, guid: a6ed9c230f824144498f6ca0e499edb8, type: 3}
+  - {fileID: 21300000, guid: db7d14f3ce74e4042bb70188ae854078, type: 3}
+  - {fileID: 21300000, guid: 091a57f35ff37844db11c0deb54e4ded, type: 3}
+  - {fileID: 21300000, guid: 653bedb4018b2414697c534e054c285c, type: 3}
+  - {fileID: 21300000, guid: d86a98c541824d54c9e40c779895e274, type: 3}
+  - {fileID: 21300000, guid: a6ae0bc548597ec4ca0f5e00ab19ad2d, type: 3}
+  - {fileID: 21300000, guid: 53641596147b1fb43928d7353b4231ae, type: 3}
+  - {fileID: 21300000, guid: fe7ffba63eaef9d41898f09d76a5faa3, type: 3}
+  - {fileID: 21300000, guid: 73908557094c64b42b8dbd9bbbe72140, type: 3}
+  - {fileID: 21300000, guid: caa0a9a7cf544e84ba55d4d63ec63250, type: 3}
+  - {fileID: 21300000, guid: 2a27b8b7f113f864197bd0c258642892, type: 3}
+  - {fileID: 21300000, guid: 0c62fcb7d02d41d4b9c3b5fc700f3004, type: 3}
+  - {fileID: 21300000, guid: 82897a2805e02bd4ba6882cb6d982d2a, type: 3}
+  - {fileID: 21300000, guid: cbdd5758d3f58c045a5801c994c8bde9, type: 3}
+  - {fileID: 21300000, guid: 404604390750aaa4b824435c9f1daa86, type: 3}
+  - {fileID: 21300000, guid: 39f1042c63a74de49967bf577ffd729b, type: 3}
+  - {fileID: 21300000, guid: 9906481d02b7e5f40b4fbcab2d6a9d5c, type: 3}
+  - {fileID: 21300000, guid: 3d68f53da8f9a1e4497520065644d49b, type: 3}
+  - {fileID: 21300000, guid: 1f48d1cde72056b428d0afbdc4d94260, type: 3}
+  - {fileID: 21300000, guid: 3a9f3dcdd2d5c114fbeec5a36fb93be2, type: 3}
+  - {fileID: 21300000, guid: 9b2b72ffc9799b74c9c3f3b1c5c243cc, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Wraith_02_Idle_001
+  - Wraith_02_Idle_008
+  - Wraith_02_Moving Forward_011
+  - Wraith_02_Idle_003
+  - Wraith_02_Idle_009
+  - Wraith_02_Moving Forward_001
+  - Wraith_02_Moving Forward_003
+  - Wraith_02_Idle_000
+  - Wraith_02_Idle_005
+  - Wraith_02_Moving Forward_004
+  - Wraith_02_Idle_007
+  - Wraith_02_Idle_011
+  - Wraith_02_Idle_002
+  - Wraith_02_Moving Forward_002
+  - Wraith_02_Idle_004
+  - Wraith_02_Moving Forward_006
+  - Wraith_02_Moving Forward_007
+  - Wraith_02_Moving Forward_009
+  - Wraith_02_Moving Forward_010
+  - Wraith_02_Moving Forward_008
+  - Wraith_02_Moving Forward_005
+  - Wraith_02_Idle_006
+  - Wraith_02_Moving Forward_000
+  - Wraith_02_Idle_010
+  m_RenderDataMap: {}
+  m_Tag: Wraith1
+  m_IsVariant: 0

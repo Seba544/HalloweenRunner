@@ -541,7 +541,6 @@ MonoBehaviour:
   Pumpkin: {fileID: 823095995273263125, guid: 9e284d1b6f49e1b44978875a362850c3, type: 3}
   MinSpawnTime: 1
   MaxSpawnTime: 3
-  ProbabilityOfOccurrencePumpkin: 2
 --- !u!224 &347284733 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8791462758102006435, guid: dd2e507248401b14894b369ac60a4bcb, type: 3}
@@ -559,7 +558,6 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420033}
-  - component: {fileID: 519420034}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -650,19 +648,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
   SmoothSpeed: 20
-  Offset: {x: 6, y: 0, z: 0}
---- !u!114 &519420034
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &588860443 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3030048418467409962, guid: fc6c5b7fbb434c64e854d8d1d9b54355, type: 3}

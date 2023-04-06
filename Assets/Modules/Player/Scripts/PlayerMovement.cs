@@ -118,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (IsGrounded() && !isDead && !isSliding)
         {
-            _currentSpeed = PlayerSpeed*2;
+            _currentSpeed = PlayerSpeed*1.5f;
             _animator.SetBool("isSliding", true);
             _boxCollider.size = new Vector2(_boxCollider.size.x, _boxCollider.size.y / 2);
             _boxCollider.offset = new Vector2(_boxCollider.offset.x, _boxCollider.offset.y - 1.5f);

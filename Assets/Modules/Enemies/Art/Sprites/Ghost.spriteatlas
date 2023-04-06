@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Ghost
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 2
+      m_CompressionQuality: 100
+      m_CrunchedCompression: 1
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 2
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 0
+      enableTightPacking: 0
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 50b0eaa2a28c878438e96de2c604bcd5, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 8bd03c827004b0144b131625ef5424bc, type: 3}
+  - {fileID: 21300000, guid: 34cb93735c01bfe4faf02dbea0073d98, type: 3}
+  - {fileID: 21300000, guid: 34984a743fc41b64fa022743c127d181, type: 3}
+  - {fileID: 21300000, guid: 9e0c37940d13c5f4c84ee40d9386300a, type: 3}
+  - {fileID: 21300000, guid: a20f7eb4e1383f8409d1286ea80d8c22, type: 3}
+  - {fileID: 21300000, guid: 84c648e49b5287347a230f2d3efd6caf, type: 3}
+  - {fileID: 21300000, guid: 0b8c5f15e57503549a7ead8a3e6e1ac3, type: 3}
+  - {fileID: 21300000, guid: 414a813581eed9547a565b6b16ebba4f, type: 3}
+  - {fileID: 21300000, guid: d5b1c986ae4b20d40b59d3fb7d7287df, type: 3}
+  - {fileID: 21300000, guid: cfb50d37f29fe694dbe5bb4c8234a40c, type: 3}
+  - {fileID: 21300000, guid: b70d8cb9207b07b41b214c16332f039e, type: 3}
+  - {fileID: 21300000, guid: 204b16d965bcf4b468b1f28f75634461, type: 3}
+  - {fileID: 21300000, guid: bf76e6ebf24e45546a4ee3b6857667c0, type: 3}
+  - {fileID: 21300000, guid: f5067fac2f0d26d409c8b141a0f134ae, type: 3}
+  - {fileID: 21300000, guid: 9d4632adcdad5db4fb28b7cc104de9e5, type: 3}
+  - {fileID: 21300000, guid: fff6cb8e1bdfeea48ababa40f6da92d2, type: 3}
+  - {fileID: 21300000, guid: 4ac7dadea05610d47a97ae5beb39f24f, type: 3}
+  - {fileID: 21300000, guid: a01db22fa4a0538479a81b4b8e7beab6, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Wraith_01_Taunt_009
+  - Wraith_01_Taunt_008
+  - Wraith_01_Taunt_005
+  - Wraith_01_Taunt_012
+  - Wraith_01_Taunt_015
+  - Wraith_01_Taunt_016
+  - Wraith_01_Taunt_001
+  - Wraith_01_Taunt_007
+  - Wraith_01_Taunt_011
+  - Wraith_01_Taunt_002
+  - Wraith_01_Taunt_017
+  - Wraith_01_Taunt_010
+  - Wraith_01_Taunt_013
+  - Wraith_01_Taunt_014
+  - Wraith_01_Taunt_004
+  - Wraith_01_Taunt_006
+  - Wraith_01_Taunt_000
+  - Wraith_01_Taunt_003
+  m_RenderDataMap: {}
+  m_Tag: Ghost
+  m_IsVariant: 0

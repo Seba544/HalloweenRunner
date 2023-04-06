@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Evil_Bug
   m_EditorClassIdentifier: 
   EnemyID: evil_bug
-  Speed: 5
+  Speed: 8

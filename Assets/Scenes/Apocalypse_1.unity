@@ -531,12 +531,13 @@ MonoBehaviour:
     - zombie_male
     - zombie_male
     - zombie_male
-    - zombie_male
-    - zombie_male
-    - zombie_male
+    - evil_bug
+    - evil_bug
+    - evil_bug
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
   Enemies:
   - {fileID: -5965952367418865842, guid: c4eccc9d8a609fe46be29e2f08443449, type: 3}
+  - {fileID: 8182011376947808356, guid: 3e7840c648e5fff45916dd11a913b268, type: 3}
   Pumpkin: {fileID: 823095995273263125, guid: 9e284d1b6f49e1b44978875a362850c3, type: 3}
   MinSpawnTime: 1
   MaxSpawnTime: 3
@@ -730,7 +731,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
-  SmoothSpeed: 3
 --- !u!224 &830012433 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1125780241457458919, guid: f35d28754e445ac46ba54dd469585c69, type: 3}

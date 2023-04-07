@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Reaper
   m_EditorClassIdentifier: 
   EnemyID: reaper
-  Speed: 3
+  Speed: 6

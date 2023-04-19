@@ -16,9 +16,10 @@ GameObject:
   - component: {fileID: 5335592487015269064}
   - component: {fileID: 960006102949311119}
   - component: {fileID: 7776203396811414381}
+  - component: {fileID: 6257611062107937367}
   m_Layer: 0
   m_Name: 3_EvilBug
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -198,3 +199,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
   DestroyAfterSeconds: 5
+--- !u!114 &6257611062107937367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2538017711316970546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86fa757381b332d44a8e0d028e0401b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioEvents: {fileID: 11400000, guid: 5f60f453dfbc62849abdaa694e3e8d0d, type: 2}
+  ExplotionEffect: {fileID: 1420767629221192575, guid: 20e02f139a542b24e9d74d5a05d080ed, type: 3}

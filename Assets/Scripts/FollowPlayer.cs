@@ -38,13 +38,12 @@ public class FollowPlayer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if(Time.timeScale==0 || !followsPlayer)
             return;
         Vector3 desiredPosition = new Vector3(_player.transform.position.x + Offset.x,transform.position.y,transform.position.z);
         Vector3 smoothedPosition = Vector3.Lerp(transform.position,desiredPosition,SmoothSpeed * Time.deltaTime);
         transform.position = smoothedPosition;
-        Debug.Log("Camera follows player");
     }
 }

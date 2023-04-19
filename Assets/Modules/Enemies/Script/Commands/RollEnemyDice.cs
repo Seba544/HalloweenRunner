@@ -7,8 +7,8 @@ public class RollEnemyDice : ICommandWithResult<GameObject>
 {
     private Dice _enemyDice;
     private int _rollResult;
-    private List<Enemy> _enemies;
-    public RollEnemyDice(Dice enemyDice,int rollResult,List<Enemy> enemies){
+    private List<EnemyInitializer> _enemies;
+    public RollEnemyDice(Dice enemyDice,int rollResult,List<EnemyInitializer> enemies){
         _enemyDice = enemyDice;
         _rollResult = rollResult;
         _enemies = enemies;

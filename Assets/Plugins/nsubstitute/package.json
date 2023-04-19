@@ -1,0 +1,46 @@
+{
+  "_from": "@etermax/nsubstitute@2.0.3-1",
+  "_id": "@etermax/nsubstitute@2.0.3-1",
+  "_inBundle": false,
+  "_integrity": "sha512-zNX0LJzOmecruwJ26rPoRWm42sJO7anKwC9GQ+904d8AYQQmV/KqtnwX9TMQwpDmef84IvsFFGcQ6QJut76fcA==",
+  "_location": "/@etermax/nsubstitute",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "@etermax/nsubstitute@2.0.3-1",
+    "name": "@etermax/nsubstitute",
+    "escapedName": "@etermax%2fnsubstitute",
+    "scope": "@etermax",
+    "rawSpec": "2.0.3-1",
+    "saveSpec": null,
+    "fetchSpec": "2.0.3-1"
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "/@etermax/daily-bonus-ui",
+    "/@etermax/lucky-spin-ui",
+    "/@etermax/platform-services-daily-bonus"
+  ],
+  "_resolved": "https://verdaccio.etermax.net/@etermax%2fnsubstitute/-/nsubstitute-2.0.3-1.tgz",
+  "_shasum": "dc3d2bdf58f4819fb0a93173b08f1cf4842fe264",
+  "_spec": "@etermax/nsubstitute@2.0.3-1",
+  "_where": "/Users/marcos.manzanares/Documents/Trivia Ladders/trivialadders-client/node_modules/@etermax/daily-bonus-ui",
+  "author": {
+    "name": "martinmoreno"
+  },
+  "bundleDependencies": false,
+  "dependencies": {},
+  "deprecated": false,
+  "description": "NSubstitute ======== [![Build status](https://ci.appveyor.com/api/projects/status/github/nsubstitute/NSubstitute?svg=true)](https://ci.appveyor.com/project/nsubstitute/NSubstitute/branch/master) [![Travis Build Status](https://travis-ci.org/nsubstitute/NSubstitute.svg?branch=master)](https://travis-ci.org/nsubstitute/NSubstitute)",
+  "devDependencies": {
+    "@etermax/upm-editor-plugin": "latest"
+  },
+  "files": [
+    "Assets/Package",
+    "CHANGELOG.md"
+  ],
+  "license": "UNLICENSED",
+  "name": "@etermax/nsubstitute",
+  "version": "2.0.3-1"
+}

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class FloatingAttack : MonoBehaviour
+public class FloatingAttack : EnemyInitializer
 {
     [SerializeField] GameEvent _gameEvents;
     private Enemy _enemyData;
@@ -33,7 +33,7 @@ public class FloatingAttack : MonoBehaviour
         if(Vector2.Distance(_destinationDown,transform.position)<=0.1f){
             _currentDestination = _destinationUp;
         }
-        transform.position = Vector2.MoveTowards(transform.position, _currentDestination,Time.deltaTime*_enemyData.Data.Speed);
+        transform.position = Vector2.MoveTowards(transform.position, _currentDestination,Time.deltaTime*_enemy.Speed);
     }
     void SetInitialPosition(){
         if(Random.Range(0,2)==0){

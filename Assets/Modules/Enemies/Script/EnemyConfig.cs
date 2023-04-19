@@ -7,4 +7,5 @@ public class EnemyConfig : ScriptableObject
 {
     public string EnemyID;
     public float Speed;
+    public int HP;
 }

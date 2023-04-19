@@ -1,20 +1,18 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
 
 public class RunAttack : MonoBehaviour
 {
     [SerializeField] GameEvent _gameEvents;
-    private EnemyConfig _enemyData;
     private Rigidbody2D _rgbd;
 
     bool isMoving;
     private Animator _animator;
+    private Enemy _enemy;
     
     void Start()
     {
-        _enemyData = GetComponent<Enemy>().Data;
+        _enemy = GetComponent<EnemyInitializer>()._enemy;
         isMoving = true;
         _rgbd = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
@@ -45,7 +43,7 @@ public class RunAttack : MonoBehaviour
         }
              
 
-        _rgbd.velocity = new Vector2(_enemyData.Speed * -1, _rgbd.velocity.y);
+        _rgbd.velocity = new Vector2(_enemy.Speed * -1, _rgbd.velocity.y);
     }
     
 

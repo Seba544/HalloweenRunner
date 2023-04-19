@@ -9,7 +9,7 @@ public class ItemSpawner : MonoBehaviour
 {
     public Dice Dice;
     [SerializeField] GameEvent _gameEvents;
-    public List<Enemy> Enemies;
+    public List<EnemyInitializer> Enemies;
     public GameObject Pumpkin;
     Coroutine _spawnCoroutine = null;
     public float MinSpawnTime;

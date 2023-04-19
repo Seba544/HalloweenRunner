@@ -10,11 +10,12 @@ public class AirAttack : MonoBehaviour
     public float DistanceFromGround;
     private Rigidbody2D _rgbd;
     bool isMoving;
+    private Enemy _enemy;
     
     // Start is called before the first frame update
     void Start()
     {
-        _enemyData = GetComponent<Enemy>().Data;
+        _enemy = GetComponent<EnemyInitializer>()._enemy;
         isMoving = true;
         _rgbd = GetComponent<Rigidbody2D>();
         transform.position = new Vector3(transform.position.x,transform.position.y+DistanceFromGround,0);
@@ -35,7 +36,7 @@ public class AirAttack : MonoBehaviour
             _rgbd.velocity = Vector2.zero;
             return;
         }
-        _rgbd.velocity = new Vector2(_enemyData.Speed * -1, _rgbd.velocity.y);
+        _rgbd.velocity = new Vector2(_enemy.Speed * -1, _rgbd.velocity.y);
     }
 
     void OnTriggerEnter2D(Collider2D other)

@@ -18,7 +18,7 @@ public class EndOfLevel : MonoBehaviour
     public TMP_Text Description;
     public string World;
     public int NextStage;
-    private int AmountOfPumpkinsRewardLevelRepeated = 25;
+    private int AmountOfPumpkinsRewardLevelRepeated = 50;
     bool isPlayerDead;
     private int Stage;
     // Start is called before the first frame update

@@ -57,9 +57,10 @@ public class PlayerMovement : MonoBehaviour
     void FixedUpdate()
     {
         if (Input.GetKeyDown(KeyCode.W))
-        {
             Jump();
-        }
+        
+        if(Input.GetKeyDown(KeyCode.S))
+            Slide();
         if (Time.timeScale == 0 || isDead)
             return;
         _rgbd.velocity = new Vector2(_currentSpeed, _rgbd.velocity.y);

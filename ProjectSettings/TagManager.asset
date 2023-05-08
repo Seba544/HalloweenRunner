@@ -10,6 +10,7 @@ TagManager:
   - SlideButton
   - JumpButton
   - Enemy
+  - BulletSpawnPoint
   layers:
   - Default
   - TransparentFX

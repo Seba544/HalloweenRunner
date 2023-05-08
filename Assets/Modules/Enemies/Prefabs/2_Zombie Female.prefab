@@ -17,9 +17,10 @@ GameObject:
   - component: {fileID: 8966373267507131865}
   - component: {fileID: 7875453947653078103}
   - component: {fileID: 4738870849451540955}
+  - component: {fileID: -1747479427798720573}
   m_Layer: 0
   m_Name: 2_Zombie Female
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -210,3 +211,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd66c0339aa4b3a44bae5f6318b4eb1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-1747479427798720573
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4872698049284644566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86fa757381b332d44a8e0d028e0401b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _audioEvents: {fileID: 11400000, guid: 5f60f453dfbc62849abdaa694e3e8d0d, type: 2}
+  ExplotionEffect: {fileID: 1420767629221192575, guid: 20e02f139a542b24e9d74d5a05d080ed, type: 3}

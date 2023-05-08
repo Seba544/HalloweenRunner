@@ -9,57 +9,61 @@ public class WeaponTest
 
     [SetUp]
     public void setup(){
-        _weapon = new Weapon("magic_projectile",10,1);
+        _weapon = new Weapon("magic_projectile",5,10,1,3,WeaponState.READY);
     }
 
     [Test]
-    public void decrease_ammunition_when_shoot(){
+    public void shoot_if_weapon_state_is_ready(){
+        _weapon.Ammunition=10;
+        _weapon.WeaponState = WeaponState.READY;
 
         _weapon.Shoot();
+        _weapon.Shoot();
+        _weapon.Shoot();
 
-        Assert.AreEqual(_weapon.Ammunition,9);
+        Assert.AreEqual(7,_weapon.Ammunition);
 
     }
     [Test]
-    public void return_out_of_ammo_true_if_ammunition_is_0(){
+    public void do_not_shoot_if_weapon_state_is_no_ammo(){
+        _weapon.Ammunition=0;
+        _weapon.WeaponState = WeaponState.NO_AMMO;
 
-        _weapon.Shoot();
-        _weapon.Shoot();
-        _weapon.Shoot();
-        _weapon.Shoot();
-        _weapon.Shoot();
-        _weapon.Shoot();
-        _weapon.Shoot();
-        _weapon.Shoot();
-        _weapon.Shoot();
-        _weapon.Shoot();
-
-        Assert.IsTrue(_weapon.IsOutOfAmmo);
-    }
-
-    [Test]
-    public void return_out_of_ammo_false_if_ammunition_is_greater_than_0(){
-
-        _weapon.Shoot();
-        _weapon.Shoot();
-        _weapon.Shoot();
-        _weapon.Shoot();
-        _weapon.Shoot();
-        _weapon.Shoot();
         _weapon.Shoot();
         _weapon.Shoot();
         _weapon.Shoot();
         
 
-        Assert.IsFalse(_weapon.IsOutOfAmmo);
+        Assert.AreEqual(0,_weapon.Ammunition);
     }
 
     [Test]
-    public void do_not_decrease_ammunition_if_weapon_is_out_of_ammo(){
-        _weapon.Ammunition = 0;
+    public void do_not_shoot_if_weapon_state_is_reloading(){
+        _weapon.Ammunition = 10;
+        _weapon.WeaponState = WeaponState.RELOADING;
 
         _weapon.Shoot();
 
-        Assert.AreEqual(0,_weapon.Ammunition);
+        Assert.AreEqual(10,_weapon.Ammunition);
     }
+    [Test]
+    public void return_can_afford_buy_true_if_amount_of_pumpkins_is_greater_or_equal_than_weapon_price(){
+        int amountOfPumpkins = 10;
+        _weapon.Price = 5;
+
+        bool result = _weapon.CanAffordBuy(amountOfPumpkins);
+
+        Assert.IsTrue(result);
+    }
+
+    [Test]
+    public void return_can_afford_buy_false_if_amount_of_pumpkins_is_less_than_weapon_price(){
+        int amountOfPumpkins = 4;
+        _weapon.Price = 5;
+
+        bool result = _weapon.CanAffordBuy(amountOfPumpkins);
+
+        Assert.IsFalse(result);
+    }
+    
 }

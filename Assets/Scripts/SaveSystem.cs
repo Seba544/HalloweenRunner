@@ -59,4 +59,33 @@ public static class SaveSystem
             return null;
         }
     }
+
+    public static void SaveMagicWeapon(WeaponData weaponData)
+    {
+        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/MagicWeapon.sav";
+        FileStream stream = new FileStream(path, FileMode.Create);
+        formatter.Serialize(stream, weaponData);
+        stream.Close();
+    }
+
+    public static WeaponData LoadMagicWeapon()
+    {
+        string path = Application.persistentDataPath + "/MagicWeapon.sav";
+        if (File.Exists(path))
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            FileStream stream = new FileStream(path, FileMode.Open);
+            WeaponData weaponData = formatter.Deserialize(stream) as WeaponData;
+            stream.Close();
+            return weaponData;
+        }
+        else
+        {
+            Debug.LogError("Save file not found in " + path);
+            return null;
+        }
+    }
+
+    
 }

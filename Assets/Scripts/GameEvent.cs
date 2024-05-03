@@ -5,8 +5,9 @@ using UnityEngine;
 using UniRx;
 
 [CreateAssetMenu(fileName = "Game Events", menuName = "Game/Game Events", order = 1)]
-public class GameEvent : ScriptableObject
+public class GameEvent : ScriptableObject, IGameEvents
 {
+
     private Subject<Unit> _collectPumpking = new Subject<Unit>();
     private Subject<Unit> _pauseGame = new Subject<Unit>();
     private Subject<Unit> _resumeGame = new Subject<Unit>();
@@ -30,8 +31,7 @@ public class GameEvent : ScriptableObject
     private ISubject<Unit> _followPlayer = new Subject<Unit>();
     private ISubject<string> _selectSkin = new Subject<string>();
 
-
-   public IObservable<string> OnSelectSkin () => _selectSkin;
+    public IObservable<string> OnSelectSkin () => _selectSkin;
    public IObservable<Unit> OnFollowPlayer() => _followPlayer;
    public IObservable<string> OnUpdateTreasureText() => _updateTreasureText;
     public IObservable<Unit> OnShowError() => _showError;
@@ -81,5 +81,6 @@ public class GameEvent : ScriptableObject
     public void ShowFTUE() => _showFTUE.OnNext(Unit.Default);
     public void HideFTUE() => _hideFTUE.OnNext(Unit.Default);
     public void ShowError() => _showError.OnNext(Unit.Default);
-    
+
+    public event Pause OnPause;
 }

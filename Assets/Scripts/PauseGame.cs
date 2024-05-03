@@ -9,6 +9,7 @@ public class PauseGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _gameEvents.OnPause += Do;
         _gameEvents.PauseGame()
             .Subscribe(_ => Pause())
             .AddTo(this);
@@ -18,6 +19,12 @@ public class PauseGame : MonoBehaviour
             .AddTo(this);
             
     }
+
+    private void Do()
+    {
+        throw new System.NotImplementedException();
+    }
+
 
     void Pause(){
         Time.timeScale = 0f;

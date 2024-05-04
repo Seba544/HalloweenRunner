@@ -8,7 +8,7 @@ public class FollowPlayer : MonoBehaviour
     [SerializeField] GameEvent _gameEvents;
     private GameObject _player;
     private float SmoothSpeed = 3f;
-    private Vector3 Offset = new Vector3(7,0,0);
+    private Vector3 Offset = new Vector3(5,0,0);
     bool followsPlayer;
     // Start is called before the first frame update
     void Start()

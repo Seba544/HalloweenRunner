@@ -4,6 +4,6 @@ namespace Modules.Player.Scripts
 {
     public interface IJump
     {
-        event Action JumpAction;
+        event Action JumpInputAction;
     }
 }

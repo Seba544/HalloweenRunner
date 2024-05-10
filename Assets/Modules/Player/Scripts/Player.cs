@@ -48,29 +48,23 @@ namespace Modules.Player.Scripts
             }
         }
 
-        public bool IsAbleToJump
+        public bool Jump()
         {
-            get
+            if (_isDead)
             {
-                return _isAbleToJump;
+                return false;
             }
-            set
+            if (_isGrounded || _currentAmountOfJumps<1)
             {
-                _isAbleToJump = value;
-                if(_isAbleToJump != value)
-                    OnPropertyChanged();
+                _currentAmountOfJumps++;
+                _isAbleToJump = true;
+                return true;
             }
-        }
+            else
+            {
+                return false;
+            }
 
-        public void Jump()
-        {
-            _currentAmountOfJumps++;
-            if (_currentAmountOfJumps == 2)
-            {
-                IsAbleToJump = false;
-                _currentAmountOfJumps = 0;
-            }
-            
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -4,94 +4,37 @@ using System.Runtime.CompilerServices;
 
 namespace Modules.Player.Scripts
 {
-    public class JumpVM : IJumpVM,IDisposable
+    public class JumpVM : IJumpVM
     {
         private readonly IJump _component;
         private readonly IPlayerRepository _playerRepository;
         private IPlayer _player;
-
-        private bool _isPlayerSliding;
         private bool _isPlayerGrounded;
+        private bool _isPlayerSliding;
         private bool _isPlayerDead;
+        private bool _isPlayerAbleToJump;
 
-        public bool IsPlayerSliding
-        {
-            get
-            {
-                return _isPlayerSliding;
-            }
-            set
-            {
-                _isPlayerSliding = value;
-                if (_isPlayerSliding != value)
-                    OnPropertyChanged(nameof(IsPlayerSliding));
-            }
-        }
 
-        public bool IsPlayerGrounded
-        {
-            get
-            {
-                return _isPlayerGrounded;
-            }
-            set
-            {
-                _isPlayerGrounded = value;
-                if(_isPlayerGrounded!=value)
-                    OnPropertyChanged(nameof(IsPlayerGrounded));
-            }
-        }
-
-        public bool IsPlayerDead
-        {
-            get
-            {
-                return _isPlayerDead;
-            }
-            set
-            {
-                _isPlayerDead = value;
-                if(_isPlayerDead!=value)
-                    OnPropertyChanged(nameof(IsPlayerDead));
-            }
-        }
 
         public JumpVM(IJump component,IPlayerRepository playerRepository)
         {
             _component = component;
             _playerRepository = playerRepository;
             _player = _playerRepository.GetPlayer();
-
-            _player.PropertyChanged += OnPlayerPropertyChanged;
-            _component.JumpAction += OnJumpAction;
+            
+            _component.JumpInputAction += OnJumpInputAction;
         }
 
-        private void OnJumpAction()
+        private void OnJumpInputAction()
         {
-            _player.Jump();
+            if(_player.Jump())
+                DoJump?.Invoke();
         }
-
-        private void OnPlayerPropertyChanged(object sender, PropertyChangedEventArgs e)
-        {
-            if (e.PropertyName == nameof(_player.IsGrounded))
-            {
-                IsPlayerGrounded = _player.IsGrounded;
-            }
-
-            if (e.PropertyName == nameof(_player.IsSliding))
-            {
-                IsPlayerSliding = _player.IsSliding;
-            }
-
-            if (e.PropertyName == nameof(_player.IsDead))
-            {
-                IsPlayerDead = _player.IsDead;
-            }
-        }
+        
 
         public void Dispose()
         {
-            _player.PropertyChanged -= OnPlayerPropertyChanged;
+            _component.JumpInputAction -= OnJumpInputAction;
         }
 
 
@@ -101,5 +44,23 @@ namespace Modules.Player.Scripts
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        public bool IsSliding
+        {
+            get
+            {
+                return _isPlayerSliding;
+            }
+            set
+            {
+                _isPlayerSliding = value;
+                if (value != _isPlayerSliding)
+                {
+                    OnPropertyChanged(nameof(IsSliding));
+                }
+            }
+        }
+
+        public event Action DoJump = () => {};
     }
 }

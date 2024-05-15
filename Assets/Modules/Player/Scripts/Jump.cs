@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel;
+using Installers;
 using UnityEngine;
 
 namespace Modules.Player.Scripts
@@ -25,7 +26,7 @@ namespace Modules.Player.Scripts
             _initialColliderOffsetY = _boxCollider.offset.y;
             _isPlayerAbleToJump = true;
             
-            _jumpVM = new JumpVM(this, new InMemoryPlayerRepository());
+            _jumpVM = new JumpVM(this, ServiceLocator.Instance.GetService<IPlayerRepository>());
             _jumpVM.DoJump += DoJump;
         }
 

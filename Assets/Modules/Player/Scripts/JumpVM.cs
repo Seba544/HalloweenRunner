@@ -13,9 +13,7 @@ namespace Modules.Player.Scripts
         private bool _isPlayerSliding;
         private bool _isPlayerDead;
         private bool _isPlayerAbleToJump;
-
-
-
+        
         public JumpVM(IJump component,IPlayerRepository playerRepository)
         {
             _component = component;
@@ -53,9 +51,9 @@ namespace Modules.Player.Scripts
             }
             set
             {
-                _isPlayerSliding = value;
                 if (value != _isPlayerSliding)
                 {
+                    _isPlayerSliding = value;
                     OnPropertyChanged(nameof(IsSliding));
                 }
             }

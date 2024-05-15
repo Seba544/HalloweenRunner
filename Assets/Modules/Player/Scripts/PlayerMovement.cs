@@ -45,7 +45,6 @@ public class PlayerMovement : MonoBehaviour
             .Subscribe(_ => Revive())
             .AddTo(this);
         
-        _jumpButton.onClick.AddListener(Jump);
         _slideButton.onClick.AddListener(Slide);
 
         _rgbd = GetComponent<Rigidbody2D>();
@@ -56,22 +55,12 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.W))
-            Jump();
-        
         if(Input.GetKeyDown(KeyCode.S))
             Slide();
         if (Time.timeScale == 0 || isDead)
             return;
         _rgbd.velocity = new Vector2(_currentSpeed, _rgbd.velocity.y);
 
-        if (IsGrounded())
-        {
-            _animator.SetBool("isRunning", true);
-        }else{
-            _animator.SetBool("isRunning", false);
-        }
-        
     }
 
     void ReproduceDeath()
@@ -88,36 +77,9 @@ public class PlayerMovement : MonoBehaviour
         _animator.SetTrigger("toRevive");
         isDead = false;
     }
-
-    private void Jump()
-    {
-        
-        
-        if (isSliding)
-        {
-            _animator.SetBool("isSliding", false);
-            _boxCollider.size = new Vector2(_boxCollider.size.x, _initialColliderSizeY);
-            _boxCollider.offset = new Vector2(_boxCollider.offset.x, _initialColliderOffsetY);
-            isSliding = false;
-            _currentSpeed = PlayerSpeed;
-            return;
-        }
-        if ((IsGrounded() || currentAmountOfJumps < 1) && !isDead)
-        {
-            
-            _animator.SetTrigger("isJumping");
-            _rgbd.velocity = new Vector2(_rgbd.velocity.x, JumpForce);
-            _audio.PlayOneShot(JumpAudioClip);
-            currentAmountOfJumps++;
-            _currentSpeed = PlayerSpeed;
-
-        }
-        
-
-    }
     private void Slide()
     {
-        if (IsGrounded() && !isDead && !isSliding)
+        if (!isDead && !isSliding)
         {
             _currentSpeed = PlayerSpeed*1.5f;
             _animator.SetBool("isSliding", true);
@@ -128,27 +90,7 @@ public class PlayerMovement : MonoBehaviour
 
         }
     }
-    bool IsGrounded()
-    {
-        float extraHeightText = 0.5f;
-        RaycastHit2D raycastHit = Physics2D.BoxCast(_boxCollider.bounds.center, _boxCollider.bounds.size, 0f, Vector2.down, extraHeightText, GroundLayerMask);
-        Color rayColor;
-        if (raycastHit.collider != null)
-        {
-            rayColor = Color.green;
-        }
-        else
-        {
-            rayColor = Color.red;
-        }
-        Debug.DrawRay(_boxCollider.bounds.center + new Vector3(_boxCollider.bounds.extents.x, 0), Vector2.down * (_boxCollider.bounds.extents.y + extraHeightText), rayColor);
-        Debug.DrawRay(_boxCollider.bounds.center - new Vector3(_boxCollider.bounds.extents.x, 0), Vector2.down * (_boxCollider.bounds.extents.y + extraHeightText), rayColor);
-        Debug.DrawRay(_boxCollider.bounds.center - new Vector3(_boxCollider.bounds.extents.x, _boxCollider.bounds.extents.y + extraHeightText), Vector2.down * (_boxCollider.bounds.extents.y + extraHeightText), rayColor);
-
-        if (raycastHit.collider != null)
-            currentAmountOfJumps = 0;
-        return raycastHit.collider != null;
-    }
+    
 
     
 }

@@ -1,5 +1,6 @@
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Installers;
 using UnityEngine;
 
 namespace Modules.Player.Scripts
@@ -12,10 +13,11 @@ namespace Modules.Player.Scripts
 
         private BoxCollider2D _boxCollider;
         private GroundCheckVM _groundCheckVm;
+        [SerializeField] private Animator _animator;
         void Start()
         {
             _boxCollider = GetComponent<BoxCollider2D>();
-            _groundCheckVm = new GroundCheckVM(this, new InMemoryPlayerRepository());
+            _groundCheckVm = new GroundCheckVM(this, ServiceLocator.Instance.GetService<IPlayerRepository>());
         }
         void FixedUpdate()
         {
@@ -35,6 +37,13 @@ namespace Modules.Player.Scripts
             Debug.DrawRay(_boxCollider.bounds.center - new Vector3(_boxCollider.bounds.extents.x, _boxCollider.bounds.extents.y + extraHeightText), Vector2.down * (_boxCollider.bounds.extents.y + extraHeightText), rayColor);
 
             IsPlayerGrounded = raycastHit.collider != null;
+
+            if (IsPlayerGrounded)
+            {
+                _animator.SetBool("isRunning", true);
+            }else{
+                _animator.SetBool("isRunning", false);
+            }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
@@ -52,9 +61,12 @@ namespace Modules.Player.Scripts
             }
             set
             {
-                _isPlayerGrounded = value;
-                if(_isPlayerGrounded!=value)
+                if (_isPlayerGrounded != value)
+                {
+                    _isPlayerGrounded = value;
                     OnPropertyChanged(nameof(IsPlayerGrounded));
+                }
+                    
             }
         }
 

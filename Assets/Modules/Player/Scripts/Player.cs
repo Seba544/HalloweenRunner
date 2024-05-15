@@ -15,9 +15,17 @@ namespace Modules.Player.Scripts
         public bool IsGrounded {get { return _isGrounded; }
             set
             {
-                _isGrounded = value;
-                if(value!=_isGrounded)
+                if (value)
+                {
+                    _currentAmountOfJumps = 0;
+                }
+                
+                if (value != _isGrounded)
+                {
+                    _isGrounded = value;
                     OnPropertyChanged(nameof(IsGrounded));
+                }
+                    
             }}
 
         public bool IsSliding
@@ -54,7 +62,7 @@ namespace Modules.Player.Scripts
             {
                 return false;
             }
-            if (_isGrounded || _currentAmountOfJumps<1)
+            if (_isGrounded || _currentAmountOfJumps<2)
             {
                 _currentAmountOfJumps++;
                 _isAbleToJump = true;

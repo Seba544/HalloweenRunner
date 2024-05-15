@@ -22,6 +22,7 @@ namespace Modules.Player.Scripts
             if (e.PropertyName == nameof(_groundCheck.IsPlayerGrounded))
             {
                 _player.IsGrounded = _groundCheck.IsPlayerGrounded;
+                
             }
         }
 

@@ -1,20 +1,22 @@
 using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Events;
 
 namespace Modules.Player.Scripts
 {
-    public class JumpVM : IJumpVM
+    public class JumpComponentModel : IJumpComponentModel
     {
-        private readonly IJump _component;
+        private IJump _component;
+        private IEventBus _eventBus;
         private readonly IPlayerRepository _playerRepository;
         private IPlayer _player;
         private bool _isPlayerGrounded;
         private bool _isPlayerSliding;
         private bool _isPlayerDead;
         private bool _isPlayerAbleToJump;
-        
-        public JumpVM(IJump component,IPlayerRepository playerRepository)
+
+        public JumpComponentModel(IJump component,IPlayerRepository playerRepository)
         {
             _component = component;
             _playerRepository = playerRepository;

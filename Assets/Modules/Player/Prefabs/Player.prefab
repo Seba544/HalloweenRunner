@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
-  PlayerSpeed: 5
+  PlayerSpeed: 2.5
   JumpForce: 15
   GroundLayerMask:
     serializedVersion: 2

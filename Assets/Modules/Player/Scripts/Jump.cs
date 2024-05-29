@@ -1,13 +1,12 @@
 using System;
-using System.ComponentModel;
-using Installers;
+using Builder;
 using UnityEngine;
 
 namespace Modules.Player.Scripts
 {
     public class Jump : MonoBehaviour,IJump
     {
-        private JumpVM _jumpVM;
+        private IJumpComponentModel _jumpComponentModel;
         private bool _isPlayerAbleToJump;
         private bool _isPlayerSliding;
         BoxCollider2D _boxCollider;
@@ -25,9 +24,12 @@ namespace Modules.Player.Scripts
             _initialColliderSizeY = _boxCollider.size.y;
             _initialColliderOffsetY = _boxCollider.offset.y;
             _isPlayerAbleToJump = true;
+
+            var componentModelBuilder = new JumpComponentModelBuilder(this);
+            componentModelBuilder.Create();
+            _jumpComponentModel = componentModelBuilder.GetComponentModel();
             
-            _jumpVM = new JumpVM(this, ServiceLocator.Instance.GetService<IPlayerRepository>());
-            _jumpVM.DoJump += DoJump;
+            _jumpComponentModel.DoJump += DoJump;
         }
 
         private void DoJump()
@@ -50,7 +52,7 @@ namespace Modules.Player.Scripts
 
         private void OnDestroy()
         {
-            _jumpVM.Dispose();
+            _jumpComponentModel.Dispose();
         }
 
 

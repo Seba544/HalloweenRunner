@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace Modules.Player.Scripts
 {
-    public interface IJumpVM : INotifyPropertyChanged,IDisposable
+    public interface IJumpComponentModel : INotifyPropertyChanged,IDisposable
     {
         event Action DoJump;
     }

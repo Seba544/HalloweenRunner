@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3202819251255094923}
   - component: {fileID: 7761911450786121520}
   - component: {fileID: 6968196566100275248}
-  - component: {fileID: -7649950303124659711}
   m_Layer: 0
   m_Name: Candy
   m_TagString: Untagged
@@ -116,7 +115,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.78610986, y: 0.796}
+    oldSize: {x: 0.6550915, y: 0.66333336}
     newSize: {x: 3.93, y: 3.9799998}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -125,22 +124,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9826373, y: 0.99499995}
   m_EdgeRadius: 0
---- !u!114 &-7649950303124659711
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3352534446014920033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b76a12b4cfa46b843ae05242adad7fd7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  HeightLevels:
-  - HeightLevel: 0
-    OffsetY: 1
-  - HeightLevel: 1
-    OffsetY: 3
-  - HeightLevel: 2
-    OffsetY: 5

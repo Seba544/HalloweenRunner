@@ -11,6 +11,8 @@ TagManager:
   - JumpButton
   - Enemy
   - BulletSpawnPoint
+  - Monster
+  - ObjectSpawnPoint
   layers:
   - Default
   - TransparentFX
@@ -50,4 +52,7 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Monster
+    uniqueID: 1411579491
     locked: 0

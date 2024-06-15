@@ -115,7 +115,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.9826373, y: 0.99499995}
+    oldSize: {x: 0.6550915, y: 0.66333336}
     newSize: {x: 3.93, y: 3.9799998}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -239,7 +239,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.9826373, y: 0.99499995}
+    oldSize: {x: 0.6550915, y: 0.66333336}
     newSize: {x: 3.93, y: 3.9799998}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -341,7 +341,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7178213922678308987, guid: 1f717110d25a840408b0cab6ac4a48a6, type: 3}
       propertyPath: m_Name
-      value: x5Candy Variant
+      value: Candy Variant x5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8711274260220429326, guid: 1f717110d25a840408b0cab6ac4a48a6, type: 3}
+      propertyPath: CandyType
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f717110d25a840408b0cab6ac4a48a6, type: 3}

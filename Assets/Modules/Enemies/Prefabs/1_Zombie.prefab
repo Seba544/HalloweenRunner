@@ -11,15 +11,15 @@ GameObject:
   - component: {fileID: 7730696646274163474}
   - component: {fileID: 7001911942168017852}
   - component: {fileID: 1763460555709823520}
-  - component: {fileID: 6961509731785920680}
   - component: {fileID: 2180624770542379754}
   - component: {fileID: 640462280847892812}
   - component: {fileID: 4595964427180114169}
-  - component: {fileID: 4514154961362370593}
   - component: {fileID: -6447589562472507194}
+  - component: {fileID: 4514154961362370593}
+  - component: {fileID: -9129823877343036785}
   m_Layer: 0
   m_Name: 1_Zombie
-  m_TagString: Enemy
+  m_TagString: Monster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,7 +32,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8332542761670196253}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.1968222, y: -0.52345806, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -77,8 +77,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1411579491
+  m_SortingLayer: 1
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 4a46dfa70dcf08246a4de8f5d7746c93, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -112,20 +112,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &6961509731785920680
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8332542761670196253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ce60bb20a401b149835a3d9bdbe94dd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
-  DestroyAfterSeconds: 10
 --- !u!95 &2180624770542379754
 Animator:
   serializedVersion: 4
@@ -268,18 +254,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4514154961362370593
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8332542761670196253}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd66c0339aa4b3a44bae5f6318b4eb1a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &-6447589562472507194
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -292,4 +266,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c172c23652da0c4592eed5637f9ddd8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 3
+  MonsterType: 0
+  Speed: 6
+--- !u!114 &4514154961362370593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8332542761670196253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd66c0339aa4b3a44bae5f6318b4eb1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-9129823877343036785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8332542761670196253}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 345eb9aadaf16064d899c07cb3be1672, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

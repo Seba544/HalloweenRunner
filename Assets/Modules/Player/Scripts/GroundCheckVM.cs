@@ -7,7 +7,7 @@ namespace Modules.Player.Scripts
     {
         private readonly IGroundCheck _groundCheck;
         private readonly IPlayerRepository _playerRepository;
-        private IPlayer _player;
+        private readonly IPlayer _player;
 
         public GroundCheckVM(IGroundCheck groundCheck, IPlayerRepository playerRepository)
         {
@@ -21,7 +21,7 @@ namespace Modules.Player.Scripts
         {
             if (e.PropertyName == nameof(_groundCheck.IsPlayerGrounded))
             {
-                _player.IsGrounded = _groundCheck.IsPlayerGrounded;
+                _player.SetGrounded(_groundCheck.IsPlayerGrounded);
                 
             }
         }

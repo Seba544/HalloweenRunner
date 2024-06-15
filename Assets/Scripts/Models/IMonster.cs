@@ -4,7 +4,8 @@ namespace Models
 {
     public interface IMonster : INotifyPropertyChanged
     {
-        public float CurrentSpeed { get; set; }
+        public string MonsterId { get; }
+        public float CurrentSpeed { get; }
         void Move();
         void Stop();
     }

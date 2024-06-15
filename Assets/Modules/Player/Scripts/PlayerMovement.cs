@@ -37,9 +37,9 @@ public class PlayerMovement : MonoBehaviour
         currentAmountOfJumps = 0;
 
 
-        _gameEvents.OnGameOver()
+        /*_gameEvents.OnGameOver()
             .Subscribe(_ => ReproduceDeath())
-            .AddTo(this);
+            .AddTo(this);*/
 
         _gameEvents.OnRevive()
             .Subscribe(_ => Revive())
@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
     }
     
 
-    void FixedUpdate()
+    /*void FixedUpdate()
     {
         if(Input.GetKeyDown(KeyCode.S))
             Slide();
@@ -61,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         _rgbd.velocity = new Vector2(_currentSpeed, _rgbd.velocity.y);
 
-    }
+    }*/
 
     void ReproduceDeath()
     {

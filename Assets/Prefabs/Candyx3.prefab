@@ -115,7 +115,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.78610986, y: 0.796}
+    oldSize: {x: 0.6550915, y: 0.66333336}
     newSize: {x: 3.93, y: 3.9799998}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -239,7 +239,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.78610986, y: 0.796}
+    oldSize: {x: 0.6550915, y: 0.66333336}
     newSize: {x: 3.93, y: 3.9799998}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -363,7 +363,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.78610986, y: 0.796}
+    oldSize: {x: 0.6550915, y: 0.66333336}
     newSize: {x: 3.93, y: 3.9799998}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -381,6 +381,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 376606768288382046}
+  - component: {fileID: 8711274260220429326}
   - component: {fileID: -1403371388609701784}
   m_Layer: 0
   m_Name: Candyx3
@@ -412,6 +413,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &8711274260220429326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7178213922678308987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05690af58f4da2447a60e21374acb244, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CandyType: 1
 --- !u!114 &-1403371388609701784
 MonoBehaviour:
   m_ObjectHideFlags: 0

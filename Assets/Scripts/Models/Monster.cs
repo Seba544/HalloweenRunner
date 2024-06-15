@@ -8,10 +8,14 @@ namespace Models
         private readonly float _speed;
         private float _currentSpeed;
 
-        public Monster(float speed)
+        public Monster(string monsterId,float speed)
         {
+            MonsterId = monsterId;
             _speed = speed;
         }
+
+        public string MonsterId { get; }
+
         public float CurrentSpeed
         {
             get => _currentSpeed;

@@ -4,27 +4,41 @@ using UnityEngine;
 using UniRx;
 using System;
 using System.Linq;
+using Builder.Controllers;
 using Components;
+using Configuration;
+using Controllers;
+using Events;
+using Strategies;
 using Random = UnityEngine.Random;
 
 public class ItemSpawner : MonoBehaviour
 {
-    public Dice Dice;
+    public DiceConfiguration Dice;
     [SerializeField] GameEvent _gameEvents;
-    public List<EnemyInitializer> Enemies;
     public List<Monster> Monsters;
-    public GameObject Pumpkin;
     Coroutine _spawnCoroutine = null;
     public float MinSpawnTime;
     public float MaxSpawnTime;
-    const int ProbabilityOfOccurrencePumpkin = 1;
+    public MonsterObjectPool MonsterObjectPool;
+    public CandyObjectPool CandyObjectPool;
+    private IEventBus _eventBus;
 
-    public List<GameObject> Candies;
-    // Start is called before the first frame update
+    private IObjectSpawnerController _controller;
+
+    public List<CandyVariation> Candies;
+
+    private void Awake()
+    {
+        var builder = new ObjectSpawnerControllerBuilder();
+        builder.Create();
+        _controller = builder.GetObjectSpawnerController();
+    }
+
     void Start()
     {
         
-        _spawnCoroutine = StartCoroutine(Spawn());
+        _spawnCoroutine = StartCoroutine(SpawnV2());
         _gameEvents.OnGameOver()
             .Subscribe(_ =>{
                 StopSpawningEnemies();
@@ -38,27 +52,39 @@ public class ItemSpawner : MonoBehaviour
              .AddTo(this);
         _gameEvents.OnRevive()
             .Subscribe(_ => {
-                _spawnCoroutine = StartCoroutine(Spawn());
+                _spawnCoroutine = StartCoroutine(SpawnV2());
             })
             .AddTo(this);
     }
 
-    IEnumerator Spawn()
+    IEnumerator SpawnV2()
     {
         while (true)
         {
             yield return new WaitForSeconds(Random.Range(MinSpawnTime,MaxSpawnTime));
-            if(Random.Range(1,11)<=ProbabilityOfOccurrencePumpkin){
-                Instantiate(Candies[Random.Range(0,Candies.Count)], transform.position, Quaternion.identity);
-                Debug.Log("Candy spawned");
-            }else{
-                //var rollEnemyDice = new RollEnemyDice(Dice,Random.Range(1,11),Enemies);
-                //var enemyPrefab = rollEnemyDice.Execute();
-                Instantiate(Monsters.First(), transform.position, Quaternion.identity);
-            }
+            var face = RollDice();
             
+            switch (face)
+            {
+                case DiceFace.MONSTER:
+                    Monster monsterSelected = Monsters[Random.Range(0,Monsters.Count)];
+                    Monster monsterGO = MonsterObjectPool.GetObject(monsterSelected.MonsterType);
+                    _controller.RelocateObjectSpawnPosition(monsterGO.GetMonsterId(),transform.position.x,transform.position.y,0);
+                    break;
+                case DiceFace.CANDY:
+                    var candySelected = Candies[Random.Range(0, Candies.Count)];
+                    var candyGO = CandyObjectPool.GetObject(candySelected.CandyType);
+                    _controller.RelocateObjectSpawnPosition(candyGO.GetCandyVariationId(),transform.position.x,transform.position.y,0);
+                    break;
+            }
         }
+    }
 
+    private DiceFace RollDice()
+    {
+        int rollDiceResult = Random.Range(0, Dice.Faces.Count);
+        DiceFace face = Dice.Faces[rollDiceResult];
+        return face;
     }
 
     void StopSpawningEnemies()
@@ -72,10 +98,21 @@ public class ItemSpawner : MonoBehaviour
         _gameEvents.EndOfLevel();
     }
 
-    
-    
+
 }
-    [Serializable]
-    public class Dice{
-        public List<string> Faces = new List<string>();
+
+public record ObjectSpawnPosition
+{
+    public float PosX;
+    public float PosY;
+    public float PosZ;
+
+    public ObjectSpawnPosition(float posX, float posY, float posZ)
+    {
+        PosX = posX;
+        PosY = posY;
+        PosZ = posZ;
     }
+}
+
+

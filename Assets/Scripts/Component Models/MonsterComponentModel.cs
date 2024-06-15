@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -25,10 +26,18 @@ namespace Component_Models
             }
         }
 
-        public void Init()
+        public void Move()
         {
             _monster.Move();
         }
+
+        public void Stop()
+        {
+            _monster.Stop();
+        }
+
+        public event Action<float,float,float> RelocateToSpawnPoint;
+        public string GetMonsterId() => _monster.MonsterId;
 
         private IMonster _monster;
 
@@ -38,8 +47,20 @@ namespace Component_Models
             _eventBus.Subscribe<PauseGameEvent>(OnPauseGameEvent);
             _eventBus.Subscribe<ResumeGameEvent>(OnResumeGame);
             _eventBus.Subscribe<GameOverEvent>(OnGameOver);
-            _monster = new Monster(monsterSpeed);
+            _eventBus.Subscribe<RelocateObjectSpawnPositionEvent>(OnObjectSpawn);
+            CreateMonster(Guid.NewGuid().ToString(),monsterSpeed);
             _monster.PropertyChanged += OnPropertyChanged;
+        }
+
+        private void CreateMonster(string id,float monsterSpeed)
+        {
+            _monster = new Monster(id,monsterSpeed);
+        }
+
+        private void OnObjectSpawn(RelocateObjectSpawnPositionEvent evt)
+        {
+            if(evt.ObjectId==_monster.MonsterId)
+                RelocateToSpawnPoint?.Invoke(evt.PosX,evt.PosY,evt.PosZ);
         }
 
         private void OnGameOver(GameOverEvent _)

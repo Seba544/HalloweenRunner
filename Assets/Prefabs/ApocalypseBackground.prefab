@@ -267,7 +267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19dc9b551c8f7ab48b13a314e2293508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _parallaxSpeed: 0
+  _parallaxSpeed: -0.1
 --- !u!1 &9174523503756480016
 GameObject:
   m_ObjectHideFlags: 0
@@ -1009,7 +1009,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19dc9b551c8f7ab48b13a314e2293508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _parallaxSpeed: -1.2
+  _parallaxSpeed: 0
 --- !u!1 &9174523504257301794
 GameObject:
   m_ObjectHideFlags: 0

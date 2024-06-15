@@ -1,7 +1,7 @@
-using System;
 using System.ComponentModel;
 using Builder;
 using Component_Models.Contracts;
+using Strategies;
 using UnityEngine;
 
 namespace Components
@@ -13,13 +13,30 @@ namespace Components
         private Rigidbody2D _rgbd;
         private float _currentSpeed;
         public float Speed;
+        private MonsterObjectPool _monsterObjectPool;
+        private Transform _spawnPoint;
 
         private void Awake()
         {
+            
+            _spawnPoint = GameObject.FindWithTag("ObjectSpawnPoint").transform;
+            switch (MonsterType)
+            {
+                case MonsterType.ZOMBIE:
+                    _monsterObjectPool = FindObjectOfType<MonsterObjectPool>();
+                    break;
+            }
             var builder = new MonsterComponentModelBuilder(Speed);
             builder.Create();
             _monsterComponentModel = builder.GetMonsterComponentModel();
+            MonsterId = _monsterComponentModel.GetMonsterId();
             _monsterComponentModel.PropertyChanged += OnPropertyChanged;
+            _monsterComponentModel.RelocateToSpawnPoint += OnRelocateToSpawnPoint;
+        }
+
+        private void OnRelocateToSpawnPoint(float posX, float posY, float posZ)
+        {
+            transform.position = new Vector3(posX, posY, posZ);
         }
 
         private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -35,12 +52,22 @@ namespace Components
             
             _rgbd = GetComponent<Rigidbody2D>();
             _animator = GetComponent<Animator>();
-            _monsterComponentModel.Init();
+            
         }
-        
+
+        private void OnEnable()
+        {
+            _monsterComponentModel.Move();
+        }
+
+        private void OnDisable()
+        {
+            _monsterComponentModel.Stop();
+            _monsterObjectPool.ReturnObject(gameObject);
+        }
+
         void FixedUpdate()
         {
-            Debug.Log("Monster Speed: "+ _currentSpeed);
             if(Time.timeScale==0)
                 Stop();
             
@@ -65,6 +92,8 @@ namespace Components
 
         private void OnDestroy()
         {
+            _monsterComponentModel.PropertyChanged -= OnPropertyChanged;
+            _monsterComponentModel.RelocateToSpawnPoint -= OnRelocateToSpawnPoint;
             _monsterComponentModel.Dispose();
         }
     }

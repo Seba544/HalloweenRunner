@@ -7,10 +7,11 @@ namespace Modules.Player.Scripts
     public class Player : IPlayer
     {
         private bool _isGrounded;
-        private bool _isSliding;
         private bool _isDead;
         private bool _isAbleToJump;
         private int _currentAmountOfJumps;
+        private float _speed;
+        private float _currentSpeed;
 
         public bool IsGrounded {get { return _isGrounded; }
             set
@@ -28,20 +29,6 @@ namespace Modules.Player.Scripts
                     
             }}
 
-        public bool IsSliding
-        {
-            get
-            {
-                return _isSliding;
-            }
-            set
-            {
-                _isSliding = value;
-                if(value!=_isSliding)
-                    OnPropertyChanged(nameof(IsSliding));
-            }
-        }
-
         public bool IsDead
         {
             get
@@ -50,10 +37,31 @@ namespace Modules.Player.Scripts
             }
             set
             {
-                _isDead = value;
-                if(value!=_isDead)
-                    OnPropertyChanged(nameof(IsDead));
+                if (value != _isDead)
+                {
+                    _isDead = value;
+                    OnPropertyChanged();
+                }
             }
+        }
+
+        public float CurrentSpeed
+        {
+            get => _currentSpeed;
+            set
+            {
+                if (value != _currentSpeed)
+                {
+                    _currentSpeed = value;
+                    OnPropertyChanged();
+                }
+            }
+        }
+
+        public void Run(float speed)
+        {
+            _speed = speed;
+            CurrentSpeed = _speed;
         }
 
         public bool Jump()
@@ -73,6 +81,18 @@ namespace Modules.Player.Scripts
                 return false;
             }
 
+        }
+
+        public void Death()
+        {
+            CurrentSpeed = 0;
+            IsDead = true;
+            
+        }
+
+        public void SetGrounded(bool isGrounded)
+        {
+            IsGrounded = isGrounded;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

@@ -30,4 +30,7 @@ public class Candy : MonoBehaviour
     {
         _componentModel.Dispose();
     }
+    
 }
+
+

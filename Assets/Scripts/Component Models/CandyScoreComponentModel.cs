@@ -17,9 +17,9 @@ namespace Component_Models
             _eventBus.Subscribe<CollectCandyEvent>(OnCollectCandyEvent);
         }
 
-        private void OnCollectCandyEvent(CollectCandyEvent _)
+        private void OnCollectCandyEvent(CollectCandyEvent collectCandyEvent)
         {
-            AmountOfCandies++;
+            AmountOfCandies += collectCandyEvent.Amount;
         }
 
         public void Dispose()

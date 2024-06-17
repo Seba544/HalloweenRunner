@@ -1,4 +1,7 @@
 ﻿namespace Events
 {
-    public record CollectCandyEvent();
+    public record CollectCandyEvent(int Amount)
+    {
+        public int Amount { get; } = Amount;
+    }
 }

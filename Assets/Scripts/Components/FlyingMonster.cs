@@ -80,7 +80,6 @@ namespace Components
         private void OnDisable()
         {
             _componentModel.Stop();
-            _monsterObjectPool.ReturnObject(gameObject);
         }
 
         private void OnDestroy()

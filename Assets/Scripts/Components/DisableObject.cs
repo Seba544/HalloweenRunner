@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Strategies;
 using UnityEngine;
 
 namespace Components
@@ -7,6 +8,13 @@ namespace Components
     public class DisableObject : MonoBehaviour
     {
         private Coroutine _coroutine;
+        private MonsterObjectPool _monsterObjectPool;
+
+        private void Awake()
+        {
+            _monsterObjectPool = FindObjectOfType<MonsterObjectPool>();
+        }
+
         private void OnEnable()
         {
             _coroutine = StartCoroutine(Disable());
@@ -17,7 +25,7 @@ namespace Components
             while (true)
             {
                 yield return new WaitForSeconds(3f);
-                gameObject.SetActive(false);
+                _monsterObjectPool.ReturnObject(gameObject);
             }
         }
 

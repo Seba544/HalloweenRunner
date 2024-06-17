@@ -17,6 +17,7 @@ public class ItemSpawner : MonoBehaviour
     public DiceConfiguration Dice;
     [SerializeField] GameEvent _gameEvents;
     public List<Monster> Monsters;
+    public List<Candy> Candies;
     Coroutine _spawnCoroutine = null;
     public float MinSpawnTime;
     public float MaxSpawnTime;
@@ -26,7 +27,6 @@ public class ItemSpawner : MonoBehaviour
 
     private IObjectSpawnerController _controller;
 
-    public List<CandyVariation> Candies;
 
     private void Awake()
     {
@@ -74,7 +74,7 @@ public class ItemSpawner : MonoBehaviour
                 case DiceFace.CANDY:
                     var candySelected = Candies[Random.Range(0, Candies.Count)];
                     var candyGO = CandyObjectPool.GetObject(candySelected.CandyType);
-                    _controller.RelocateObjectSpawnPosition(candyGO.GetCandyVariationId(),transform.position.x,transform.position.y,0);
+                    _controller.RelocateObjectSpawnPosition(candyGO.GetCandyId(),transform.position.x,transform.position.y,0);
                     break;
             }
         }

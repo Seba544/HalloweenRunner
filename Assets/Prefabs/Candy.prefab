@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3355192366107439189}
   - component: {fileID: 3202819251255094923}
-  - component: {fileID: 7761911450786121520}
   - component: {fileID: 6968196566100275248}
+  - component: {fileID: 7761911450786121520}
   m_Layer: 0
   m_Name: Candy
   m_TagString: Untagged
@@ -86,18 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7761911450786121520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3352534446014920033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 92e26455d23e1774898c02dd71bdce88, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &6968196566100275248
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -124,3 +112,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.9826373, y: 0.99499995}
   m_EdgeRadius: 0
+--- !u!114 &7761911450786121520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3352534446014920033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92e26455d23e1774898c02dd71bdce88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CandyType: 0
+  Amount: 1
+  HeightLevels:
+  - HeightLevel: 0
+    OffsetY: 1
+  - HeightLevel: 1
+    OffsetY: 3
+  - HeightLevel: 2
+    OffsetY: 5

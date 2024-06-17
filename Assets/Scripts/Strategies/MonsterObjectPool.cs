@@ -59,6 +59,7 @@ namespace Strategies
 
         public void ReturnObject(GameObject obj)
         {
+            obj.transform.position = transform.position;
             obj.SetActive(false);
         }
     }

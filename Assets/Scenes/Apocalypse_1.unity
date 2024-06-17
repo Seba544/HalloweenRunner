@@ -440,16 +440,12 @@ MonoBehaviour:
   Monsters:
   - {fileID: -6447589562472507194, guid: c4eccc9d8a609fe46be29e2f08443449, type: 3}
   - {fileID: -3385239411266477097, guid: 3e7840c648e5fff45916dd11a913b268, type: 3}
+  Candies:
+  - {fileID: 7761911450786121520, guid: d7941571083f71b4e8afe511b38c511b, type: 3}
   MinSpawnTime: 1
   MaxSpawnTime: 3
   MonsterObjectPool: {fileID: 1791531492}
-  CandyObjectPool: {fileID: 0}
-  Candies:
-  - {fileID: 3352534446014920033, guid: d7941571083f71b4e8afe511b38c511b, type: 3}
-  - {fileID: 7178213922678308987, guid: 1f717110d25a840408b0cab6ac4a48a6, type: 3}
-  - {fileID: 9005356262343690552, guid: 0ebc86c17cb4d6e47b757bdcee486d1c, type: 3}
-  - {fileID: 6407654742258153880, guid: 1aa049b67daa683449768841e309ae62, type: 3}
-  - {fileID: 1327315005369513656, guid: 7bbb21eb84c270e4d93789a6583338d3, type: 3}
+  CandyObjectPool: {fileID: 529603609}
 --- !u!224 &347284733 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8791462758102006435, guid: dd2e507248401b14894b369ac60a4bcb, type: 3}
@@ -555,6 +551,54 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameEvents: {fileID: 11400000, guid: 3a60e387ade0ac6448998c4e7bcf28c1, type: 2}
+--- !u!1 &529603607
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 529603608}
+  - component: {fileID: 529603609}
+  m_Layer: 0
+  m_Name: CandyObjectPool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &529603608
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529603607}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1623674640}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &529603609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 529603607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7c230cb9e9d4e9290c6784f2cb4df90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Candies:
+  - CandyType: 0
+    Prefab: {fileID: 3352534446014920033, guid: d7941571083f71b4e8afe511b38c511b, type: 3}
+  InitialSize: 5
 --- !u!224 &803840271 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3030048418467409962, guid: fc6c5b7fbb434c64e854d8d1d9b54355, type: 3}
@@ -1509,6 +1553,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1791531491}
+  - {fileID: 529603608}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

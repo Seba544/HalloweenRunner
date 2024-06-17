@@ -63,7 +63,6 @@ namespace Components
         private void OnDisable()
         {
             _monsterComponentModel.Stop();
-            _monsterObjectPool.ReturnObject(gameObject);
         }
 
         void FixedUpdate()

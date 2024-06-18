@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UniRx;
-using System;
-using System.Linq;
 using Builder.Controllers;
 using Components;
 using Configuration;
@@ -18,11 +16,13 @@ public class ItemSpawner : MonoBehaviour
     [SerializeField] GameEvent _gameEvents;
     public List<Monster> Monsters;
     public List<Candy> Candies;
+    public List<Obstacle> Obstacles;
     Coroutine _spawnCoroutine = null;
     public float MinSpawnTime;
     public float MaxSpawnTime;
     public MonsterObjectPool MonsterObjectPool;
     public CandyObjectPool CandyObjectPool;
+    public ObstacleObjectPool ObstacleObjectPool;
     private IEventBus _eventBus;
 
     private IObjectSpawnerController _controller;
@@ -75,6 +75,11 @@ public class ItemSpawner : MonoBehaviour
                     var candySelected = Candies[Random.Range(0, Candies.Count)];
                     var candyGO = CandyObjectPool.GetObject(candySelected.CandyType);
                     _controller.RelocateObjectSpawnPosition(candyGO.GetCandyId(),transform.position.x,transform.position.y,0);
+                    break;
+                case DiceFace.OBSTACLE:
+                    var obstacleSelected = Obstacles[Random.Range(0, Obstacles.Count)];
+                    var obstacleGo = ObstacleObjectPool.GetObject(obstacleSelected.obstacleType);
+                    _controller.RelocateObjectSpawnPosition(obstacleGo.GetObstacleId(),transform.position.x,transform.position.y,0);
                     break;
             }
         }

@@ -38,7 +38,7 @@ public class FollowPlayer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         if(Time.timeScale==0 || !followsPlayer)
             return;

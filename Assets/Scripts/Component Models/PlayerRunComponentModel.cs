@@ -1,6 +1,8 @@
+using System;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Component_Models.Contracts;
+using Events;
 using Modules.Player.Scripts;
 
 namespace Component_Models
@@ -8,6 +10,7 @@ namespace Component_Models
     public class PlayerRunComponentModel : IPlayerRunComponentModel
     {
         private readonly IPlayerRepository _playerRepository;
+        private readonly IEventBus _eventBus;
         private bool _isDead;
         private float _currentSpeed;
         private IPlayer _player;
@@ -43,13 +46,33 @@ namespace Component_Models
             _player.Run(speed);
         }
 
-        public PlayerRunComponentModel(IPlayerRepository playerRepository)
+        public void ReduceSpeed()
+        {
+            _player.ReduceSpeed();
+        }
+        public void ResumeSpeed()
+        {
+            _player.ResumeSpeed();
+        }
+
+        public event Action PlayerStumblesAgainstObstacle;
+
+        public PlayerRunComponentModel(IPlayerRepository playerRepository, IEventBus eventBus)
         {
             _playerRepository = playerRepository;
+            _eventBus = eventBus;
             _player = playerRepository.GetPlayer();
 
             _player.PropertyChanged += OnPlayerPropertyChanged;
+            _eventBus.Subscribe<PlayerStumblesAgainstObstacleEvent>(OnPlayerStumblesAgainstObstacle);
         }
+
+        private void OnPlayerStumblesAgainstObstacle(PlayerStumblesAgainstObstacleEvent _)
+        {
+            PlayerStumblesAgainstObstacle?.Invoke();
+        }
+
+        
 
         private void OnPlayerPropertyChanged(object sender, PropertyChangedEventArgs e)
         {

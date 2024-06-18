@@ -11,5 +11,7 @@ namespace Modules.Player.Scripts
         public bool Jump();
         void Death();
         void SetGrounded(bool isGrounded);
+        void ReduceSpeed();
+        void ResumeSpeed();
     }
 }

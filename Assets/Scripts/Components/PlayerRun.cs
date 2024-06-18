@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
 using Builder;
 using Component_Models;
@@ -14,6 +16,7 @@ namespace Components
         private bool _isDead;
         private IPlayerRunComponentModel _componentModel;
         private Rigidbody2D _rgbd;
+        private Coroutine _playerStumblesAgainstObstacleCoroutine;
 
         private void Awake()
         {
@@ -23,6 +26,21 @@ namespace Components
             _componentModel = builder.GetPlayerRunComponentModel();
 
             _componentModel.PropertyChanged += OnPropertyChanged;
+            _componentModel.PlayerStumblesAgainstObstacle += OnPlayerStumblesAgainstObstacle;
+        }
+
+        private void OnPlayerStumblesAgainstObstacle()
+        {
+            if(_playerStumblesAgainstObstacleCoroutine!=null)
+                StopCoroutine(_playerStumblesAgainstObstacleCoroutine);
+            _playerStumblesAgainstObstacleCoroutine = StartCoroutine(ReduceSpeedCoroutine());
+        }
+
+        private IEnumerator ReduceSpeedCoroutine()
+        {
+            _componentModel.ReduceSpeed();
+            yield return new WaitForSeconds(2f);
+            _componentModel.ResumeSpeed();
         }
 
         private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -44,7 +62,7 @@ namespace Components
             _componentModel.Run(Speed);
         }
         
-        void FixedUpdate()
+        void Update()
         {
             if (Time.timeScale == 0 || _isDead)
                 return;
@@ -53,6 +71,8 @@ namespace Components
 
         private void OnDestroy()
         {
+            _componentModel.PropertyChanged -= OnPropertyChanged;
+            _componentModel.PlayerStumblesAgainstObstacle -= OnPlayerStumblesAgainstObstacle;
             _componentModel.Dispose();
         }
     }

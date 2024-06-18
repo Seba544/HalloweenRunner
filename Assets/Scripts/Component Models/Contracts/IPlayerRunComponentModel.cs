@@ -9,5 +9,8 @@ namespace Component_Models.Contracts
         public float CurrentSpeed { get; }
 
         void Run(float speed);
+        void ReduceSpeed();
+        void ResumeSpeed();
+        event Action PlayerStumblesAgainstObstacle;
     }
 }

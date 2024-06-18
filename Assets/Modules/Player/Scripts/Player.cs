@@ -95,6 +95,16 @@ namespace Modules.Player.Scripts
             IsGrounded = isGrounded;
         }
 
+        public void ReduceSpeed()
+        {
+            CurrentSpeed = _speed - 1f;
+        }
+
+        public void ResumeSpeed()
+        {
+            CurrentSpeed = _speed;
+        }
+
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)

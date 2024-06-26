@@ -2,6 +2,7 @@ using System;
 using System.ComponentModel;
 using Builder;
 using Component_Models.Contracts;
+using Core.Monsters.Scripts.Component_Models;
 using Strategies;
 using UnityEngine;
 
@@ -36,6 +37,14 @@ namespace Components
         {
             _rgbd = GetComponent<Rigidbody2D>();
             _componentModel.Move();
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                _componentModel.CollideWithPlayer();
+            }
         }
 
         private void SetFlyHeight()

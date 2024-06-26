@@ -1,5 +1,6 @@
 ﻿using Component_Models;
 using Component_Models.Contracts;
+using Core.Monsters.Scripts.Component_Models;
 using Events;
 using Installers;
 

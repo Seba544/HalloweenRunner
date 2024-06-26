@@ -1,10 +1,9 @@
-using System;
 using System.ComponentModel;
 using Builder;
 using Component_Models.Contracts;
 using UnityEngine;
 
-namespace Components
+namespace Core.Player.Scripts.Components
 {
     public class PlayerDeath : MonoBehaviour
     {
@@ -38,14 +37,6 @@ namespace Components
         void ReproduceDeath()
         {
             _animator.SetTrigger("isDead");
-        }
-
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            if (other.CompareTag("Monster"))
-            {
-                _componentModel.PlayerDies();
-            }
         }
 
         private void OnDestroy()

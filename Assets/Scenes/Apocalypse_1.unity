@@ -227,6 +227,8 @@ MonoBehaviour:
   Obstacles:
   - ObstacleType: 0
     Prefab: {fileID: 5094007089369463070, guid: baf9aa9eabd290549a43949bf2803486, type: 3}
+  - ObstacleType: 1
+    Prefab: {fileID: 3720361677269302049, guid: 8401697063f2d224c937dd0d9a0711c6, type: 3}
   initialSize: 5
 --- !u!1 &171106364
 GameObject:
@@ -492,6 +494,7 @@ MonoBehaviour:
   - {fileID: 7761911450786121520, guid: d7941571083f71b4e8afe511b38c511b, type: 3}
   Obstacles:
   - {fileID: 2928928810116254333, guid: baf9aa9eabd290549a43949bf2803486, type: 3}
+  - {fileID: 3030111311847991491, guid: 8401697063f2d224c937dd0d9a0711c6, type: 3}
   MinSpawnTime: 1
   MaxSpawnTime: 2
   MonsterObjectPool: {fileID: 1791531492}

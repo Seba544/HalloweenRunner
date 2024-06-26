@@ -1,5 +1,6 @@
 ﻿using Component_Models;
 using Component_Models.Contracts;
+using Core.Player.Scripts.Component_Models;
 using Events;
 using Installers;
 using Modules.Player.Scripts;

@@ -1,6 +1,8 @@
+using System;
 using System.ComponentModel;
 using Builder;
 using Component_Models.Contracts;
+using Core.Monsters.Scripts.Component_Models;
 using Strategies;
 using UnityEngine;
 
@@ -55,6 +57,14 @@ namespace Components
             
         }
 
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.CompareTag("Player"))
+            {
+                _monsterComponentModel.CollideWithPlayer();
+            }
+        }
+
         private void OnEnable()
         {
             _monsterComponentModel.Move();
@@ -64,6 +74,7 @@ namespace Components
         {
             _monsterComponentModel.Stop();
         }
+        
 
         void FixedUpdate()
         {

@@ -1,12 +1,10 @@
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using Component_Models.Contracts;
 using Events;
 using Models;
 
-namespace Component_Models
+namespace Core.Monsters.Scripts.Component_Models
 {
     public class MonsterComponentModel : IMonsterComponentModel
     {
@@ -38,6 +36,11 @@ namespace Component_Models
 
         public event Action<float,float,float> RelocateToSpawnPoint;
         public string GetMonsterId() => _monster.MonsterId;
+        public void CollideWithPlayer()
+        {
+            GameOverEvent gameOverEvent = new GameOverEvent();
+            _eventBus.Publish(gameOverEvent);
+        }
 
         private IMonster _monster;
 
@@ -91,6 +94,7 @@ namespace Component_Models
             _eventBus.Unsubscribe<PauseGameEvent>(OnPauseGameEvent);
             _eventBus.Unsubscribe<ResumeGameEvent>(OnResumeGame);
             _eventBus.Unsubscribe<GameOverEvent>(OnGameOver);
+            _eventBus.Unsubscribe<RelocateObjectSpawnPositionEvent>(OnObjectSpawn);
             _monster.PropertyChanged -= OnPropertyChanged;
         }
 

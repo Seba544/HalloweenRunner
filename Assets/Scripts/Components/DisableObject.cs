@@ -9,6 +9,7 @@ namespace Components
     {
         private Coroutine _coroutine;
         private MonsterObjectPool _monsterObjectPool;
+        public float Time;
 
         private void Awake()
         {
@@ -24,7 +25,7 @@ namespace Components
         {
             while (true)
             {
-                yield return new WaitForSeconds(3f);
+                yield return new WaitForSeconds(Time);
                 _monsterObjectPool.ReturnObject(gameObject);
             }
         }

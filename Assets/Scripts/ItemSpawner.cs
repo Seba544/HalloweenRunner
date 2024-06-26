@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 using UniRx;
 using Builder.Controllers;
@@ -33,6 +35,18 @@ public class ItemSpawner : MonoBehaviour
         var builder = new ObjectSpawnerControllerBuilder();
         builder.Create();
         _controller = builder.GetObjectSpawnerController();
+        _controller.PropertyChanged += OnPropertyChanged;
+    }
+
+    private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
+    {
+        if (e.PropertyName == nameof(_controller.IsGameOver))
+        {
+            if (_controller.IsGameOver)
+            {
+                StopSpawningObjects();
+            }
+        }
     }
 
     void Start()
@@ -41,12 +55,12 @@ public class ItemSpawner : MonoBehaviour
         _spawnCoroutine = StartCoroutine(SpawnV2());
         _gameEvents.OnGameOver()
             .Subscribe(_ =>{
-                StopSpawningEnemies();
+                StopSpawningObjects();
             } )
             .AddTo(this);
         _gameEvents.EndWave()
              .Subscribe(_ =>{
-                StopSpawningEnemies();
+                StopSpawningObjects();
                 StartCoroutine(FinishLevel());
              })
              .AddTo(this);
@@ -92,7 +106,7 @@ public class ItemSpawner : MonoBehaviour
         return face;
     }
 
-    void StopSpawningEnemies()
+    void StopSpawningObjects()
     {
         if(_spawnCoroutine!=null)
             StopCoroutine(_spawnCoroutine);
@@ -103,7 +117,11 @@ public class ItemSpawner : MonoBehaviour
         _gameEvents.EndOfLevel();
     }
 
-
+    private void OnDestroy()
+    {
+        _controller.PropertyChanged -= OnPropertyChanged;
+        _controller.Dispose();
+    }
 }
 
 public record ObjectSpawnPosition

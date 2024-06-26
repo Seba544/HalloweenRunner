@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5335592487015269064}
   - component: {fileID: 960006102949311119}
   - component: {fileID: -3385239411266477097}
-  - component: {fileID: 3814455945220063635}
+  - component: {fileID: 9010820166326320539}
   m_Layer: 0
   m_Name: 3_EvilBug
   m_TagString: Enemy
@@ -171,7 +171,7 @@ MonoBehaviour:
   MonsterType: 1
   Speed: 6
   DistanceFromGround: 3
---- !u!114 &3814455945220063635
+--- !u!114 &9010820166326320539
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -183,3 +183,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 345eb9aadaf16064d899c07cb3be1672, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Time: 8

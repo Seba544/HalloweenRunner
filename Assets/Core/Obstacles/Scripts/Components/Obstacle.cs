@@ -12,5 +12,6 @@ public abstract class Obstacle : MonoBehaviour
 
 public enum ObstacleType
 {
-    SLIME_PLATFORM
+    SLIME_PLATFORM,
+    SNAIL
 }

@@ -15,7 +15,7 @@ namespace Strategies
         {
             _obstaclePool = new Dictionary<ObstacleType, List<Obstacle>>();
             _obstaclePool.Add(ObstacleType.SLIME_PLATFORM,new List<Obstacle>());
-            
+            _obstaclePool.Add(ObstacleType.SNAIL,new List<Obstacle>());
             foreach (var obstacle in Obstacles)
             {
                 GameObject pref = obstacle.Prefab;

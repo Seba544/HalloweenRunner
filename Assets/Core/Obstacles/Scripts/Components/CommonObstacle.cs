@@ -1,9 +1,8 @@
-using System;
 using Builder;
 using Component_Models.Contracts;
 using UnityEngine;
 
-namespace Components
+namespace Core.Obstacles.Scripts.Components
 {
     public class CommonObstacle : Obstacle
     {
@@ -27,7 +26,6 @@ namespace Components
         {
             if (other.CompareTag("Player"))
             {
-                Debug.Log("Player Collides against obstacle");
                 _componentModel.CollidesWithPlayer(false);       
             }
         }

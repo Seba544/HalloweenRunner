@@ -4,7 +4,7 @@ using Component_Models.Contracts;
 using Events;
 using Modules.Player.Scripts;
 
-namespace Component_Models
+namespace Core.Player.Scripts.Component_Models
 {
     public class PlayerDeathComponentModel : IPlayerDeathComponentModel
     {
@@ -26,13 +26,6 @@ namespace Component_Models
                 }
             } }
 
-        public void PlayerDies()
-        {
-            _player.Death();
-            GameOverEvent gameOverEvent = new GameOverEvent();
-            _eventBus.Publish(gameOverEvent);
-        }
-
         public PlayerDeathComponentModel(IEventBus eventBus, IPlayerRepository playerRepository)
         {
             _eventBus = eventBus;
@@ -40,6 +33,12 @@ namespace Component_Models
             _player = _playerRepository.GetPlayer();
 
             _player.PropertyChanged += OnPropertyChanged;
+            _eventBus.Subscribe<GameOverEvent>(OnGameOver);
+        }
+
+        private void OnGameOver(GameOverEvent evt)
+        {
+            _player.Death();
         }
 
         private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)

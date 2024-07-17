@@ -5,7 +5,7 @@ using Installers;
 
 namespace Builder
 {
-    public class ObstacleComponentModelBuilder : ComponentModelBuilder
+    public class ObstacleControllerBuilder : ControllerBuilder
     {
         private IObstacleComponentModel _componentModel;
         public override void Create()

@@ -6,12 +6,12 @@ using Installers;
 
 namespace Builder
 {
-    public class MonsterComponentModelBuilder : ComponentModelBuilder
+    public class MonsterControllerBuilder : ControllerBuilder
     {
         private IMonsterComponentModel _componentModel;
         private float _monsterSpeed;
 
-        public MonsterComponentModelBuilder(float monsterSpeed)
+        public MonsterControllerBuilder(float monsterSpeed)
         {
             _monsterSpeed = monsterSpeed;
         }

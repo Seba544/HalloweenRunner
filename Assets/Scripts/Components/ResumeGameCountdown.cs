@@ -1,22 +1,22 @@
 using System;
 using Builder;
-using Component_Models.Contracts;
 using Components.Contracts;
 using TMPro;
 using UnityEngine;
 using DG.Tweening;
+using Contracts;
 
 namespace Components
 {
     public class ResumeGameCountdown : MonoBehaviour, IResumeGameCountdown
     {
         
-        private IResumeGameCountdownComponentModel _countdownComponentModel;
+        private IResumeGameCountdownController _countdownComponentModel;
         public int CountdownValue;
         [SerializeField] private TMP_Text _countdownText;
         private void Awake()
         {
-            var componentModelBuilder = new ResumeGameCountdownComponentModelBuilder(this);
+            var componentModelBuilder = new ResumeGameCountdownControllerBuilder(this);
             componentModelBuilder.Create();
             _countdownComponentModel = componentModelBuilder.GetComponentModel();
 

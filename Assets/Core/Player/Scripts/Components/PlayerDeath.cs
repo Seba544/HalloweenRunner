@@ -12,7 +12,7 @@ namespace Core.Player.Scripts.Components
 
         private void Awake()
         {
-            var builder = new PlayerDeathComponentModelBuilder();
+            var builder = new PlayerDeathControllerBuilder();
             builder.Create();
             _componentModel = builder.GetPlayerDeathComponentModel();
 

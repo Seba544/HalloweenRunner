@@ -3,7 +3,7 @@ using Component_Models.Contracts;
 
 namespace Builder
 {
-    public class ChaserComponentModelBuilder : ComponentModelBuilder
+    public class ChaserControllerBuilder : ControllerBuilder
     {
         private IChaserComponentModel _componentModel;
         public override void Create()

@@ -19,7 +19,7 @@ namespace Components
         private void Awake()
         {
             _monsterObjectPool = FindObjectOfType<MonsterObjectPool>();
-            var builder = new MonsterComponentModelBuilder(Speed);
+            var builder = new MonsterControllerBuilder(Speed);
             builder.Create();
             _componentModel = builder.GetMonsterComponentModel();
             MonsterId = _componentModel.GetMonsterId();

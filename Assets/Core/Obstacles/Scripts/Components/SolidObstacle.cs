@@ -10,7 +10,7 @@ namespace Core.Obstacles.Scripts.Components
         private IObstacleComponentModel _componentModel;
         private void Awake()
         {
-            var builder = new ObstacleComponentModelBuilder();
+            var builder = new ObstacleControllerBuilder();
             builder.Create();
             _componentModel = builder.GetObstacleComponentModel();
             _obstacleId = _componentModel.GetObstacleId();

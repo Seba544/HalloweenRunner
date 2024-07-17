@@ -1,18 +1,26 @@
 using System;
 using System.Collections;
+using Assets.Scripts.Builder;
+using Assets.Scripts.Components.Contracts;
+using Assets.Scripts.Controllers;
 using Strategies;
 using UnityEngine;
 
 namespace Components
 {
-    public class DisableObject : MonoBehaviour
+    public class DisableObject : MonoBehaviour,IDisableObject
     {
+        private IDisableObjectController _controller;
         private Coroutine _coroutine;
         private MonsterObjectPool _monsterObjectPool;
         public float Time;
 
         private void Awake()
         {
+            var builder = new DisableObjectControllerBuilder(this);
+            builder.Create();
+            _controller = builder.GetDisableObjectController();
+
             _monsterObjectPool = FindObjectOfType<MonsterObjectPool>();
         }
 
@@ -30,9 +38,15 @@ namespace Components
             }
         }
 
+
+        public void GameOver()
+        {
+            StopCoroutine(_coroutine);
+        }
         private void OnDestroy()
         {
             StopCoroutine(_coroutine);
+            _controller.Dispose();
         }
     }
 }

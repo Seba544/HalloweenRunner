@@ -4,21 +4,22 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using Builder;
 using Component_Models.Contracts;
+using Controllers;
 using TMPro;
 using UnityEngine;
 
 public class CandyScore : MonoBehaviour
 {
-    private ICandyScoreComponentModel _componentModel;
+    private ICandyScoreController m_controller;
     private int _currentAmountOfCandies;
     [SerializeField] private TMP_Text _amountOfCandiesTxt;
     private void Awake()
     {
-        var builder = new CandyScoreComponentModelBuilder();
+        var builder = new CandyScoreControllerBuilder();
         builder.Create();
-        _componentModel = builder.GetCandyScoreComponentModel();
+        m_controller = builder.GetCandyScoreComponentModel();
 
-        _componentModel.PropertyChanged += OnPropertyChanged;
+        m_controller.PropertyChanged += OnPropertyChanged;
     }
 
     private void Start()
@@ -28,9 +29,9 @@ public class CandyScore : MonoBehaviour
 
     private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
     {
-        if (e.PropertyName == nameof(_componentModel.AmountOfCandies))
+        if (e.PropertyName == nameof(m_controller.AmountOfCandies))
         {
-            _currentAmountOfCandies = _componentModel.AmountOfCandies;
+            _currentAmountOfCandies = m_controller.AmountOfCandies;
             UpdateAmountOfCandiesCollected(_currentAmountOfCandies);
         }
     }
@@ -42,6 +43,6 @@ public class CandyScore : MonoBehaviour
 
     private void OnDestroy()
     {
-        _componentModel.Dispose();
+        m_controller.Dispose();
     }
 }

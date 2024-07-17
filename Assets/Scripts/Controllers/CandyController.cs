@@ -4,14 +4,14 @@ using Events;
 using Models;
 using Candy = Models.Candy;
 
-namespace Component_Models
+namespace Controllers
 {
-    public class CandyComponentModel : ICandyComponentModel
+    public class CandyController : ICandyController
     {
         private readonly IEventBus _eventBus;
         private readonly int _amount;
         private ICandy _candy;
-        public CandyComponentModel(IEventBus eventBus, int amount)
+        public CandyController(IEventBus eventBus, int amount)
         {
             _eventBus = eventBus;
             _eventBus.Subscribe<RelocateObjectSpawnPositionEvent>(OnObjectSpawn);

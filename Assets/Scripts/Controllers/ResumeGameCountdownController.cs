@@ -1,16 +1,17 @@
 ﻿using System;
 using Component_Models.Contracts;
 using Components.Contracts;
+using Contracts;
 using Events;
 
-namespace Component_Models
+namespace Controllers
 {
-    public class ResumeGameCountdownComponentModel : IResumeGameCountdownComponentModel
+    public class ResumeGameCountdownController : IResumeGameCountdownController
     {
         private IResumeGameCountdown _component;
         private IEventBus _eventBus;
 
-        public ResumeGameCountdownComponentModel(IResumeGameCountdown component,IEventBus eventBus)
+        public ResumeGameCountdownController(IResumeGameCountdown component,IEventBus eventBus)
         {
             _component = component;
             _eventBus = eventBus;

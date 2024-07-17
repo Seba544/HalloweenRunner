@@ -3,10 +3,11 @@ using System.ComponentModel;
 using Components.Contracts;
 using Events;
 
-namespace Component_Models.Contracts
+namespace Contracts
 {
-    public interface IResumeGameCountdownComponentModel : IDisposable
+    public interface IResumeGameCountdownController : IDisposable
     {
         event Action InitCountdown;
     }
+
 }

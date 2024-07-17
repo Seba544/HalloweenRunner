@@ -21,7 +21,7 @@ namespace Components
         private void Awake()
         {
             _currentSpeed = Speed;
-            var builder = new PlayerRunComponentModelBuilder();
+            var builder = new PlayerRunControllerBuilder();
             builder.Create();
             _componentModel = builder.GetPlayerRunComponentModel();
 

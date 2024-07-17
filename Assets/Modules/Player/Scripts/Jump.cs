@@ -4,9 +4,9 @@ using UnityEngine;
 
 namespace Modules.Player.Scripts
 {
-    public class Jump : MonoBehaviour,IJump
+    public class Jump : MonoBehaviour
     {
-        private IJumpComponentModel _jumpComponentModel;
+        private IJumpController _jumpController;
         private bool _isPlayerAbleToJump;
         private bool _isPlayerSliding;
         BoxCollider2D _boxCollider;
@@ -25,11 +25,11 @@ namespace Modules.Player.Scripts
             _initialColliderOffsetY = _boxCollider.offset.y;
             _isPlayerAbleToJump = true;
 
-            var componentModelBuilder = new JumpComponentModelBuilder(this);
+            var componentModelBuilder = new JumpControllerBuilder();
             componentModelBuilder.Create();
-            _jumpComponentModel = componentModelBuilder.GetComponentModel();
+            _jumpController = componentModelBuilder.GetController();
             
-            _jumpComponentModel.DoJump += DoJump;
+            _jumpController.DoJump += DoJump;
         }
 
         private void DoJump()
@@ -46,13 +46,13 @@ namespace Modules.Player.Scripts
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                JumpInputAction?.Invoke();
+                _jumpController.Jump();
             }
         }
 
         private void OnDestroy()
         {
-            _jumpComponentModel.Dispose();
+            _jumpController.Dispose();
         }
 
 

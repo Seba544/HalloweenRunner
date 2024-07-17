@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UniRx;
@@ -49,7 +47,7 @@ public class PlayerMovement : MonoBehaviour
 
         _rgbd = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
-
+        
     }
     
 

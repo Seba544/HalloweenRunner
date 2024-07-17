@@ -11,7 +11,7 @@ namespace Components
     public class Candy : MonoBehaviour
     {
         private string _candyId;
-        private ICandyComponentModel _componentModel;
+        private ICandyController m_controller;
         private CandyObjectPool _candyObjectPool;
         public CandyType CandyType;
         [SerializeField] private int Amount;
@@ -19,11 +19,11 @@ namespace Components
         private void Awake()
         {
             _candyObjectPool = FindObjectOfType<CandyObjectPool>();
-            var builder = new CandyComponentModelBuilder(Amount);
+            var builder = new CandyControllerBuilder(Amount);
             builder.Create();
-            _componentModel = builder.GetCandyComponentModel();
-            _candyId = _componentModel.GetCandyId();
-            _componentModel.RelocateToSpawnPoint += OnRelocateToSpawnPoint;
+            m_controller = builder.GetCandyComponentModel();
+            _candyId = m_controller.GetCandyId();
+            m_controller.RelocateToSpawnPoint += OnRelocateToSpawnPoint;
         }
 
         private void OnRelocateToSpawnPoint(float posX, float posY, float posZ)
@@ -36,7 +36,7 @@ namespace Components
         {
             if (other.CompareTag("Player"))
             {
-                _componentModel.CollectCandy();
+                m_controller.CollectCandy();
                 _candyObjectPool.ReturnObject(gameObject);
             }
         }
@@ -50,8 +50,8 @@ namespace Components
 
         private void OnDestroy()
         {
-            _componentModel.RelocateToSpawnPoint -= OnRelocateToSpawnPoint;
-            _componentModel.Dispose();
+            m_controller.RelocateToSpawnPoint -= OnRelocateToSpawnPoint;
+            m_controller.Dispose();
         }
     
     }

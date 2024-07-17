@@ -7,7 +7,7 @@ using Modules.Player.Scripts;
 
 namespace Builder
 {
-    public class PlayerDeathComponentModelBuilder : ComponentModelBuilder
+    public class PlayerDeathControllerBuilder : ControllerBuilder
     {
         private IPlayerDeathComponentModel _componentModel;
         public override void Create()

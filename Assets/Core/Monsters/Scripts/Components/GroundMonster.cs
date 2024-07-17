@@ -28,7 +28,7 @@ namespace Components
                     _monsterObjectPool = FindObjectOfType<MonsterObjectPool>();
                     break;
             }
-            var builder = new MonsterComponentModelBuilder(Speed);
+            var builder = new MonsterControllerBuilder(Speed);
             builder.Create();
             _monsterComponentModel = builder.GetMonsterComponentModel();
             MonsterId = _monsterComponentModel.GetMonsterId();

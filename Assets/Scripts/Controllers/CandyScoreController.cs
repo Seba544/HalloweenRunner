@@ -2,16 +2,17 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Component_Models.Contracts;
+using Controllers;
 using Events;
 
 namespace Component_Models
 {
-    public class CandyScoreComponentModel : ICandyScoreComponentModel
+    public class CandyScoreController : ICandyScoreController
     {
         private readonly IEventBus _eventBus;
         private int _amountOfCandies;
 
-        public CandyScoreComponentModel(IEventBus eventBus)
+        public CandyScoreController(IEventBus eventBus)
         {
             _eventBus = eventBus;
             _eventBus.Subscribe<CollectCandyEvent>(OnCollectCandyEvent);

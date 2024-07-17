@@ -6,7 +6,7 @@ using Modules.Player.Scripts;
 
 namespace Builder
 {
-    public class PlayerRunComponentModelBuilder : ComponentModelBuilder
+    public class PlayerRunControllerBuilder : ControllerBuilder
     {
         private IPlayerRunComponentModel _componentModel;
 

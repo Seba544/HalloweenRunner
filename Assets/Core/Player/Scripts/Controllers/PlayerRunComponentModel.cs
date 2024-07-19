@@ -64,12 +64,6 @@ namespace Component_Models
             _player = playerRepository.GetPlayer();
 
             _player.PropertyChanged += OnPlayerPropertyChanged;
-            _eventBus.Subscribe<PlayerStumblesAgainstObstacleEvent>(OnPlayerStumblesAgainstObstacle);
-        }
-
-        private void OnPlayerStumblesAgainstObstacle(PlayerStumblesAgainstObstacleEvent _)
-        {
-            PlayerStumblesAgainstObstacle?.Invoke();
         }
 
         

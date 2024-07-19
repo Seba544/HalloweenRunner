@@ -38,7 +38,7 @@ namespace Modules.Player.Scripts
 
             IsPlayerGrounded = raycastHit.collider != null;
 
-            if (IsPlayerGrounded)
+            if (IsPlayerGrounded && !_animator.GetBool("isWalking"))
             {
                 _animator.SetBool("isRunning", true);
             }else{

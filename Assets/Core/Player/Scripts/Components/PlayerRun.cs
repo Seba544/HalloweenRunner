@@ -26,21 +26,6 @@ namespace Components
             _componentModel = builder.GetPlayerRunComponentModel();
 
             _componentModel.PropertyChanged += OnPropertyChanged;
-            _componentModel.PlayerStumblesAgainstObstacle += OnPlayerStumblesAgainstObstacle;
-        }
-
-        private void OnPlayerStumblesAgainstObstacle()
-        {
-            if(_playerStumblesAgainstObstacleCoroutine!=null)
-                StopCoroutine(_playerStumblesAgainstObstacleCoroutine);
-            _playerStumblesAgainstObstacleCoroutine = StartCoroutine(ReduceSpeedCoroutine());
-        }
-
-        private IEnumerator ReduceSpeedCoroutine()
-        {
-            _componentModel.ReduceSpeed();
-            yield return new WaitForSeconds(2f);
-            _componentModel.ResumeSpeed();
         }
 
         private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)
@@ -72,7 +57,6 @@ namespace Components
         private void OnDestroy()
         {
             _componentModel.PropertyChanged -= OnPropertyChanged;
-            _componentModel.PlayerStumblesAgainstObstacle -= OnPlayerStumblesAgainstObstacle;
             _componentModel.Dispose();
         }
     }

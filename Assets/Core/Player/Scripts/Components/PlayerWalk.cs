@@ -27,10 +27,11 @@ namespace Core.Player.Scripts.Components
         }
         private IEnumerator ReduceSpeedCoroutine()
         {
-            _controller.ReduceSpeed();
+            _controller.Walk();
             _animator.SetBool("isWalking",true);
-            yield return new WaitForSeconds(2f);
-            _controller.ResumeSpeed();
+            yield return new WaitForSeconds(1.5f);
+            _controller.Run();
+            yield return new WaitForSeconds(0.5f);
             _animator.SetBool("isWalking",false);
         }
 

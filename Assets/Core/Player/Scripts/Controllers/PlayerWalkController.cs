@@ -29,14 +29,14 @@ namespace Core.Player.Scripts.Controllers
             _eventBus.Unsubscribe<PlayerStumblesAgainstObstacleEvent>(OnPlayerStumblesAgainstObstacle);
         }
 
-        public void ReduceSpeed()
+        public void Walk()
         {
-            _player.ReduceSpeed();
+            _player.Walk();
         }
 
-        public void ResumeSpeed()
+        public void Run()
         {
-            _player.ResumeSpeed();
+            _player.Run();
         }
     }
 }

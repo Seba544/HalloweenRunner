@@ -7,7 +7,7 @@ using Modules.Player.Scripts;
 
 namespace Component_Models
 {
-    public class PlayerRunComponentModel : IPlayerRunComponentModel
+    public class PlayerRunController : IPlayerRunController
     {
         private readonly IPlayerRepository _playerRepository;
         private readonly IEventBus _eventBus;
@@ -41,23 +41,14 @@ namespace Component_Models
             }
         }
 
-        public void Run(float speed)
+        public void Run()
         {
-            _player.Run(speed);
-        }
-
-        public void ReduceSpeed()
-        {
-            _player.ReduceSpeed();
-        }
-        public void ResumeSpeed()
-        {
-            _player.ResumeSpeed();
+            _player.Run();
         }
 
         public event Action PlayerStumblesAgainstObstacle;
 
-        public PlayerRunComponentModel(IPlayerRepository playerRepository, IEventBus eventBus)
+        public PlayerRunController(IPlayerRepository playerRepository, IEventBus eventBus)
         {
             _playerRepository = playerRepository;
             _eventBus = eventBus;

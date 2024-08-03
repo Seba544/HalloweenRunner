@@ -8,14 +8,14 @@ namespace Builder
 {
     public class PlayerRunControllerBuilder : ControllerBuilder
     {
-        private IPlayerRunComponentModel _componentModel;
+        private IPlayerRunController m_controller;
 
         public override void Create()
         {
-            _componentModel = new PlayerRunComponentModel(ServiceLocator.Instance.GetService<IPlayerRepository>(),
+            m_controller = new PlayerRunController(ServiceLocator.Instance.GetService<IPlayerRepository>(),
                 ServiceLocator.Instance.GetService<IEventBus>());
         }
 
-        public IPlayerRunComponentModel GetPlayerRunComponentModel() => _componentModel;
+        public IPlayerRunController GetPlayerRunComponentModel() => m_controller;
     }
 }

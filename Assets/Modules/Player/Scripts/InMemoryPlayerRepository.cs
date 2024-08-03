@@ -3,19 +3,14 @@ namespace Modules.Player.Scripts
     public class InMemoryPlayerRepository : IPlayerRepository
     {
         private IPlayer _player;
-
-        public InMemoryPlayerRepository()
-        {
-            _player = new Player();
-        }
         public IPlayer GetPlayer()
         {
             return _player;
         }
 
-        public void SetPlayer(IPlayer player)
+        public void Create(float playerRunSpeed, float playerWalkSpeed)
         {
-            _player = player;
+            _player = new Player(playerRunSpeed,playerWalkSpeed);
         }
     }
 }

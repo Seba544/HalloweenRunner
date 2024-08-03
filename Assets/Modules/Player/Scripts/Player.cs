@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using UnityEngine;
 
 namespace Modules.Player.Scripts
 {
@@ -10,8 +11,15 @@ namespace Modules.Player.Scripts
         private bool _isDead;
         private bool _isAbleToJump;
         private int _currentAmountOfJumps;
-        private float _speed;
+        private float _runSpeed;
+        private float _walkSpeed;
         private float _currentSpeed;
+
+        public Player(float playerRunRunSpeed, float playerWalkSpeed)
+        {
+            _runSpeed = playerRunRunSpeed;
+            _walkSpeed = playerWalkSpeed;
+        }
 
         public bool IsGrounded {get { return _isGrounded; }
             set
@@ -50,7 +58,7 @@ namespace Modules.Player.Scripts
             get => _currentSpeed;
             set
             {
-                if (value != _currentSpeed)
+                if (!Mathf.Approximately(value, _currentSpeed))
                 {
                     _currentSpeed = value;
                     OnPropertyChanged();
@@ -58,10 +66,14 @@ namespace Modules.Player.Scripts
             }
         }
 
-        public void Run(float speed)
+        public void Run()
         {
-            _speed = speed;
-            CurrentSpeed = _speed;
+            CurrentSpeed = _runSpeed;
+        }
+
+        public void Walk()
+        {
+            CurrentSpeed = _walkSpeed;
         }
 
         public bool Jump()
@@ -97,12 +109,18 @@ namespace Modules.Player.Scripts
 
         public void ReduceSpeed()
         {
-            CurrentSpeed = _speed - 1f;
+            CurrentSpeed = _runSpeed - 2f;
         }
 
         public void ResumeSpeed()
         {
-            CurrentSpeed = _speed;
+            CurrentSpeed = _runSpeed;
+        }
+
+        public void IncreaseSpeed(float amountToIncrease)
+        {
+            _runSpeed += amountToIncrease;
+            CurrentSpeed = _runSpeed;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

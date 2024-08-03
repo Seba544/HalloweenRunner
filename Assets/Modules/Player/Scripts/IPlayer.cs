@@ -7,11 +7,11 @@ namespace Modules.Player.Scripts
         public bool IsGrounded { get; }
         public bool IsDead { get; }
         public float CurrentSpeed { get; }
-        void Run(float speed);
+        void Run();
+        void Walk();
         public bool Jump();
         void Death();
         void SetGrounded(bool isGrounded);
-        void ReduceSpeed();
-        void ResumeSpeed();
+        void IncreaseSpeed(float amountToIncrease);
     }
 }
